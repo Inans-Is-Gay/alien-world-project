@@ -1,0 +1,38 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.player.no_damage_4s": {
+      "loop": true,
+      "animation_length": 4.1,
+      "timeline": {
+        "4.0": ["/event entity @s evt:normal_damage"]
+      }
+    },
+    "animation.player.log_in": {
+      "loop": false,
+      "animation_length": 16.5,
+      "timeline": {
+        "5.0": [
+          "/say login anim",
+          "/execute @s[tag=!init] ~ ~ ~ function tp/lobby"
+        ]
+      }
+    },
+    "animation.player.init": {
+      "loop": false,
+      "animation_length": 4,
+      "timeline": {
+        "0.0": [
+          "/say init anim",
+          "/function entities/init_player",
+          "/execute @s[tag=!init] ~ ~ ~ function tp/start_game"
+        ],
+        "3.0": [
+          "/tag @s add init",
+          "/spawnpoint @s ~ ~ ~",
+          "/event entity @s evt:reset_init_player"
+        ]
+      }
+    }
+  }
+}

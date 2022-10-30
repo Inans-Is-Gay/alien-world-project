@@ -1,0 +1,66 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.62b15c782efb1d94950c26dffed62bf929c8b6ea_0": {
+			"animation_length": 1,
+			"loop": false,
+			"timeline": {
+				"0.0": [
+					"/tag @s add lighting_upgrade",
+					"/function entity/boat/mirror_upgrades_onto_relay"
+				]
+			}
+		},
+		"animation.62b15c782efb1d94950c26dffed62bf929c8b6ea_1": {
+			"animation_length": 1,
+			"loop": false,
+			"timeline": {
+				"0.0": [
+					"/tag @s add kelp_cutter",
+					"/function entity/boat/mirror_upgrades_onto_relay"
+				]
+			}
+		},
+		"animation.62b15c782efb1d94950c26dffed62bf929c8b6ea_2": {
+			"animation_length": 15,
+			"loop": true,
+			"timeline": {
+				"0.0": [
+					"/execute @a[r=2.5] ~~~ function entity/boat/kelp_cutter/warn"
+				],
+				"0.05": [
+					"@s chum:remove_kelp_warning"
+				]
+			}
+		},
+		"animation.62b15c782efb1d94950c26dffed62bf929c8b6ea_3": {
+			"animation_length": 1,
+			"loop": false,
+			"timeline": {
+				"0.0": [
+					"/tag @s add melody_upgrade",
+					"/function entity/boat/mirror_upgrades_onto_relay"
+				]
+			}
+		},
+		"animation.62b15c782efb1d94950c26dffed62bf929c8b6ea_4": {
+			"animation_length": 1,
+			"loop": false,
+			"timeline": {
+				"0.0": [
+					"/tag @s add storage_upgrade",
+					"/function entity/boat/mirror_upgrades_onto_relay"
+				]
+			}
+		},
+		"animation.62b15c782efb1d94950c26dffed62bf929c8b6ea_5": {
+			"animation_length": 1.05,
+			"loop": true,
+			"timeline": {
+				"1.0": [
+					"@s chum:remove_melody_pulse"
+				]
+			}
+		}
+	}
+}

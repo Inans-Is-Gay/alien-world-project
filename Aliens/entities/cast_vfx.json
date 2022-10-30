@@ -1,0 +1,56 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:cast_vfx",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"3ee144ee9c15296c_a_0": "animation.3ee144ee9c15296c14508027ae03c1d84900869f_0"
+			},
+			"scripts": {
+				"animate": [
+					"3ee144ee9c15296c_a_0"
+				]
+			}
+		},
+		"component_groups": {
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 1
+			},
+			"minecraft:timer": {
+				"time": 3,
+				"time_down_event": {
+					"event": "chum:despawn"
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			}
+		}
+	}
+}

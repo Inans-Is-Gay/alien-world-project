@@ -1,0 +1,329 @@
+{
+    "tiers": [
+        {
+            "total_exp_required": 0,
+            "trades": [
+                {
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 10,
+                            "price_multiplier": -0.05
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:caught_parrot",
+                            "quantity": 1
+                        }
+                    ],
+                    "max_uses": 12,
+                    "reward_exp": false
+                }
+            ]
+        },
+        {
+            "total_exp_required": 0,
+            "groups": [
+                {
+                    "num_to_select": 0,
+                    "trades": [
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_toad",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_cuddle",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        }
+                    ]
+                },
+                {
+                    "trades": [
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_crab",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_chameleon",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_kelp",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_piranja",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_shark",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_slug",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_rocket",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_puffer",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_angler",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_crawler",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_spook",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_butterfly",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_spike",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_royal",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "chum:lumia_coin",
+                                    "quantity": 2,
+                                    "price_multiplier": 0.05
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "chum:caught_eclipse",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 12,
+                            "reward_exp": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

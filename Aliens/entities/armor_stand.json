@@ -1,0 +1,237 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:armor_stand",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"on_world_load": "animation.armor_stand.on_world_load",
+				"9745c9c433c4e69b_ac_0": "controller.animation.9745c9c433c4e69be778d7d5cab7c53f0a010d6d_0"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"on_world_load": "q.mark_variant==1"
+					},
+					"9745c9c433c4e69b_ac_0"
+				]
+			}
+		},
+		"component_groups": {
+			"chum:always_tick": {
+				"minecraft:tick_world": {
+					"radius": 0
+				},
+				"minecraft:mark_variant": {
+					"value": 1
+				}
+			},
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"chum:node": {
+				"minecraft:scale": {
+					"value": 0.5
+				}
+			},
+			"chum:node_1": {
+				"minecraft:type_family": {
+					"family": [
+						"armor_stand",
+						"node",
+						"node_1"
+					]
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"chum:node_2": {
+				"minecraft:type_family": {
+					"family": [
+						"armor_stand",
+						"node",
+						"node_2"
+					]
+				},
+				"minecraft:variant": {
+					"value": 2
+				},
+				"minecraft:floats_in_liquid": {},
+				"minecraft:behavior.float": {
+					"priority": 0
+				},
+				"minecraft:navigation.generic": {},
+				"minecraft:jump.static": {},
+				"minecraft:movement.generic": {},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": [
+						"fish"
+					],
+					"pull_in_entities": true,
+					"seats": [
+						{
+							"position": [
+								0,
+								-1,
+								0
+							]
+						}
+					]
+				}
+			},
+			"chum:short": {
+				"minecraft:leashable": {
+					"max_distance": 60,
+					"soft_distance": 2,
+					"hard_distance": 3
+				},
+				"minecraft:timer": {
+					"time": 0.2,
+					"time_down_event": {
+						"event": "chum:long"
+					}
+				}
+			},
+			"chum:long": {
+				"minecraft:leashable": {
+					"max_distance": 60,
+					"soft_distance": 16,
+					"hard_distance": 24
+				}
+			},
+			"chum:shortest": {
+				"minecraft:leashable": {
+					"max_distance": 60,
+					"soft_distance": 1,
+					"hard_distance": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:movement": {
+				"value": 0
+			},
+			"minecraft:leashable": {
+				"max_distance": 30,
+				"soft_distance": 16,
+				"hard_distance": 24
+			},
+			"minecraft:nameable": {
+				"name_actions": [
+					{
+						"name_filter": "main",
+						"on_named": {
+							"event": "chum:add_always_tick"
+						}
+					},
+					{
+						"name_filter": "node_1",
+						"on_named": {
+							"event": "chum:node_1"
+						}
+					},
+					{
+						"name_filter": "node_2",
+						"on_named": {
+							"event": "chum:node_2"
+						}
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 1.9
+			},
+			"minecraft:health": {
+				"value": 8,
+				"max": 8
+			},
+			"minecraft:type_family": {
+				"family": [
+					"armor_stand"
+				]
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"chum:add_always_tick": {
+				"add": {
+					"component_groups": [
+						"chum:always_tick"
+					]
+				}
+			},
+			"chum:node_1": {
+				"add": {
+					"component_groups": [
+						"chum:node",
+						"chum:node_1"
+					]
+				}
+			},
+			"chum:node_2": {
+				"add": {
+					"component_groups": [
+						"chum:node",
+						"chum:node_2"
+					]
+				}
+			},
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			},
+			"chum:short": {
+				"add": {
+					"component_groups": [
+						"chum:short"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:long"
+					]
+				}
+			},
+			"chum:long": {
+				"add": {
+					"component_groups": [
+						"chum:long"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:short"
+					]
+				}
+			},
+			"chum:shortest": {
+				"add": {
+					"component_groups": [
+						"chum:shortest"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:short",
+						"chum:long"
+					]
+				}
+			}
+		}
+	}
+}

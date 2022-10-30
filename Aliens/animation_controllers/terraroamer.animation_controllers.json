@@ -1,0 +1,51 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.terraroamer.can_i_spawn_here": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [{
+						"check": "1.0"
+					}]
+				},
+				"check": {
+					"on_entry": [
+						"/event entity @s[tag=!init,x=2388,y=40,z=-648,dx=84,dy=100,dz=166] evt:despawn",
+						"/event entity @s[tag=!init,x=1893,y=40,z=-1010,dx=130,dy=100,dz=117] evt:despawn",
+						"/event entity @s[tag=!init,x=1993,y=40,z=-1088,dx=59,dy=100,dz=78] evt:despawn",
+						"/event entity @s[tag=!init,x=1481,y=40,z=-1131,dx=142,dy=100,dz=82] evt:despawn",
+						"/event entity @s[tag=!init,x=1638,y=40,z=-680,dx=82,dy=100,dz=74] evt:despawn",
+						"/tag @s[type=tsu:terrawalker] add no_air_above",
+						"/execute @s[type=tsu:terrawalker] ~ ~ ~ detect ~ ~5 ~ air 0 tag @s remove no_air_above",
+						"/event entity @s[tag=!init,tag=no_air_above] evt:despawn",
+						"/tag @s add init"
+					]
+				}
+			}
+		},
+		"controller.animation.terrawalker.attacks": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{ "shockwave": "q.is_stunned && q.is_delayed_attacking" },
+						{ "stomp": "!q.is_stunned && q.is_delayed_attacking" }
+					]
+				},
+				"stomp": {
+					"animations": ["stomp"],
+					"transitions": [{
+						"default": "!q.is_delayed_attacking && q.any_animation_finished"
+					}]
+				},
+				"shockwave": {
+					"animations": ["shockwave"],
+					"transitions": [{
+						"default": "!q.is_delayed_attacking && q.any_animation_finished"
+					}]
+				}
+			}
+		}
+	}
+}

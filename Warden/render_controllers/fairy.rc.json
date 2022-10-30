@@ -1,0 +1,37 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.heart": {
+			"arrays": {
+				"materials": {
+				  "Array.materials": [
+					"material.day",
+					"material.night"
+				  ]
+				}
+			  },
+			"geometry": "geometry.heart",
+			"materials": [ {"*": "Array.materials[query.time_of_day<0.2||query.time_of_day>0.8]"} ],
+			"textures": [
+				"texture.default"
+			],
+			"ignore_lighting": true
+		},
+		"controller.render.body": {
+			"geometry": "geometry.shell",
+			"materials": [ {"*": "material.body"} ],
+			"textures": [
+				"texture.default"
+			],
+			"ignore_lighting": true
+		},
+		"controller.render.wings": {
+			"geometry": "geometry.wings",
+			"materials": [ {"*": "material.body"} ],
+			"textures": [
+				"texture.default"
+			],
+			"ignore_lighting": false
+		}
+	}
+}

@@ -1,0 +1,160 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:time_manager",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"controller": "controller.animation.time_manager",
+				"tp_fix": "animation.npc_tp_fix"
+			},
+			"scripts": {
+				"animate": [
+					"tp_fix",
+					"controller"
+				]
+			}
+		},
+		"component_groups": {
+			"chum:morn": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"chum:noon": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"chum:night": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			}
+		},
+		"components": {
+			"minecraft:scheduler": {
+				"scheduled_events": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "hourly_clock_time",
+									"operator": ">=",
+									"value": 23000
+								},
+								{
+									"test": "hourly_clock_time",
+									"operator": "<",
+									"value": 24000
+								}
+							]
+						},
+						"event": "chum:morn"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "hourly_clock_time",
+									"operator": ">=",
+									"value": 0
+								},
+								{
+									"test": "hourly_clock_time",
+									"operator": "<",
+									"value": 6000
+								}
+							]
+						},
+						"event": "chum:morn"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "hourly_clock_time",
+									"operator": ">=",
+									"value": 6000
+								},
+								{
+									"test": "hourly_clock_time",
+									"operator": "<",
+									"value": 13000
+								}
+							]
+						},
+						"event": "chum:noon"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "hourly_clock_time",
+									"operator": ">=",
+									"value": 13000
+								},
+								{
+									"test": "hourly_clock_time",
+									"operator": "<",
+									"value": 23000
+								}
+							]
+						},
+						"event": "chum:night"
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"chum:morn": {
+				"add": {
+					"component_groups": [
+						"chum:morn"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:night",
+						"chum:noon"
+					]
+				}
+			},
+			"chum:noon": {
+				"add": {
+					"component_groups": [
+						"chum:noon"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:morn",
+						"chum:night"
+					]
+				}
+			},
+			"chum:night": {
+				"add": {
+					"component_groups": [
+						"chum:night"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:morn",
+						"chum:noon"
+					]
+				}
+			}
+		}
+	}
+}

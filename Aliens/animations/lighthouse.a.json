@@ -1,0 +1,68 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.lighthouse.fog_small": {
+            "timeline": {
+                "0.0": [
+                    
+                ]
+            },
+            "animation_length": 7.5,
+            "loop": true
+        },
+        "animation.lighthouse.lighthouse_beam": {
+            "animation_length": 4.0,
+            "loop": true,
+            "timeline": {
+                "0.0": [
+                    
+                ]
+            }
+        },
+        "animation.lighthouse.fog_small_burst": {
+            "timeline": {
+                "0.0": [
+                    
+                ]
+            },
+            "animation_length": 7.5,
+            "loop": false
+        },
+        "animation.lighthouse.fog_medium": {
+            "timeline": {
+                "0.0": [
+                    
+                ]
+            },
+            "animation_length": 7.5,
+            "loop": true
+        },
+        "animation.lighthouse.fog_medium_burst": {
+            "timeline": {
+                "0.0": [
+                    
+                ]
+            },
+            "animation_length": 7.5,
+            "loop": false
+        },
+        "animation.lighthouse.fog_large": {
+            "timeline": {
+                "0.0": [
+                    
+                ]
+            },
+            "animation_length": 7.5,
+            "loop": true
+        },
+        "animation.lighthouse.fog_large_burst": {
+            "timeline": {
+                "0.0": [
+                    
+                ]
+            },
+            "animation_length": 7.5,
+            "loop": false
+        }
+    }
+}

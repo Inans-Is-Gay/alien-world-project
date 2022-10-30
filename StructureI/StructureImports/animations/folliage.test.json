@@ -1,0 +1,62 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.place.jungle_foliage": {
+			"animation_length": 0.5,
+			"loop": true,
+			"timeline": {
+				"0": [
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function Jungle.Stands",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function Jungle.Stands",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function Jungle.Stands",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function Jungle.Stands",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 summon minecraft:armor_stand ~ ~ ~ despawnable Bush",
+                    "/event entity @e[name=Bush] avoid_azalea_leaves",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 spreadplayers ~ ~ 1 50 @e[type=armor_stand,r=1]"
+				],
+                "0.4":[
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function Jungle.Foliage"
+                ]
+			}
+		},
+        "animation.place.jungle_lights": {
+			"animation_length": 0.5,
+			"loop": true,
+			"timeline": {
+				"0": [
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function jungle_lights",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function jungle_lights",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function jungle_lights",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function jungle_lights",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function jungle_lights",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function jungle_lights",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function jungle_lights",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function jungle_lights",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function jungle_lights",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function jungle_lights",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function jungle_lights",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function jungle_lights",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 spreadplayers ~ ~ 0 10 @e[type=armor_stand,r=1]"
+				],
+                "0.4":[
+                    "/execute @e[y=145,dy=100,name=lights] ~ ~ ~ detect ~ ~-1 ~ moss_block 0 fill ~ ~-2 ~ ~ 100 ~ light_block 15 keep",
+                    "/execute @e[y=145,dy=100,name=lights] ~ ~ ~ detect ~ ~-1 ~ grass 0 fill ~ ~-2 ~ ~ 100 ~ light_block 15 keep"
+                ]
+			}
+		},
+        "animation.place.trees": {
+			"animation_length": 4.0,
+			"loop": true,
+			"timeline": {
+				"0": [
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function Jungletree.Stands",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 spreadplayers ~ ~ 15 60 @e[type=armor_stand,r=1]"
+				],
+                "3.95":[
+                    "/execute @e[name=JungleTree] ~ ~ ~ event entity @e[name=JungleTree,r=13,rm=1] despawn",
+                    "/execute @s ~ ~ ~ detect ~ ~-1 ~ moss_block 0 function Jungletree.Place"
+                ]
+			}
+		}
+    }
+}

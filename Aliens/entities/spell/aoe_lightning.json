@@ -1,0 +1,62 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tsu:aoe_lightning",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "active": "animation.spell_entity.aoe_lightning"
+      },
+      "scripts": {
+        "animate": ["active"]
+      }
+    },
+    "component_groups": {
+      "cyd:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:persistent": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:fire_immune": {},
+      "minecraft:physics": {},
+      "minecraft:type_family": {
+        "family": ["aoe_lightning", "spell_entity"]
+      },
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:health": {
+        "value": 10,
+        "max": 10
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "deals_damage": false
+        }
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 1,
+        "look_distance": 8
+      }
+    },
+
+    "events": {
+      "evt:despawn": {
+        "add": {
+          "component_groups": ["cyd:despawn"]
+        }
+      }
+    }
+  }
+}

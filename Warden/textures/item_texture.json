@@ -1,0 +1,39 @@
+{
+   "resource_pack_name" : "vanilla",
+   "texture_data" : {
+	"senza_nome" : {
+         "textures" : [ "textures/items/Custom_items/swords/Senza_nome" ]
+      },
+      "egg_strider" : {
+         "textures" : [ "textures/items/egg_strider" ]
+      },
+      "egg_fairy" : {
+         "textures" : [ "textures/items/egg_fairy" ]
+      },
+      "egg_hoglin" : {
+         "textures" : [ "textures/items/egg_hoglin" ]
+      },
+      "egg_zoglin" : {
+         "textures" : [ "textures/items/egg_zoglin" ]
+      },
+      "egg_piglin" : {
+         "textures" : [ "textures/items/egg_piglin" ]
+      },
+      "egg_piglin_brute" : {
+         "textures" : [ "textures/items/egg_piglin_brute" ]
+      },
+      "egg_goat" : {
+         "textures" : [ "textures/items/egg_goat" ]
+      },
+      "egg_glow_squid" : {
+         "textures" : [ "textures/items/egg_glow_squid" ]
+      },
+      "egg_axolotl" : {
+         "textures" : [ "textures/items/egg_axolotl" ]
+      },
+      "egg_zombie_piglin" : {
+         "textures" : [ "textures/items/egg_zombie_piglin" ]
+      }
+   },
+   "texture_name" : "atlas.items"
+}

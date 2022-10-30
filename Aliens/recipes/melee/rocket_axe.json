@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "tsu:rocket_axe"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "DO",
+      "CN",
+      "C "
+    ],
+    "key": {
+      "D": {
+        "item": "tsu:terrarite"
+      },
+      "O": {
+        "item": "tsu:compressed_obsidian"
+      },
+      "C": {
+        "item": "tsu:carbon_steel_staff"
+      },
+      "N": {
+        "item": "tnt"
+      }
+    },
+    "result": {
+      "item": "tsu:rocket_axe"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+    "tiers": [
+        {
+            "total_exp_required": 0,
+            "trades": [
+                {
+                    "max_uses": 1,
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 64
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:upgrade_boathouse",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false
+                },
+                {
+                    "max_uses": 1,
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 64
+                        },
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 64
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:upgrade_living",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false
+                },
+                {
+                    "max_uses": 1,
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 64
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:upgrade_gazebo",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false
+                },
+                {
+                    "max_uses": 1,
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 64
+                        },
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 64
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:upgrade_cave",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.0f2813a246b516a20381494f58b8729aa4a4f5b9_0": {
+			"initial_state": "start",
+			"states": {
+				"start": {
+					"transitions": [
+						{
+							"empty": "query.is_tamed&&query.mark_variant==0"
+						},
+						{
+							"crab": "query.is_tamed&&query.mark_variant==1"
+						},
+						{
+							"crawler": "query.is_tamed&&query.mark_variant==2"
+						},
+						{
+							"slug": "query.is_tamed&&query.mark_variant==3"
+						},
+						{
+							"eclipse": "query.is_tamed&&query.mark_variant==4"
+						}
+					]
+				},
+				"empty": {
+					"on_entry": [
+						"/function trap/empty_reward",
+						"@s chum:despawn"
+					]
+				},
+				"crab": {
+					"on_entry": [
+						"/function trap/crab_reward",
+						"@s chum:despawn"
+					]
+				},
+				"crawler": {
+					"on_entry": [
+						"/function trap/crawler_reward",
+						"@s chum:despawn"
+					]
+				},
+				"slug": {
+					"on_entry": [
+						"/function trap/slug_reward",
+						"@s chum:despawn"
+					]
+				},
+				"eclipse": {
+					"on_entry": [
+						"/function trap/eclipse_reward",
+						"@s chum:despawn"
+					]
+				}
+			}
+		}
+	}
+}

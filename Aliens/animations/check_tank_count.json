@@ -1,0 +1,50 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.jungle_tank_count": {
+            "loop": true,
+            "timeline": {
+                "0.0": [
+                    "/execute @e[name=main,scores={jung_tank_count=0}] ~ ~ ~ event entity @e[type=chum:jungle_tank_statue,tag=is_near] chum:reset",
+                    "/execute @e[name=main,scores={jung_tank_count=1}] ~ ~ ~ event entity @e[type=chum:jungle_tank_statue,tag=is_near] chum:statue_1",
+                    "/execute @e[name=main,scores={jung_tank_count=2}] ~ ~ ~ event entity @e[type=chum:jungle_tank_statue,tag=is_near] chum:statue_2",
+                    "/execute @e[name=main,scores={jung_tank_count=3}] ~ ~ ~ event entity @e[type=chum:jungle_tank_statue,tag=is_near] chum:statue_3",
+                    "/execute @e[name=main,scores={jung_tank_count=4}] ~ ~ ~ event entity @e[type=chum:jungle_tank_statue,tag=is_near] chum:statue_4",
+                    "/execute @e[name=main,scores={jung_tank_count=5}] ~ ~ ~ event entity @e[type=chum:jungle_tank_statue,tag=is_near] chum:statue_5",
+                    "/execute @e[name=main,scores={jung_tank_count=6}] ~ ~ ~ event entity @e[type=chum:jungle_tank_statue,tag=is_near] chum:statue_6"
+                ]
+            },
+            "animation_length": 1
+        },
+        "animation.reef_tank_count": {
+            "loop": true,
+            "timeline": {
+                "0.0": [
+                    "/execute @e[name=main,scores={reef_tank_count=0}] ~ ~ ~ event entity @e[type=chum:reef_tank_statue,tag=is_near] chum:reset",
+                    "/execute @e[name=main,scores={reef_tank_count=1}] ~ ~ ~ event entity @e[type=chum:reef_tank_statue,tag=is_near] chum:statue_1",
+                    "/execute @e[name=main,scores={reef_tank_count=2}] ~ ~ ~ event entity @e[type=chum:reef_tank_statue,tag=is_near] chum:statue_2",
+                    "/execute @e[name=main,scores={reef_tank_count=3}] ~ ~ ~ event entity @e[type=chum:reef_tank_statue,tag=is_near] chum:statue_3",
+                    "/execute @e[name=main,scores={reef_tank_count=4}] ~ ~ ~ event entity @e[type=chum:reef_tank_statue,tag=is_near] chum:statue_4",
+                    "/execute @e[name=main,scores={reef_tank_count=5}] ~ ~ ~ event entity @e[type=chum:reef_tank_statue,tag=is_near] chum:statue_5",
+                    "/execute @e[name=main,scores={reef_tank_count=6}] ~ ~ ~ event entity @e[type=chum:reef_tank_statue,tag=is_near] chum:statue_6"
+                ]
+            },
+            "animation_length": 1
+        },
+        "animation.mel_tank_count": {
+            "loop": true,
+            "timeline": {
+                "0.0": [
+                    "/execute @e[name=main,scores={mel_tank_count=0}] ~ ~ ~ event entity @e[type=chum:melody_tank_statue,tag=is_near] chum:reset",
+                    "/execute @e[name=main,scores={mel_tank_count=1}] ~ ~ ~ event entity @e[type=chum:melody_tank_statue,tag=is_near] chum:statue_1",
+                    "/execute @e[name=main,scores={mel_tank_count=2}] ~ ~ ~ event entity @e[type=chum:melody_tank_statue,tag=is_near] chum:statue_2",
+                    "/execute @e[name=main,scores={mel_tank_count=3}] ~ ~ ~ event entity @e[type=chum:melody_tank_statue,tag=is_near] chum:statue_3",
+                    "/execute @e[name=main,scores={mel_tank_count=4}] ~ ~ ~ event entity @e[type=chum:melody_tank_statue,tag=is_near] chum:statue_4",
+                    "/execute @e[name=main,scores={mel_tank_count=5}] ~ ~ ~ event entity @e[type=chum:melody_tank_statue,tag=is_near] chum:statue_5",
+                    "/execute @e[name=main,scores={mel_tank_count=6}] ~ ~ ~ event entity @e[type=chum:melody_tank_statue,tag=is_near] chum:statue_6"
+                ]
+            },
+            "animation_length": 1
+        }
+    }
+}

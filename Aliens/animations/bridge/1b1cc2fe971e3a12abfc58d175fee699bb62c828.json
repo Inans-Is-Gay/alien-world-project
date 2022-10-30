@@ -1,0 +1,14 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.1b1cc2fe971e3a12abfc58d175fee699bb62c828_0": {
+			"animation_length": 60,
+			"timeline": {
+				"0.0": [
+					
+				]
+			},
+			"loop": true
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "tsu:carbon_steel_ingot"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "C",
+      "I"
+    ],
+    "key": {
+      "C": {
+        "item": "charcoal"
+      },
+      "I": {
+        "item": "iron_ingot"
+      }
+    },
+    "result": {
+      "item": "tsu:carbon_steel_ingot"
+    }
+  }
+}

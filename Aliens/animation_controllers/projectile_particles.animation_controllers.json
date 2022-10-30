@@ -1,0 +1,41 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.projectile_particles.ion_gun.standard": {
+			"states": {
+				"default": {
+					"transitions": [{
+						"action": "1.0"
+					}]
+				},
+				"action": {
+					"on_entry": [
+						"/particle ion_particle_explosion ~~~"
+					],
+					"transitions": [{
+						"despawn": "1.0"
+					}]
+				},
+				"despawn": {
+					"on_entry": [
+						"/event entity @s evt:despawn"
+					]
+				}
+			}
+		},
+		"controller.animation.projectile_particles.laser_bow.standard": {
+			"states": {
+				"default": {
+					"transitions": [{
+						"action": "1.0"
+					}]
+				},
+				"action": {
+					"on_entry": [
+						"/particle laser_bow_explosion ~~~"
+					]
+				}
+			}
+		}
+	}
+}

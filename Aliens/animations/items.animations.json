@@ -1,0 +1,89 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.item.cooldowns": {
+      "loop": true,
+      "animation_length": 1.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players remove @s[scores={cdKAl=1..}] cdKAl 1",
+          "/scoreboard players remove @s[scores={cdKAr=1..}] cdKAr 1",
+
+          "/scoreboard players remove @s[scores={cdCHl=1..}] cdCHl 1",
+          "/scoreboard players remove @s[scores={cdCHr=1..}] cdCHr 1",
+
+          "/scoreboard players remove @s[scores={cdLSl=1..}] cdLSl 1",
+          "/scoreboard players remove @s[scores={cdLSr=1..}] cdLSr 1",
+
+          "/scoreboard players remove @s[scores={cdRAl=1..}] cdRAl 1",
+          "/scoreboard players remove @s[scores={cdRAr=1..}] cdRAr 1",
+
+          "/scoreboard players remove @s[scores={cdLSGl=1..}] cdLSGl 1",
+
+          "/scoreboard players remove @s[scores={cdLNSr=1..}] cdLNSr 1",
+          "/scoreboard players remove @s[scores={cdFSr=1..}] cdFSr 1",
+
+					"/scoreboard players remove @s[scores={cdLBr=1..}] cdLBr 1",
+
+          "/scoreboard players remove @s[scores={ARMode1CD=1..}] ARMode1CD 1",
+          "/scoreboard players remove @s[scores={IGMode1CD=1..}] IGMode1CD 1",
+          "/scoreboard players remove @s[scores={PGMode1CD=1..}] PGMode1CD 1",
+          "/scoreboard players remove @s[scores={LGMode1CD=1..}] LGMode1CD 1"
+        ]
+      }
+    },
+    "animation.item.longsword_rc": {
+      "loop": true,
+      "animation_length": 1.0,
+      "timeline": {
+        "0.0": [
+          "/execute @s[scores={cdLNSr=0}] ^ ^ ^-1 summon tsu:longsword_rc ~ ~ ~ evt:knockback_power_1"
+        ],
+        "0.3": [
+          "/effect @e[tag=!longsword_rc,r=3,c=1] wither 5 5 true",
+          "/tag @s remove longsword_rc",
+          "/scoreboard players set @s[scores={cdLNSr=0}] cdLNSr 1",
+          "/event entity @s evt:reset_mark_var"
+        ]
+      }
+    },
+    "animation.item.fire_saw_active": {
+      "loop": true,
+      "animation_length": 0.5,
+      "timeline": {
+        "0.0": [
+          "/execute @s[tag=FSBoost] ~ ~ ~ execute @e[r=10,rm=2,type=!item] ~ ~ ~ summon tsu:entity_fire ~ ~.1 ~",
+          "/execute @s[tag=FSBoost] ~ ~ ~ effect @e[r=10,rm=2,type=!item] instant_damage 1 1 true",
+          "/execute @s[tag=FSBoost] ~ ~ ~ effect @e[r=10,rm=2,type=!item] wither 5 0 true",
+          "/tag @s remove FSBoost"
+        ]
+      }
+    },
+		"animation.item.laser_sword_remove_tag": {
+			"loop": false,
+			"animation_length": 1.1,
+			"timeline": {
+				"1.05": [
+					"/tag @s remove laser_sword_rc"
+				]
+			}
+		},
+		"animation.item.laser_sword_rc": {
+			"loop": false,
+			"animation_length": 5.0,
+			"timeline": {
+				"0.0": [
+					"/tag @s add laser_sword_rc",
+					"/replaceitem entity @s slot.weapon.mainhand 0 air"
+				],
+				"0.1": [
+					"/replaceitem entity @s slot.weapon.mainhand 0 tsu:laser_sword",
+					"/function weapons/melee/laser_sword_rc"
+				],
+				"1.05": [
+					"/tag @s remove laser_sword_rc"
+				]
+			}
+		}
+  }
+}

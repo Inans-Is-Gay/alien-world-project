@@ -1,0 +1,38 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wands:Lights",
+            "category": "construction"
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:icon":{
+                "texture": "stick"
+            },
+            "minecraft:display_name":{
+                "value": "Light Stick"
+            },"minecraft:on_use":{
+                "on_use": {
+                    "event": "use_item"
+                }
+            }
+        },
+        "events":{
+            "use_item": {
+                "sequence": [
+                    {
+                        "swing": {}
+                    },
+                    {
+                        "run_command": {
+                            "command": [
+                                "setblock ~ ~ ~ light_block 15"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,504 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:pod_whirlpool",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"pool_manager": "controller.animation.pod_whirlpool.pool_manager",
+				"quantity": "controller.animation.pod_whirlpool.quantity"
+			},
+			"scripts": {
+				"animate": [
+					"pool_manager",
+					"quantity"
+				]
+			}
+		},
+		"component_groups": {
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"pool:fish_quantity_0": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"pool:fish_quantity_1": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"pool:fish_quantity_2": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"pool:fish_quantity_3": {
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"pool:fish_quantity_4": {
+				"minecraft:variant": {
+					"value": 4
+				}
+			},
+			"pool:reset": {
+				"minecraft:mark_variant": {
+					"value": 0
+				}
+			},
+			"pool:reset_catch": {
+				"minecraft:mark_variant": {
+					"value": 5
+				}
+			},
+			"pool:catch": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": [
+						0.1,
+						0.1
+					],
+					"time_down_event": {
+						"event": "pool:after_catch"
+					}
+				},
+				"minecraft:mark_variant": {
+					"value": 4
+				}
+			},
+			"pool:try_catch": {
+				"minecraft:entity_sensor": {
+					"sensor_range": 5,
+					"event_filters": {
+						"test": "is_family",
+						"subject": "other",
+						"value": "bobber"
+					},
+					"event": "pool:catch"
+				},
+				"minecraft:mark_variant": {
+					"value": 3
+				}
+			},
+			"pool:has_bobber": {
+				"minecraft:timer": {
+					"looping": false,
+					"randomInterval": true,
+					"time": [
+						1.5,
+						5
+					],
+					"time_down_event": {
+						"filters": [
+							{
+								"test": "is_variant",
+								"subject": "self",
+								"operator": "not",
+								"value": 0
+							}
+						],
+						"event": "pool:try_catch"
+					}
+				},
+				"minecraft:entity_sensor": {
+					"event_filters": {
+						"test": "is_family",
+						"subject": "other",
+						"operator": "not",
+						"value": "bobber"
+					},
+					"require_all": true,
+					"sensor_range": 4.9,
+					"event": "pool:reset_catch"
+				},
+				"minecraft:mark_variant": {
+					"value": 2
+				}
+			},
+			"pool:find_bobber": {
+				"minecraft:entity_sensor": {
+					"sensor_range": 5,
+					"event_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "bobber"
+							},
+							{
+								"test": "is_variant",
+								"operator": "not",
+								"value": 0
+							}
+						]
+					},
+					"event": "pool:bobber_close"
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"randomInterval": true,
+					"time": [
+						120,
+						230
+					],
+					"time_down_event": {
+						"event": "pool:refresh"
+					}
+				},
+				"minecraft:mark_variant": {
+					"value": 1
+				}
+			},
+			"gm1:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"whirlpool"
+				]
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"value": "blaze_rod",
+										"domain": "hand",
+										"subject": "other"
+									},
+									{
+										"test": "has_ability",
+										"value": "instabuild",
+										"subject": "other"
+									}
+								]
+							},
+							"event": "gm1:despawn"
+						}
+					},
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"value": "minecraft:blaze_rod",
+										"domain": "hand",
+										"subject": "other"
+									},
+									{
+										"test": "has_ability",
+										"value": "instabuild",
+										"subject": "other"
+									}
+								]
+							},
+							"event": "gm1:despawn"
+						}
+					}
+				]
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:skin_id": {
+				"value": 0
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"remove": {
+					"component_groups": [
+						"pool:fish_quantity_0"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"pool:fish_quantity_3",
+						"pool:find_bobber"
+					]
+				}
+			},
+			"pool:refresh": {
+				"remove": {
+					"component_groups": [
+						"pool:fish_quantity_0"
+					]
+				},
+				"randomize": [
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"pool:fish_quantity_4"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"pool:fish_quantity_3"
+							]
+						}
+					}
+				]
+			},
+			"pool:find_bobber": {
+				"add": {
+					"component_groups": [
+						"pool:find_bobber"
+					]
+				}
+			},
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			},
+			"pool:fish_one": {
+				"sequence": [
+					{
+						"trigger": "pool:decrease_quantity"
+					}
+				]
+			},
+			"pool:after_catch": {
+				"remove": {
+					"component_groups": [
+						"pool:catch"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"pool:reset_catch"
+					]
+				}
+			},
+			"pool:increase_quantity": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "is_variant",
+							"value": 0
+						},
+						"remove": {
+							"component_groups": [
+								"pool:fish_quantity_0"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"pool:fish_quantity_1"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "is_variant",
+							"value": 1
+						},
+						"remove": {
+							"component_groups": [
+								"pool:fish_quantity_1"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"pool:fish_quantity_2"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "is_variant",
+							"value": 2
+						},
+						"remove": {
+							"component_groups": [
+								"pool:fish_quantity_2"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"pool:fish_quantity_3"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "is_variant",
+							"value": 3
+						},
+						"remove": {
+							"component_groups": [
+								"pool:fish_quantity_3"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"pool:fish_quantity_4"
+							]
+						}
+					}
+				]
+			},
+			"pool:decrease_quantity": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "is_variant",
+							"value": 4
+						},
+						"remove": {
+							"component_groups": [
+								"pool:fish_quantity_4"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"pool:fish_quantity_3"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "is_variant",
+							"value": 3
+						},
+						"remove": {
+							"component_groups": [
+								"pool:fish_quantity_3"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"pool:fish_quantity_2"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "is_variant",
+							"value": 2
+						},
+						"remove": {
+							"component_groups": [
+								"pool:fish_quantity_2"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"pool:fish_quantity_1"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "is_variant",
+							"value": 1
+						},
+						"remove": {
+							"component_groups": [
+								"pool:fish_quantity_1"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"pool:fish_quantity_0"
+							]
+						}
+					}
+				]
+			},
+			"pool:reset_catch": {
+				"remove": {
+					"component_groups": [
+						"pool:catch",
+						"pool:find_bobber",
+						"pool:has_bobber",
+						"pool:try_catch"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"pool:reset"
+					]
+				}
+			},
+			"pool:bobber_close": {
+				"add": {
+					"component_groups": [
+						"pool:has_bobber"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"pool:find_bobber"
+					]
+				}
+			},
+			"pool:try_catch": {
+				"add": {
+					"component_groups": [
+						"pool:try_catch"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"pool:has_bobber"
+					]
+				}
+			},
+			"pool:catch": {
+				"add": {
+					"component_groups": [
+						"pool:catch"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"pool:try_catch"
+					]
+				},
+				"trigger": "pool:fish_one"
+			},
+			"gm1:despawn": {
+				"add": {
+					"component_groups": [
+						"gm1:despawn",
+						"gm1:despawn"
+					]
+				}
+			}
+		}
+	}
+}

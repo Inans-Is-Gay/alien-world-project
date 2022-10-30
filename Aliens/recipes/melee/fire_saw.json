@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "tsu:fire_saw"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " T ",
+      "BIB"
+    ],
+    "key": {
+      "T": {
+        "item": "tsu:terralite_shard"
+      },
+      "B": {
+        "item": "blaze_rod"
+      },
+      "I": {
+        "item": "tsu:compressed_iron"
+      }
+    },
+    "result": {
+      "item": "tsu:fire_saw"
+    }
+  }
+}

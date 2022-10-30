@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:piglin",
+      "materials": {
+        "default": "piglin"
+      },
+      "textures": {
+        "default": "textures/entity/piglin/piglin"
+      },
+      "geometry": {
+        "default": "geometry.piglin"
+      },
+      "spawn_egg": {
+        "texture": "egg_piglin",
+		"texture_index": 0
+      },
+      "render_controllers": [ "controller.render.piglin" ],
+      "enable_attachables": false
+    }
+  }
+}

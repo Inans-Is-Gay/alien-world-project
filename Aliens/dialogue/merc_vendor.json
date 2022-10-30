@@ -1,0 +1,120 @@
+{
+    "format_version": "1.17",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "merc_vendor1",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "corgi.vendor.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "merc.vendor1",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": [
+                    "/event entity @e[type=chum:mercorgi_npc_vendor] chum:remove_dialog",
+                    "execute @e[type=chum:mercorgi_npc_vendor,tag=!corg_gave_dialogue] ~~~ scoreboard players add @e[name=main] corgi_talks 1",
+                    "tag @e[type=chum:mercorgi_npc_vendor] add corg_gave_dialogue"
+                ],
+                "on_close_commands": [
+                    "/dialogue change @e[type=chum:mercorgi_npc_vendor] merc_vendor1 @initiator"
+                ],
+                "buttons": [
+                    {
+                        "name": {
+                            "rawtext": [
+                                {
+                                    "translate": "Next"
+                                }
+                            ]
+                        },
+                        "commands": [
+                            "/dialogue open @e[type=chum:mercorgi_npc_vendor] @initiator merc_vendor2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag": "merc_vendor2",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "corgi.vendor.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "merc.vendor2",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [
+                    "/dialogue change @e[type=chum:mercorgi_npc_vendor] merc_vendor1 @initiator"
+                ],
+                "buttons": [
+                    {
+                        "name": {
+                            "rawtext": [
+                                {
+                                    "translate": "Next"
+                                }
+                            ]
+                        },
+                        "commands": [
+                            "/dialogue open @e[type=chum:mercorgi_npc_vendor] @initiator merc_vendor3"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag": "merc_vendor3",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "corgi.vendor.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "merc.vendor3",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [
+                    "/dialogue change @e[type=chum:mercorgi_npc_vendor] merc_vendor1 @initiator"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,1203 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+      "animations": {
+				"get_scores": "controller.animation.player.get_scores",
+        "log_in": "animation.player.log_in",
+        "init_player": "animation.player.init",
+        "item_cooldowns": "animation.item.cooldowns",
+        "no_damage_4s": "animation.player.no_damage_4s",
+        "control_item_animations": "controller.animation.item.animations",
+        "control_item_handheld": "controller.animation.item.handheld",
+        "control_item_longsword": "controller.animation.item.longsword",
+        "longsword_rc": "animation.item.longsword_rc",
+        "laser_sword_rc": "animation.item.laser_sword_rc",
+				"laser_sword_remove_tag": "animation.item.laser_sword_remove_tag",
+        "fire_saw_active": "animation.item.fire_saw_active",
+        "control_item_kinetic_axe": "controller.animation.item.kinetic_axe",
+        "control_item_concussion_hammer": "controller.animation.item.concussion_hammer",
+        "control_item_laser_sword": "controller.animation.item.laser_sword",
+        "control_item_fire_saw": "controller.animation.item.fire_saw",
+        "control_item_rocket_axe": "controller.animation.item.rocket_axe",
+        "control_item_laser_blaster": "controller.animation.item.laser_blaster",
+        "control_item_pulse_gun": "controller.animation.item.pulse_gun",
+        "control_item_ion_gun": "controller.animation.item.ion_gun",
+        "control_item_blaster_glove": "controller.animation.item.blaster_glove",
+        "control_item_laser_bow": "controller.animation.item.laser_bow",
+        "control_item_scatter_blaster": "controller.animation.item.scatter_blaster",
+        "control_item_creeper_canon": "controller.animation.item.creeper_canon",
+        "control_item_omni_gun": "controller.animation.item.omni_gun",
+        "control_item_lightning_gun": "controller.animation.item.lightning_gun",
+        "jetpack_init_repeater": "animation.jetpack.init_repeater",
+        "jetpack_none_ground": "animation.jetpack.none_ground",
+        "jetpack_none_air": "animation.jetpack.none_air",
+        "jetpack_rise": "animation.jetpack.rise",
+        "jetpack_rise_sound": "animation.jetpack.rise_sound",
+        "jetpack_hover": "animation.jetpack.hover",
+        "jetpack_hover_sound": "animation.jetpack.hover_sound",
+        "jetpack_glide": "animation.jetpack.glide",
+        "jetpack_glide_sound": "animation.jetpack.glide_sound",
+        "update_rise_variable": "controller.animation.jetpack.update_rise_variable",
+        "update_hover_variable": "controller.animation.jetpack.update_hover_variable",
+        "jetpack": "controller.animation.jetpack",
+        "drop_jetpack": "controller.animation.jetpack.drop_jetpack",
+				"can_use_item": "controller.animation.player.can_use_item",
+				"check_laser_blaster_cd": "animation.player.check_weapon_cd.check_laser_blaster_cd",
+				"check_fire_saw_cd": "animation.player.check_weapon_cd.check_fire_saw_cd",
+				"check_kinetic_axe_cd": "animation.player.check_weapon_cd.check_kinetic_axe_cd",
+				"check_laser_bow_cd": "animation.player.check_weapon_cd.check_laser_bow_cd",
+				"check_laser_sword_cd": "animation.player.check_weapon_cd.check_laser_sword_cd",
+				"check_longsword_cd": "animation.player.check_weapon_cd.check_longsword_cd",
+				"check_pulse_gun_cd": "animation.player.check_weapon_cd.check_pulse_gun_cd",
+				"check_rocket_axe_cd": "animation.player.check_weapon_cd.check_rocket_axe_cd"
+      },
+      "scripts": {
+        "animate": [
+					"get_scores",
+          "item_cooldowns",
+          "control_item_animations",
+          "control_item_handheld",
+          "control_item_longsword",
+          "control_item_kinetic_axe",
+          "control_item_concussion_hammer",
+          "control_item_laser_sword",
+          "control_item_laser_bow",
+          "control_item_fire_saw",
+          "control_item_rocket_axe",
+          "control_item_laser_blaster",
+          "control_item_ion_gun",
+          "control_item_pulse_gun",
+          "control_item_blaster_glove",
+          "control_item_scatter_blaster",
+          "control_item_creeper_canon",
+          "control_item_omni_gun",
+          "control_item_lightning_gun",
+          "update_rise_variable",
+          "update_hover_variable",
+          "jetpack",
+          "drop_jetpack",
+          {
+            "no_damage_4s": "query.is_saddled"
+          },
+          {
+						"init_player": "query.is_sheared"
+          },
+					"can_use_item"
+        ]
+      }
+    },
+
+    "component_groups": {
+			"tsu:blast_resistance": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "entity_explosion",
+							"deals_damage": false
+						},
+						{
+							"cause": "block_explosion",
+							"deals_damage": false
+						},
+						{
+							"deals_damage": true
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 1.5,
+					"time_down_event": {
+						"event": "evt:remove_blast_resistance"
+					}
+				}
+			},
+			"tsu:enable_animation": {
+				"minecraft:is_tamed": {}
+			},
+      "tsu:init_player": {
+        "minecraft:is_sheared": {}
+      },
+      "tsu:custom_attack_animation": {
+        "minecraft:is_shaking": {}
+      },
+      "tsu:normal_damage": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+						{
+							"cause": "fall",
+							"deals_damage": true
+						},
+            {
+              "deals_damage": true
+            }
+          ]
+        }
+      },
+      "tsu:no_damage": {
+        "minecraft:is_saddled": {},
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "deals_damage": false
+          }
+        }
+      },
+      "tsu:reset_mark_var": {
+        "minecraft:mark_variant": {
+          "value": 0
+        }
+      },
+      "tsu:longsword_rc": {
+        "minecraft:mark_variant": {
+          "value": 1
+        }
+      },
+      "tsu:fire_saw_active": {
+        "minecraft:mark_variant": {
+          "value": 2
+        }
+      },
+      "tsu:attack_standard": {
+        "minecraft:attack": {
+          "damage": 1
+        }
+      },
+      "tsu:kinetic_axe": {
+        "minecraft:attack": {
+          "damage": 1
+        }
+      },
+      "tsu:concussion_hammer": {
+        "minecraft:attack": {
+          "damage": 8
+        }
+      },
+      "tsu:concussion_hammer_lc_0": {
+        "minecraft:attack": {
+          "damage": 8
+        }
+      },
+      "tsu:concussion_hammer_lc_1": {
+        "minecraft:attack": {
+          "damage": 12
+        }
+      },
+      "tsu:concussion_hammer_lc_2": {
+        "minecraft:attack": {
+          "damage": 16
+        }
+      },
+      "tsu:concussion_hammer_lc_3": {
+        "minecraft:attack": {
+          "damage": 20
+        }
+      },
+      "tsu:concussion_hammer_lc_4": {
+        "minecraft:attack": {
+          "damage": 24
+        }
+      },
+      "tsu:concussion_hammer_lc_5": {
+        "minecraft:attack": {
+          "damage": 28
+        }
+      },
+      "tsu:rocket_axe": {
+        "minecraft:attack": {
+          "damage": 5
+        },
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "fall",
+						"deals_damage": false
+					}
+				}
+      },
+      "tsu:laser_sword": {
+        "minecraft:attack": {
+          "damage": 40
+        }
+      },
+      "tsu:long_sword": {
+        "minecraft:attack": {
+          "damage": 8
+        }
+      },
+      "tsu:fire_saw": {
+        "minecraft:attack": {
+          "damage": 1
+        }
+      },
+      "tsu:blaster_glove_lc": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:blaster_glove_lc",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "tsu:laser_blaster_lc_burst": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:laser_blaster_lc",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "tsu:laser_blaster_lc_auto": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:laser_blaster_piercing",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "tsu:scatter_blaster_lc": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:scatter_blaster_lc",
+              "single_use": true,
+              "num_to_spawn": 10
+            }
+          ]
+        }
+      },
+      "tsu:creeper_canon_rc": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:creeper_canon_rc",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "tsu:omni_gun_gravity": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:omni_gun_gravity",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "tsu:omni_gun_fire": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:omni_gun_fire",
+              "single_use": true,
+              "num_to_spawn": 10
+            }
+          ]
+        }
+      },
+      "tsu:omni_gun_freeze": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:omni_gun_freeze",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "tsu:lightning_gun_single": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:lightning_gun_single",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "tsu:lightning_gun_multi": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:lightning_gun_multi",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "tsu:laser_bow_standard": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:laser_bow_standard",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "tsu:ion_gun_standard": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:ion_gun_standard",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "tsu:ion_gun_heavy": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:ion_gun_heavy",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "tsu:pulse_gun_standard": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:pulse_gun_standard",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "tsu:pulse_gun_heavy": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "tsu:pulse_gun_heavy",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+			"tsu:jetpack_on": {
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "fall",
+						"deals_damage": false
+					}
+				}
+			},
+      "tsu:jetpack_unequipped": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": ["levitation"]
+        }
+      },
+      "tsu:jetpack_none_ground": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": ["levitation"]
+        }
+      },
+      "tsu:jetpack_none_air": {
+        "minecraft:variant": {
+          "value": 2
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": ["levitation"]
+        }
+      },
+      "tsu:jetpack_rise": {
+        "minecraft:variant": {
+          "value": 3
+        }
+      },
+      "tsu:jetpack_hover": {
+        "minecraft:variant": {
+          "value": 4
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": ["levitation"],
+          "add_effects": [
+            {
+              "effect": "levitation",
+              "duration": 751619276,
+              "amplifier": -1,
+              "visible": false
+            }
+          ]
+        }
+      },
+      "tsu:jetpack_glide": {
+        "minecraft:variant": {
+          "value": 5
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": ["levitation"]
+        }
+      },
+      "minecraft:add_bad_omen": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "bad_omen",
+              "duration": 6000,
+              "display_on_screen_animation": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": [0.0, 0.0],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:clear_add_bad_omen",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:clear_bad_omen_spell_effect": {
+        "minecraft:spell_effects": {}
+      },
+      "minecraft:raid_trigger": {
+        "minecraft:raid_trigger": {
+          "triggered_event": {
+            "event": "minecraft:remove_raid_trigger",
+            "target": "self"
+          }
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": "bad_omen"
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_variant",
+                    "operator": "!=",
+                    "subject": "self",
+                    "value": 0
+                  },
+                  {
+                    "test": "has_damage",
+                    "operator": "==",
+                    "subject": "self",
+                    "value": "fall"
+                  }
+                ]
+              }
+            },
+            "deals_damage": false
+          },
+          {
+            "deals_damage": true
+          }
+        ]
+      },
+      "minecraft:scheduler": {
+        "min_delay_secs": 0,
+        "max_delay_secs": 0,
+        "scheduled_events": [
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "laser_blaster_lc_burst"
+              }
+            ],
+            "event": "evt:laser_blaster_lc_burst"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "blaster_glove_lc"
+              }
+            ],
+            "event": "evt:blaster_glove_lc"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "laser_blaster_lc_auto"
+              }
+            ],
+            "event": "evt:laser_blaster_lc_auto"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "scatter_blaster_lc"
+              }
+            ],
+            "event": "evt:scatter_blaster_lc"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "laser_bow_standard"
+              }
+            ],
+            "event": "evt:laser_bow_standard"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "creeper_canon_rc"
+              }
+            ],
+            "event": "evt:creeper_canon_rc"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "omni_gun_gravity"
+              }
+            ],
+            "event": "evt:omni_gun_gravity"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "omni_gun_fire"
+              }
+            ],
+            "event": "evt:omni_gun_fire"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "omni_gun_freeze"
+              }
+            ],
+            "event": "evt:omni_gun_freeze"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "lightning_gun_single"
+              }
+            ],
+            "event": "evt:lightning_gun_single"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "lightning_gun_multi"
+              }
+            ],
+            "event": "evt:lightning_gun_multi"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "ion_gun_standard"
+              }
+            ],
+            "event": "evt:ion_gun_standard"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "ion_gun_heavy"
+              }
+            ],
+            "event": "evt:ion_gun_heavy"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "pulse_gun_standard"
+              }
+            ],
+            "event": "evt:pulse_gun_standard"
+          },
+          {
+            "filters": [
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "pulse_gun_heavy"
+              }
+            ],
+            "event": "evt:pulse_gun_heavy"
+          }
+        ]
+      },
+      "minecraft:experience_reward": {
+        "on_death": "Math.Min(query.player_level * 7, 100)"
+      },
+      "minecraft:type_family": {
+        "family": ["player"]
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:can_climb": {},
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:player.saturation": {
+        "value": 20
+      },
+      "minecraft:player.exhaustion": {
+        "value": 0,
+        "max": 4
+      },
+      "minecraft:player.level": {
+        "value": 0,
+        "max": 24791
+      },
+      "minecraft:player.experience": {
+        "value": 0,
+        "max": 1
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": -1,
+        "inhale_time": 3.75,
+        "generates_bubbles": false
+      },
+      "minecraft:nameable": {
+        "always_show": true,
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:insomnia": {
+        "days_until_insomnia": 3
+      },
+      "minecraft:rideable": {
+        "seat_count": 2,
+        "family_types": ["parrot_tame"],
+        "pull_in_entities": true,
+        "seats": [
+          {
+            "position": [0.4, -0.2, -0.1],
+            "min_rider_count": 0,
+            "max_rider_count": 0,
+            "lock_rider_rotation": 0
+          },
+          {
+            "position": [-0.4, -0.2, -0.1],
+            "min_rider_count": 1,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 0
+          }
+        ]
+      },
+      "minecraft:scaffolding_climber": {},
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_mob_effect",
+                  "subject": "self",
+                  "value": "bad_omen"
+                },
+                {
+                  "test": "is_in_village",
+                  "subject": "self",
+                  "value": true
+                }
+              ]
+            },
+            "event": "minecraft:trigger_raid"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "subject": "self",
+                  "operator": "==",
+                  "domain": "armor",
+                  "value": "chainmail_chestplate"
+                },
+                {
+                  "test": "is_variant",
+                  "subject": "self",
+                  "value": 0
+                },
+                {
+                  "test": "has_ability",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "instabuild"
+                }
+              ]
+            },
+            "event": "evt:set_jetpack_none_ground"
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "all_of": [
+                    {
+                      "test": "has_equipment",
+                      "subject": "self",
+                      "operator": "!=",
+                      "domain": "armor",
+                      "value": "chainmail_chestplate"
+                    },
+                    {
+                      "test": "on_ground",
+                      "subject": "self",
+                      "operator": "==",
+                      "value": true
+                    },
+                    {
+                      "test": "is_variant",
+                      "subject": "self",
+                      "operator": "==",
+                      "value": 1
+                    }
+                  ]
+                },
+                {
+                  "all_of": [
+                    {
+                      "test": "has_ability",
+                      "subject": "self",
+                      "operator": "==",
+                      "value": "instabuild"
+                    }
+                  ]
+                },
+                {
+                  "all_of": [
+                    {
+                      "test": "is_riding",
+                      "subject": "self",
+                      "operator": "==",
+                      "value": true
+                    }
+                  ]
+                }
+              ]
+            },
+            "event": "evt:set_jetpack_unequipped"
+          }
+        ]
+      }
+    },
+
+    "events": {
+      "minecraft:gain_bad_omen": {
+        "add": {
+          "component_groups": ["minecraft:add_bad_omen"]
+        }
+      },
+      "minecraft:clear_add_bad_omen": {
+        "remove": {
+          "component_groups": ["minecraft:add_bad_omen"]
+        },
+        "add": {
+          "component_groups": ["minecraft:clear_bad_omen_spell_effect"]
+        }
+      },
+      "minecraft:trigger_raid": {
+        "add": {
+          "component_groups": ["minecraft:raid_trigger"]
+        }
+      },
+      "minecraft:remove_raid_trigger": {
+        "remove": {
+          "component_groups": ["minecraft:raid_trigger"]
+        }
+      },
+			"evt:enable_animation": {
+				"add": {
+					"component_groups": ["tsu:enable_animation"]
+				}
+			},
+			"evt:disable_animation": {
+				"remove": {
+					"component_groups": ["tsu:enable_animation"]
+				}
+			},
+      "evt:init_player": {
+        "add": {
+          "component_groups": ["tsu:init_player"]
+        }
+      },
+      "evt:reset_init_player": {
+        "remove": {
+          "component_groups": ["tsu:init_player"]
+        }
+      },
+      "evt:no_damage": {
+        "remove": {
+          "component_groups": ["tsu:normal_damage"]
+        },
+        "add": {
+          "component_groups": ["tsu:no_damage"]
+        }
+      },
+      "evt:normal_damage": {
+        "remove": {
+          "component_groups": ["tsu:no_damage"]
+        },
+        "add": {
+          "component_groups": ["tsu:normal_damage"]
+        }
+      },
+      "evt:reset_click": {
+        "remove": {
+          "component_groups": [
+            "tsu:laser_blaster_lc_burst",
+            "tsu:laser_blaster_lc_auto",
+            "tsu:scatter_blaster_lc",
+            "tsu:creeper_canon_rc",
+            "tsu:omni_gun_gravity",
+            "tsu:omni_gun_fire",
+            "tsu:omni_gun_freeze",
+            "tsu:lightning_gun_single",
+            "tsu:lightning_gun_multi",
+            "tsu:blaster_glove_lc",
+            "tsu:ion_gun_standard",
+            "tsu:ion_gun_heavy",
+            "tsu:pulse_gun_shoot",
+            "tsu:laser_bow_standard"
+          ]
+        }
+      },
+      "evt:reset_mark_var": {
+        "remove": {
+          "component_groups": ["tsu:longsword_rc", "tsu:fire_saw_active"]
+        },
+        "add": {
+          "component_groups": ["tsu:reset_mark_var"]
+        }
+      },
+      "evt:to_longsword_rc": {
+        "add": {
+          "component_groups": ["tsu:longsword_rc"]
+        }
+      },
+      "evt:to_fire_saw_active": {
+        "add": {
+          "component_groups": ["tsu:fire_saw_active"]
+        }
+      },
+      "evt:to_kinetic_axe": {
+        "add": {
+          "component_groups": ["tsu:kinetic_axe"]
+        }
+      },
+      "evt:to_concussion_hammer": {
+        "add": {
+          "component_groups": ["tsu:concussion_hammer"]
+        }
+      },
+			"evt:concussion_hammer_lc_0": {
+				"add": {
+					"component_groups": ["tsu:concussion_hammer_lc_0"]
+				}
+			},
+			"evt:concussion_hammer_lc_1": {
+				"add": {
+					"component_groups": ["tsu:concussion_hammer_lc_1"]
+				}
+			},
+			"evt:concussion_hammer_lc_2": {
+				"add": {
+					"component_groups": ["tsu:concussion_hammer_lc_2"]
+				}
+			},
+			"evt:concussion_hammer_lc_3": {
+				"add": {
+					"component_groups": ["tsu:concussion_hammer_lc_3"]
+				}
+			},
+			"evt:concussion_hammer_lc_4": {
+				"add": {
+					"component_groups": ["tsu:concussion_hammer_lc_4"]
+				}
+			},
+			"evt:concussion_hammer_lc_5": {
+				"add": {
+					"component_groups": ["tsu:concussion_hammer_lc_5"]
+				}
+			},
+      "evt:to_laser_sword": {
+        "add": {
+          "component_groups": ["tsu:laser_sword"]
+        }
+      },
+      "evt:to_long_sword": {
+        "add": {
+          "component_groups": ["tsu:long_sword"]
+        }
+      },
+      "evt:to_fire_saw": {
+        "add": {
+          "component_groups": ["tsu:fire_saw"]
+        }
+      },
+      "evt:to_rocket_axe": {
+        "add": {
+          "component_groups": ["tsu:rocket_axe"]
+        }
+      },
+      "evt:laser_blaster_lc_burst": {
+        "add": {
+          "component_groups": ["tsu:laser_blaster_lc_burst"]
+        }
+      },
+      "evt:laser_blaster_lc_auto": {
+        "add": {
+          "component_groups": ["tsu:laser_blaster_lc_auto"]
+        }
+      },
+      "evt:pulse_gun_standard": {
+        "add": {
+          "component_groups": ["tsu:pulse_gun_standard"]
+        }
+      },
+      "evt:laser_bow_standard": {
+        "add": {
+          "component_groups": ["tsu:laser_bow_standard"]
+        }
+      },
+      "evt:pulse_gun_heavy": {
+        "add": {
+          "component_groups": ["tsu:pulse_gun_heavy"]
+        }
+      },
+      "evt:ion_gun_standard": {
+        "add": {
+          "component_groups": ["tsu:ion_gun_standard"]
+        }
+      },
+      "evt:ion_gun_heavy": {
+        "add": {
+          "component_groups": ["tsu:ion_gun_heavy"]
+        }
+      },
+      "evt:blaster_glove_lc": {
+        "add": {
+          "component_groups": ["tsu:blaster_glove_lc"]
+        }
+      },
+      "evt:scatter_blaster_lc": {
+        "add": {
+          "component_groups": ["tsu:scatter_blaster_lc"]
+        }
+      },
+      "evt:creeper_canon_rc": {
+        "add": {
+          "component_groups": ["tsu:creeper_canon_rc"]
+        }
+      },
+      "evt:omni_gun_gravity": {
+        "add": {
+          "component_groups": ["tsu:omni_gun_gravity"]
+        }
+      },
+      "evt:omni_gun_fire": {
+        "add": {
+          "component_groups": ["tsu:omni_gun_fire"]
+        }
+      },
+      "evt:omni_gun_freeze": {
+        "add": {
+          "component_groups": ["tsu:omni_gun_freeze"]
+        }
+      },
+      "evt:lightning_gun_single": {
+        "add": {
+          "component_groups": ["tsu:lightning_gun_single"]
+        }
+      },
+      "evt:lightning_gun_multi": {
+        "add": {
+          "component_groups": ["tsu:lightning_gun_multi"]
+        }
+      },
+      "evt:reset_handheld": {
+        "add": {
+          "component_groups": ["tsu:attack_standard"]
+        },
+        "remove": {
+          "component_groups": [
+            "tsu:kinetic_axe",
+            "tsu:concussion_hammer",
+            "tsu:concussion_hammer_lc_0",
+            "tsu:concussion_hammer_lc_1",
+            "tsu:concussion_hammer_lc_2",
+            "tsu:concussion_hammer_lc_3",
+            "tsu:concussion_hammer_lc_4",
+            "tsu:concussion_hammer_lc_5",
+            "tsu:laser_sword",
+            "tsu:rocket_axe",
+            "tsu:longsword",
+            "tsu:fire_saw"
+          ]
+        }
+      },
+      "evt:set_jetpack_unequipped": {
+        "add": {
+          "component_groups": ["tsu:jetpack_unequipped"]
+        }
+      },
+      "evt:set_jetpack_none_ground": {
+        "add": {
+          "component_groups": ["tsu:jetpack_none_ground"]
+        }
+      },
+      "evt:set_jetpack_none_air": {
+        "add": {
+          "component_groups": ["tsu:jetpack_none_air"]
+        }
+      },
+      "evt:set_jetpack_rise": {
+        "add": {
+          "component_groups": ["tsu:jetpack_rise"]
+        }
+      },
+      "evt:set_jetpack_hover": {
+        "add": {
+          "component_groups": ["tsu:jetpack_hover"]
+        }
+      },
+      "evt:set_jetpack_glide": {
+        "add": {
+          "component_groups": ["tsu:jetpack_glide"]
+        }
+      },
+			"evt:jetpack_on": {
+				"add": {
+					"component_groups": ["tsu:jetpack_on"]
+				}
+			},
+			"evt:jetpack_off": {
+				"remove": {
+					"component_groups": ["tsu:jetpack_on"]
+				}
+			},
+			"evt:blast_resistance": {
+				"add": {
+					"component_groups": ["tsu:blast_resistance"]
+				}
+			},
+			"evt:remove_blast_resistance": {
+				"remove": {
+					"component_groups": ["tsu:blast_resistance"]
+				}
+			}
+    }
+  }
+}

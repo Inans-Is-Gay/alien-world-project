@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.casting_vfx": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"casted": "query.is_in_water"
+						}
+					]
+				},
+				"casted": {
+					"on_entry": [
+						"/summon chum:cast_vfx ~ ~0.25 ~"
+					]
+				}
+			}
+		}
+	}
+}

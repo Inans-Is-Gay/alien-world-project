@@ -1,0 +1,1 @@
+scoreboard objectives add fish_c dummy

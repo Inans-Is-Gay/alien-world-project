@@ -1,0 +1,113 @@
+{
+    "stained_hardened_clay" : {  
+        "isotropic" : false
+    },
+    
+		"clay" : { 
+		"isotropic" : false
+	},
+
+
+ 
+	
+		"gravel" : { 
+		"isotropic" : true
+	},
+   "powered_comparator" : {
+      "sound" : "metal",
+      "textures" : {
+         "down" : "repeater_floor",
+         "side" : "comparator_stone_slab",
+         "up" : "comparator_up"
+      }
+   },
+   "powered_repeater" : {
+      "sound" : "metal",
+      "textures" : {
+         "down" : "repeater_floor",
+         "side" : "repeater_stone_slab",
+         "up" : "repeater_up"
+      }
+   },
+    "unpowered_comparator" : {
+      "sound" : "metal",
+      "textures" : {
+         "down" : "comparator_stone_slab",
+         "side" : "comparator_stone_slab",
+         "up" : "comparator_up"
+      }
+   },
+   "unpowered_repeater" : {
+      "sound" : "metal",
+      "textures" : {
+         "down" : "repeater_floor",
+         "side" : "repeater_stone_slab",
+         "up" : "repeater_up"
+      }
+   },
+	
+		"netherrack" : { 
+		"isotropic" : false
+	},
+	
+	"hardened_clay" : { 
+		"isotropic" : false
+	},
+	
+	"stonebrick": {
+      "textures" : {
+         "down" : "stonebrick_top",
+         "side" : "stonebrick",
+         "up" : "stonebrick_top"
+      },
+		"sound": "stone"
+	},
+  "stained_hardened_clay": {
+    "isotropic": true,
+      "textures" : {
+         "down" : "stained_clay_top",
+         "side" : "stained_clay",
+         "up" : "stained_clay_top"
+		 },
+    "sound": "stone"
+  },
+  
+  "cracked_deepslate_bricks": {
+    "isotropic": false,
+      "textures" : {
+         "down" : "cracked_deepslate_bricks_top",
+         "side" : "cracked_deepslate_bricks",
+         "up" : "cracked_deepslate_bricks_top"
+		 },
+    "sound": "deepslate_bricks"
+  },
+  
+  "deepslate_bricks": {
+    "isotropic": false,
+    "textures": "deepslate_bricks",
+    "sound": "deepslate_bricks"
+  },
+
+  "chiseled_deepslate": {
+    "isotropic": false,
+    "textures": "chiseled_deepslate",
+    "sound": "deepslate_bricks"
+  },
+ 
+   "cracked_polished_blackstone_bricks" : {
+      "sound" : "stone",
+      "textures" : {
+         "down" : "cracked_polished_blackstone_bricks_top",
+         "side" : "cracked_polished_blackstone_bricks",
+         "up" : "cracked_polished_blackstone_bricks_top"
+		}
+   },
+   "chiseled_polished_blackstone" : {
+      "sound" : "stone",
+      "textures" : {
+         "down" : "chiseled_polished_blackstone_top",
+         "side" : "chiseled_polished_blackstone",
+         "up" : "chiseled_polished_blackstone_top"
+		}
+   }
+}

@@ -1,0 +1,69 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tsu:pulse_gun_standard",
+      "runtime_identifier": "minecraft:snowball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tsu:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": 0,
+            "knockback": false
+          },
+          "spawn_chance": {
+            "first_spawn_percent_chance": 100.0,
+            "first_spawn_count": 1,
+            "spawn_definition": "tsu:knockback_nearby<evt:knockback_power_2>",
+            "spawn_baby": false
+          },
+          "stick_in_ground": {
+            "shake_time": 0.35
+          }
+        },
+        "shoot_sound": "",
+        "hit_sound": "",
+        "power": 8,
+        "gravity": 0.0,
+        "uncertainty_base": 1,
+        "uncertainty_multiplier": 0,
+        "anchor": 1,
+        "should_bounce": true,
+        "offset": [0, -0.1, 0]
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:timer": {
+        "time": 3,
+        "looping": true,
+        "time_down_event": {
+          "event": "evt:despawn",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "evt:despawn": {
+        "add": {
+          "component_groups": ["tsu:despawn"]
+        }
+      }
+    }
+  }
+}

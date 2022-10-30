@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "tsu:diamond_bit_plating"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "TTT",
+      "TDT",
+      "TTT"
+    ],
+    "key": {
+      "T": {
+        "item": "iron_trapdoor"
+      },
+      "D": {
+        "item": "diamond"
+      }
+    },
+    "result": {
+      "item": "tsu:diamond_bit_plating"
+    }
+  }
+}

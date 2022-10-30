@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.lighthouse.fog": {
+			"initial_state": "small",
+			"states": {
+				"small": {
+					"transitions": [
+						{
+							"small_quick": "query.is_ignited"
+						}
+					],
+					"animations": [
+						"fog"
+					]
+				},
+				"small_quick": {
+					"on_entry": [
+						"/execute @s[tag=!first_pad_use] ~~~ playsound fog_jingle @a",
+						"/tag @s add first_pad_use"
+					],
+					"transitions": [
+						{
+							"small": "!query.is_ignited"
+						}
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,129 @@
+{
+    "tiers": [
+        {
+            "trades": [
+                {
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 8
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "minecraft:snowball",
+                            "quantity": 1,
+                            "functions": [
+                                {
+                                    "function": "set_lore",
+                                    "lore": [
+                                        "Press and hold to throw",
+                                        "Mark your favorite fishing spots!"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": -1
+                },
+                {
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 32
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "minecraft:chainmail_helmet",
+                            "quantity": 1,
+                            "functions": [
+                                {
+                                    "function": "set_lore",
+                                    "lore": [
+                                        "You are the captain now!"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": -1
+                },
+                {
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 32
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "minecraft:diamond_helmet",
+                            "quantity": 1,
+                            "functions": [
+                                {
+                                    "function": "set_lore",
+                                    "lore": [
+                                        "The ultimate fisher-friend attire"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": -1
+                },
+                {
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 32
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "minecraft:golden_helmet",
+                            "quantity": 1,
+                            "functions": [
+                                {
+                                    "function": "set_lore",
+                                    "lore": [
+                                        "Fashionable headwear for any seafaring individual"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": -1
+                },
+                {
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 32
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "minecraft:netherite_helmet",
+                            "quantity": 1,
+                            "functions": [
+                                {
+                                    "function": "set_lore",
+                                    "lore": [
+                                        "Don't worry, this was thorougly washed!"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": -1
+                }
+            ]
+        }
+    ]
+}

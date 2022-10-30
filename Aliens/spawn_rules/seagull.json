@@ -1,0 +1,36 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:spawn_rules": {
+		"description": {
+			"identifier": "chum:critter_seagull",
+			"population_control": "animal"
+		},
+		"conditions": [
+			{
+				"minecraft:spawns_on_surface": {},
+				"minecraft:distance_filter": {
+					"min": 16,
+					"max": 64
+				},
+				"minecraft:weight": {
+					"default": 150
+				},
+				"minecraft:brightness_filter": {
+					"min": 6,
+					"max": 15
+				},
+				"minecraft:density_limit": {
+					"surface": 5
+				},
+				"minecraft:herd": {
+					"min_size": 1,
+					"max_size": 2
+				},
+				"minecraft:height_filter": {
+					"min": 0,
+					"max": 100
+				}
+			}
+		]
+	}
+}

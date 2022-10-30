@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.terrawalker.attacks.stomp": {
+			"loop": false,
+			"animation_length": 1.0,
+			"timeline": {
+				"0.5": [
+					"/summon tsu:terrawalker_stomp ~ ~ ~ evt:knockback_power_1",
+					"/particle concussion_hammer.particle ~ ~ ~"
+				]
+			}
+		},
+		"animation.terrawalker.attacks.shockwave": {
+			"loop": false,
+			"animation_length": 1.8,
+			"timeline": {
+				"0.0": [
+					"/effect @s slowness 3 10 true"
+				],
+				"1.55": [
+					"/summon tsu:terrawalker_stomp ~ ~ ~ evt:knockback_power_5",
+					"/particle concussion_hammer.particle ~ ~ ~",
+					"/event entity @s evt:remove_angry"
+				]
+			}
+		}
+	}
+}

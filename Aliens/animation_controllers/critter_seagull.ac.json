@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.critter_seagull.stuck_controller": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"stuck": "query.modified_move_speed<=0.1&&query.is_ignited"
+						},
+						{
+							"fix_grounded": "query.modified_move_speed<=0.1&&!query.is_ignited&&!query.is_on_ground&&!query.is_in_water"
+						}
+					]
+				},
+				"stuck": {
+					"transitions": [
+						{
+							"default": "!query.is_tamed"
+						}
+					],
+					"on_entry": [
+						"@s seagull:get_unstuck",
+						"/effect @s levitation 1 1 true"
+					],
+					"on_exit": [
+						"@s seagulL:not_stuck"
+					]
+				},
+				"fix_grounded": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"@s seagull:begin_fly"
+					]
+				}
+			}
+		}
+	}
+}

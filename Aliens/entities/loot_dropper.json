@@ -1,0 +1,296 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:loot_dropper",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"chum:parrot_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/parrot_loot_table.json"
+				}
+			},
+			"chum:crab_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/crab_loot_table.json"
+				}
+			},
+			"chum:alien_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/alien_loot_table.json"
+				}
+			},
+			"chum:angler_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/angler_loot_table.json"
+				}
+			},
+			"chum:butterfly_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/butterfly_loot_table.json"
+				}
+			},
+			"chum:chameleon_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/chameleon_loot_table.json"
+				}
+			},
+			"chum:crawler_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/crawler_loot_table.json"
+				}
+			},
+			"chum:cuddle_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/cuddle_loot_table.json"
+				}
+			},
+			"chum:eclipse_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/eclipse_loot_table.json"
+				}
+			},
+			"chum:feather_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/feather_loot_table.json"
+				}
+			},
+			"chum:kelp_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/kelp_loot_table.json"
+				}
+			},
+			"chum:piranja_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/piranja_loot_table.json"
+				}
+			},
+			"chum:pod_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/pod_loot_table.json"
+				}
+			},
+			"chum:puffer_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/puffer_loot_table.json"
+				}
+			},
+			"chum:rocket_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/rocket_loot_table.json"
+				}
+			},
+			"chum:royal_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/royal_loot_table.json"
+				}
+			},
+			"chum:serpent_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/serpent_loot_table.json"
+				}
+			},
+			"chum:shark_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/shark_loot_table.json"
+				}
+			},
+			"chum:slug_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/slug_loot_table.json"
+				}
+			},
+			"chum:spike_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/spike_loot_table.json"
+				}
+			},
+			"chum:spook_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/spook_loot_table.json"
+				}
+			},
+			"chum:toad_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/toad_loot_table.json"
+				}
+			},
+			"chum:scholar_loot": {
+				"minecraft:loot": {
+					"table": "loot_tables/fish_lore/scholar_loot_table.json"
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 0
+			}
+		},
+		"events": {
+			"chum:add_parrot": {
+				"add": {
+					"component_groups": [
+						"chum:parrot_loot"
+					]
+				}
+			},
+			"chum:add_crab": {
+				"add": {
+					"component_groups": [
+						"chum:crab_loot"
+					]
+				}
+			},
+			"chum:add_alien": {
+				"add": {
+					"component_groups": [
+						"chum:alien_loot"
+					]
+				}
+			},
+			"chum:add_angler": {
+				"add": {
+					"component_groups": [
+						"chum:angler_loot"
+					]
+				}
+			},
+			"chum:add_butterfly": {
+				"add": {
+					"component_groups": [
+						"chum:butterfly_loot"
+					]
+				}
+			},
+			"chum:add_chameleon": {
+				"add": {
+					"component_groups": [
+						"chum:chameleon_loot"
+					]
+				}
+			},
+			"chum:add_crawler": {
+				"add": {
+					"component_groups": [
+						"chum:crawler_loot"
+					]
+				}
+			},
+			"chum:add_cuddle": {
+				"add": {
+					"component_groups": [
+						"chum:cuddle_loot"
+					]
+				}
+			},
+			"chum:add_eclipse": {
+				"add": {
+					"component_groups": [
+						"chum:eclipse_loot"
+					]
+				}
+			},
+			"chum:add_feather": {
+				"add": {
+					"component_groups": [
+						"chum:feather_loot"
+					]
+				}
+			},
+			"chum:add_kelp": {
+				"add": {
+					"component_groups": [
+						"chum:kelp_loot"
+					]
+				}
+			},
+			"chum:add_piranja": {
+				"add": {
+					"component_groups": [
+						"chum:piranja_loot"
+					]
+				}
+			},
+			"chum:add_pod": {
+				"add": {
+					"component_groups": [
+						"chum:pod_loot"
+					]
+				}
+			},
+			"chum:add_puffer": {
+				"add": {
+					"component_groups": [
+						"chum:puffer_loot"
+					]
+				}
+			},
+			"chum:add_rocket": {
+				"add": {
+					"component_groups": [
+						"chum:rocket_loot"
+					]
+				}
+			},
+			"chum:add_royal": {
+				"add": {
+					"component_groups": [
+						"chum:royal_loot"
+					]
+				}
+			},
+			"chum:add_serpent": {
+				"add": {
+					"component_groups": [
+						"chum:serpent_loot"
+					]
+				}
+			},
+			"chum:add_shark": {
+				"add": {
+					"component_groups": [
+						"chum:shark_loot"
+					]
+				}
+			},
+			"chum:add_slug": {
+				"add": {
+					"component_groups": [
+						"chum:slug_loot"
+					]
+				}
+			},
+			"chum:add_spike": {
+				"add": {
+					"component_groups": [
+						"chum:spike_loot"
+					]
+				}
+			},
+			"chum:add_spook": {
+				"add": {
+					"component_groups": [
+						"chum:spook_loot"
+					]
+				}
+			},
+			"chum:add_toad": {
+				"add": {
+					"component_groups": [
+						"chum:toad_loot"
+					]
+				}
+			},
+			"chum:add_scholar": {
+				"add": {
+					"component_groups": [
+						"chum:scholar_loot"
+					]
+				}
+			}
+		}
+	}
+}

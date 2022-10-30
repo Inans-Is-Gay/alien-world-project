@@ -1,0 +1,196 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:mercorgi_npc",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"controller": "controller.animation.mercorgi"
+			},
+			"scripts": {
+				"animate": [
+					"controller"
+				]
+			}
+		},
+		"component_groups": {
+			"chum:is_npc": {
+				"minecraft:npc": {}
+			},
+			"chum:is_tameable": {
+				"minecraft:tameable": {
+					"probability": 1,
+					"tame_items": "chum:corgi_tame",
+					"tame_event": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"value": "minecraft:is_ignited",
+									"subject": "self"
+								}
+							]
+						},
+						"event": "chum:on_tame",
+						"target": "self"
+					}
+				}
+			},
+			"chum:has_rod": {
+				"minecraft:is_ignited": {}
+			},
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"chum:dig_anim": {
+				"minecraft:is_sheared": {}
+			},
+			"chum:is_tamed": {
+				"minecraft:is_tamed": {}
+			},
+			"chum:follow_owner": {
+				"minecraft:behavior.follow_owner": {
+					"priority": 1,
+					"speed_multiplier": 1,
+					"start_distance": 2,
+					"stop_distance": 6
+				},
+				"minecraft:movement": {
+					"value": 0.2
+				},
+				"minecraft:navigation.generic": {
+					"is_amphibious": false,
+					"can_path_over_water": true,
+					"can_break_doors": false,
+					"can_swim": true,
+					"can_walk": true,
+					"avoid_sun": false
+				},
+				"minecraft:underwater_movement": {
+					"value": 0.5
+				},
+				"minecraft:movement.generic": {}
+			}
+		},
+		"components": {
+			"minecraft:floats_in_liquid": {},
+			"minecraft:buoyant": {
+				"base_buoyancy": 1,
+				"liquid_blocks": [
+					"water"
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_air": true,
+				"breathes_water": true
+			}
+		},
+		"events": {
+			"chum:add_npc": {
+				"add": {
+					"component_groups": [
+						"chum:is_npc"
+					]
+				}
+			},
+			"chum:has_rod": {
+				"add": {
+					"component_groups": [
+						"chum:has_rod"
+					]
+				}
+			},
+			"chum:remove_rod": {
+				"remove": {
+					"component_groups": [
+						"chum:has_rod"
+					]
+				}
+			},
+			"chum:run_dig_anim": {
+				"add": {
+					"component_groups": [
+						"chum:dig_anim"
+					]
+				}
+			},
+			"chum:stop_dig": {
+				"remove": {
+					"component_groups": [
+						"chum:dig_anim"
+					]
+				}
+			},
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			},
+			"chum:on_tame": {
+				"add": {
+					"component_groups": [
+						"chum:is_tamed",
+						"chum:is_npc",
+						"chum:follow_owner"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:is_tameable",
+						"chum:dig_anim",
+						"chum:has_rod"
+					]
+				}
+			},
+			"chum:add_tameable": {
+				"add": {
+					"component_groups": [
+						"chum:is_tameable"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:is_npc"
+					]
+				}
+			},
+			"chum:remove_npc": {
+				"remove": {
+					"component_groups": [
+						"chum:is_npc"
+					]
+				}
+			},
+			"chum:_add_follow": {
+				"add": {
+					"component_groups": [
+						"chum:follow_owner"
+					]
+				}
+			},
+			"chum:remove_follow": {
+				"remove": {
+					"component_groups": [
+						"chum:follow_owner"
+					]
+				}
+			}
+		}
+	}
+}

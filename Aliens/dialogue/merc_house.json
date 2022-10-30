@@ -1,0 +1,73 @@
+{
+    "format_version": "1.17",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "merc_house1",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "corgi.house.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "merc.house1",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": [
+                    "/event entity @e[type=chum:mercorgi_npc_house] chum:remove_dialog", "execute @e[type=chum:mercorgi_npc_house,tag=!corg_gave_dialogue] ~~~ scoreboard players add @e[name=main] corgi_talks 1", "tag @e[type=chum:mercorgi_npc_house] add corg_gave_dialogue"
+                ],
+                "on_close_commands": ["/dialogue change @e[type=chum:mercorgi_npc_house] merc_house1 @initiator"],
+                "buttons": [
+                    {
+                        "name": {
+                            "rawtext": [
+                                {
+                                    "translate": "Next"
+                                }
+                            ]
+                        },
+                        "commands": [
+                            "/dialogue open @e[type=chum:mercorgi_npc_house] @initiator merc_house2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag": "merc_house2",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "corgi.house.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "merc.house2",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": ["/dialogue change @e[type=chum:mercorgi_npc_house] merc_house1 @initiator"]
+            }
+        ]
+    }
+}

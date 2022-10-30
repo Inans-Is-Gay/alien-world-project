@@ -1,0 +1,66 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "tsu:terrawalker",
+      "population_control": "monster"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 10
+        },
+        "minecraft:density_limit": {
+          "surface": 5
+        },
+        "minecraft:biome_filter": {
+					"any_of": [
+						{ "test": "has_biome_tag", "operator": "==", "value": "roofed_forest" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "roofed_forest_mutated" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "jungle_hills" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "ice_mountains" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "extreme_hills" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "extreme_hills_plus_trees" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "extreme_hills_mutated" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "extreme_hills_plus_trees_mutated" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "extreme_hills_edge" }
+					]
+        }
+      },
+      {
+        "minecraft:spawns_underground": {},
+        "minecraft:brightness_filter": {
+          "min": 0,
+          "max": 7,
+          "adjust_for_weather": true
+        },
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 6
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 1
+        },
+				"minecraft:biome_filter": {
+					"none_of": [
+						{ "test": "has_biome_tag", "operator": "==", "value": "hell" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "crimson_forest" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "warped_forest" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "soulsand_valley" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "basalt_deltas" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "the_end" }
+					]
+				}
+      }
+    ]
+  }
+}

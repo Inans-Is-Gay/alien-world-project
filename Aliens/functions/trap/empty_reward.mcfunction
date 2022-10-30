@@ -1,0 +1,1 @@
+execute @p ~~~ structure load trap_item ~~~

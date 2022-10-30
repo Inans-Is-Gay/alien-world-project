@@ -1,0 +1,135 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:npc_nautilus",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"controller": "controller.animation.npc_vicinity",
+				"tp_controller": "controller.animation.npc_tp",
+				"delay": "animation.npc.delay"
+			}
+		},
+		"component_groups": {
+			"chum:vicinity": {
+				"minecraft:is_ignited": {}
+			},
+			"chum:remove": {
+				"minecraft:is_sheared": {}
+			},
+			"gm1:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"width": 2,
+						"height": 3,
+						"pivot": [
+							0,
+							1.5,
+							0
+						]
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					},
+					{
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": false
+			},
+			"minecraft:npc": {},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"value": "minecraft:blaze_rod",
+										"domain": "hand",
+										"subject": "other"
+									},
+									{
+										"test": "has_ability",
+										"value": "instabuild",
+										"subject": "other"
+									}
+								]
+							},
+							"event": "gm1:despawn"
+						}
+					}
+				]
+			},
+			"minecraft:skin_id": {
+				"value": 0
+			}
+		},
+		"events": {
+			"chum:remove_tp": {
+				"add": {
+					"component_groups": [
+						"chum:remove"
+					]
+				}
+			},
+			"chum:remove_tp_event": {
+				"remove": {
+					"component_groups": [
+						"chum:remove"
+					]
+				}
+			},
+			"chum:in_vicinity": {
+				"add": {
+					"component_groups": [
+						"chum:vicinity"
+					]
+				}
+			},
+			"chum:out_vicinity": {
+				"remove": {
+					"component_groups": [
+						"chum:vicinity"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+					]
+				}
+			},
+			"gm1:despawn": {
+				"add": {
+					"component_groups": [
+						"gm1:despawn"
+					]
+				}
+			}
+		}
+	}
+}

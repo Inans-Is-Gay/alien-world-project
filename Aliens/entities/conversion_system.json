@@ -1,0 +1,482 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:conversion_system",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"chum:func_play_conversion_animation": {
+				"minecraft:is_charged": {},
+				"minecraft:timer": {
+					"time": 0.25,
+					"time_down_event": {
+						"event": "chum:conversion_reset"
+					}
+				}
+			},
+			"chum:parrot_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/parrot_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"chum:feather_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/feather_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"chum:pod_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/pod_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"chum:toad_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/toad_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"chum:cuddle_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/cuddle_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 4
+				}
+			},
+			"chum:crab_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/crab_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 5
+				}
+			},
+			"chum:chameleon_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/chameleon_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 6
+				}
+			},
+			"chum:kelp_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/kelp_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 7
+				}
+			},
+			"chum:piranja_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/piranja_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 8
+				}
+			},
+			"chum:shark_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/shark_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 9
+				}
+			},
+			"chum:slug_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/slug_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 10
+				}
+			},
+			"chum:rocket_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/rocket_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 11
+				}
+			},
+			"chum:puffer_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/puffer_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 12
+				}
+			},
+			"chum:angler_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/angler_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 13
+				}
+			},
+			"chum:crawler_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/crawler_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 14
+				}
+			},
+			"chum:spook_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/spook_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 15
+				}
+			},
+			"chum:butterfly_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/butterfly_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 16
+				}
+			},
+			"chum:spike_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/spike_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 17
+				}
+			},
+			"chum:royal_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/royal_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 18
+				}
+			},
+			"chum:eclipse_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/eclipse_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 19
+				}
+			},
+			"chum:tutorial_cotd": {
+				"minecraft:economy_trade_table": {
+					"new_screen": true,
+					"table": "trading/well/tutorial_cotd.json"
+				},
+				"minecraft:variant": {
+					"value": 20
+				}
+			},
+			"gm1:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": false
+			},
+			"minecraft:collision_box": {
+				"height": 2,
+				"width": 0
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"width": 3,
+						"height": 4,
+						"pivot": [
+							0,
+							0.75,
+							0
+						]
+					}
+				]
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"value": "minecraft:blaze_rod",
+										"domain": "hand",
+										"subject": "other"
+									},
+									{
+										"test": "has_ability",
+										"value": "instabuild",
+										"subject": "other"
+									}
+								]
+							},
+							"event": "gm1:despawn"
+						}
+					}
+				]
+			},
+			"minecraft:skin_id": {
+				"value": 0
+			}
+		},
+		"events": {
+			"chum:play_conversion_animation": {
+				"add": {
+					"component_groups": [
+						"chum:func_play_conversion_animation"
+					]
+				}
+			},
+			"chum:conversion_reset": {
+				"remove": {
+					"component_groups": [
+						"chum:func_play_conversion_animation"
+					]
+				}
+			},
+			"chum:set_parrot_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:parrot_cotd"
+					]
+				}
+			},
+			"chum:set_feather_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:feather_cotd"
+					]
+				}
+			},
+			"chum:set_pod_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:pod_cotd"
+					]
+				}
+			},
+			"chum:set_toad_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:toad_cotd"
+					]
+				}
+			},
+			"chum:set_cuddle_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:cuddle_cotd"
+					]
+				}
+			},
+			"chum:set_crab_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:crab_cotd"
+					]
+				}
+			},
+			"chum:set_chameleon_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:chameleon_cotd"
+					]
+				}
+			},
+			"chum:set_kelp_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:kelp_cotd"
+					]
+				}
+			},
+			"chum:set_piranja_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:piranja_cotd"
+					]
+				}
+			},
+			"chum:set_shark_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:shark_cotd"
+					]
+				}
+			},
+			"chum:set_slug_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:slug_cotd"
+					]
+				}
+			},
+			"chum:set_rocket_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:rocket_cotd"
+					]
+				}
+			},
+			"chum:set_puffer_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:puffer_cotd"
+					]
+				}
+			},
+			"chum:set_angler_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:angler_cotd"
+					]
+				}
+			},
+			"chum:set_crawler_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:crawler_cotd"
+					]
+				}
+			},
+			"chum:set_spook_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:spook_cotd"
+					]
+				}
+			},
+			"chum:set_butterfly_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:butterfly_cotd"
+					]
+				}
+			},
+			"chum:set_spike_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:spike_cotd"
+					]
+				}
+			},
+			"chum:set_royal_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:royal_cotd"
+					]
+				}
+			},
+			"chum:set_eclipse_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:eclipse_cotd"
+					]
+				}
+			},
+			"chum:set_tutorial_cotd": {
+				"add": {
+					"component_groups": [
+						"chum:tutorial_cotd"
+					]
+				}
+			},
+			"chum:remove_trades": {
+				"remove": {
+					"component_groups": [
+						"chum:parrot_cotd",
+						"chum:feather_cotd",
+						"chum:pod_cotd",
+						"chum:toad_cotd",
+						"chum:cuddle_cotd",
+						"chum:crab_cotd",
+						"chum:chameleon_cotd",
+						"chum:kelp_cotd",
+						"chum:piranja_cotd",
+						"chum:shark_cotd",
+						"chum:slug_cotd",
+						"chum:rocket_cotd",
+						"chum:puffer_cotd",
+						"chum:angler_cotd",
+						"chum:crawler_cotd",
+						"chum:spook_cotd",
+						"chum:butterfly_cotd",
+						"chum:spike_cotd",
+						"chum:royal_cotd",
+						"chum:eclipse_cotd",
+						"chum:tutorial_cotd"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+					]
+				}
+			},
+			"gm1:despawn": {
+				"add": {
+					"component_groups": [
+						"gm1:despawn"
+					]
+				}
+			}
+		}
+	}
+}

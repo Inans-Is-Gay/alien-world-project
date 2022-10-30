@@ -1,0 +1,91 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.jetpack.init_repeater": {
+      "loop": true,
+      "animation_length": 0.2,
+      "timeline": {
+        "0": [
+          "@s evt:set_jetpack_none_ground"
+        ]
+      }
+    },
+    "animation.jetpack.none_ground": {
+      "loop": true,
+      "animation_length": 1.0,
+      "timeline": {
+				"0": [
+					"/stopsound @s jetpack.active",
+          "/title @s actionbar Jetpack: NONE (GROUND)"
+        ]
+      }
+    },
+    "animation.jetpack.none_air": {
+      "loop": true,
+      "animation_length": 1.0,
+      "timeline": {
+				"0": [
+					"/stopsound @s jetpack.active",
+          "/title @s actionbar Jetpack: NONE (AIR)"
+        ]
+      }
+    },
+    "animation.jetpack.rise": {
+			"loop": true,
+      "animation_length": 1.0,
+      "timeline": {
+				"0": [
+					"/title @s actionbar Jetpack: RISE"
+        ]
+      }
+    },
+    "animation.jetpack.rise_sound": {
+			"loop": true,
+      "animation_length": 2.1,
+      "timeline": {
+				"0": [
+					"/stopsound @s jetpack.active",
+          "/playsound jetpack.active @s ~ ~ ~ 1"
+        ]
+      }
+    },
+    "animation.jetpack.hover": {
+      "loop": true,
+      "animation_length": 1.0,
+      "timeline": {
+        "0": [
+          "/title @s actionbar Jetpack: HOVER"
+        ]
+      }
+    },
+    "animation.jetpack.hover_sound": {
+      "loop": true,
+      "animation_length": 2.1,
+      "timeline": {
+        "0": [
+					"/stopsound @s jetpack.active",
+          "/playsound jetpack.active @s ~ ~ ~ 0.2"
+        ]
+      }
+    },
+    "animation.jetpack.glide": {
+			"loop": true,
+      "animation_length": 1.0,
+      "timeline": {
+				"0": [
+					"/title @s actionbar Jetpack: GLIDE"
+        ]
+      }
+    },
+    "animation.jetpack.glide_sound": {
+			"loop": true,
+      "animation_length": 2.1,
+      "timeline": {
+				"0": [
+					"/stopsound @s jetpack.active",
+					"/playsound jetpack.active @s ~ ~ ~ 0.1"
+        ]
+      }
+    }
+  }
+}

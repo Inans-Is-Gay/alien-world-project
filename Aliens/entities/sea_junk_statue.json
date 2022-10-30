@@ -1,0 +1,257 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:sea_junk_statue",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"upgrades": "controller.animation.sea_junk_statue.upgrades"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"upgrades": "query.is_ignited"
+					}
+				]
+			}
+		},
+		"component_groups": {
+			"statue:part_1": {
+				"minecraft:is_chested": {}
+			},
+			"statue:part_2": {
+				"minecraft:is_saddled": {}
+			},
+			"statue:part_3": {
+				"minecraft:is_baby": {}
+			},
+			"statue:part_4": {
+				"minecraft:is_tamed": {}
+			},
+			"statue:upgraded": {
+				"minecraft:is_ignited": {}
+			},
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:persistent": {},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"swing": true,
+						"use_item": true,
+						"on_interact": {
+							"filters": [
+								{
+									"test": "has_equipment",
+									"domain": "hand",
+									"subject": "other",
+									"value": "chum:statue_upgrade_1"
+								},
+								{
+									"test": "has_component",
+									"operator": "not",
+									"value": "minecraft:is_chested"
+								}
+							],
+							"event": "statue:part_1"
+						}
+					},
+					{
+						"swing": true,
+						"use_item": true,
+						"on_interact": {
+							"filters": [
+								{
+									"test": "has_equipment",
+									"domain": "hand",
+									"subject": "other",
+									"value": "chum:statue_upgrade_2"
+								},
+								{
+									"test": "has_component",
+									"operator": "not",
+									"value": "minecraft:is_saddled"
+								}
+							],
+							"event": "statue:part_2"
+						}
+					},
+					{
+						"swing": true,
+						"use_item": true,
+						"on_interact": {
+							"filters": [
+								{
+									"test": "has_equipment",
+									"domain": "hand",
+									"subject": "other",
+									"value": "chum:statue_upgrade_3"
+								},
+								{
+									"test": "has_component",
+									"operator": "not",
+									"value": "minecraft:is_baby"
+								}
+							],
+							"event": "statue:part_3"
+						}
+					},
+					{
+						"swing": true,
+						"use_item": true,
+						"on_interact": {
+							"filters": [
+								{
+									"test": "has_equipment",
+									"domain": "hand",
+									"subject": "other",
+									"value": "chum:statue_upgrade_4"
+								},
+								{
+									"test": "has_component",
+									"operator": "not",
+									"value": "minecraft:is_tamed"
+								}
+							],
+							"event": "statue:part_4"
+						}
+					}
+				]
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": [
+							{
+								"test": "has_tag",
+								"value": "do_upgrade_1"
+							},
+							{
+								"test": "has_component",
+								"operator": "!=",
+								"value": "minecraft:is_chested"
+							}
+						],
+						"event": "statue:part_1"
+					},
+					{
+						"filters": [
+							{
+								"test": "has_tag",
+								"value": "do_upgrade_2"
+							},
+							{
+								"test": "has_component",
+								"operator": "!=",
+								"value": "minecraft:is_saddled"
+							}
+						],
+						"event": "statue:part_2"
+					},
+					{
+						"filters": [
+							{
+								"test": "has_tag",
+								"value": "do_upgrade_3"
+							},
+							{
+								"test": "has_component",
+								"operator": "!=",
+								"value": "minecraft:is_baby"
+							}
+						],
+						"event": "statue:part_3"
+					},
+					{
+						"filters": [
+							{
+								"test": "has_tag",
+								"value": "do_upgrade_4"
+							},
+							{
+								"test": "has_component",
+								"operator": "!=",
+								"value": "minecraft:is_tamed"
+							}
+						],
+						"event": "statue:part_4"
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"height": 2,
+				"width": 2
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+					]
+				}
+			},
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			},
+			"statue:upgrade_finished": {
+				"remove": {
+					"component_groups": [
+						"statue:upgraded"
+					]
+				}
+			},
+			"statue:part_1": {
+				"add": {
+					"component_groups": [
+						"statue:part_1",
+						"statue:upgraded"
+					]
+				}
+			},
+			"statue:part_2": {
+				"add": {
+					"component_groups": [
+						"statue:part_2",
+						"statue:upgraded"
+					]
+				}
+			},
+			"statue:part_3": {
+				"add": {
+					"component_groups": [
+						"statue:part_3",
+						"statue:upgraded"
+					]
+				}
+			},
+			"statue:part_4": {
+				"add": {
+					"component_groups": [
+						"statue:part_4",
+						"statue:upgraded"
+					]
+				}
+			}
+		}
+	}
+}

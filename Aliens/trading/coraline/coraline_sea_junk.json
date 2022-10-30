@@ -1,0 +1,72 @@
+{
+    "tiers": [
+        {
+            "trades": [
+                {
+                    "wants": [
+                        {
+                            "item": "chum:sea_junk",
+                            "quantity": 13
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:statue_upgrade_1",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": 1
+                },
+                {
+                    "wants": [
+                        {
+                            "item": "chum:sea_junk",
+                            "quantity": 18
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:statue_upgrade_2",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": 1
+                },
+                {
+                    "wants": [
+                        {
+                            "item": "chum:sea_junk",
+                            "quantity": 18
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:statue_upgrade_3",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": 1
+                },
+                {
+                    "wants": [
+                        {
+                            "item": "chum:sea_junk",
+                            "quantity": 18
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:statue_upgrade_4",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.worms.collect": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"collect_1": "query.variant==1"
+						},
+						{
+							"collect_2": "query.variant==2"
+						},
+						{
+							"collect_3": "query.variant==3"
+						},
+						{
+							"collect_4": "query.variant==4"
+						}
+					]
+				},
+				"collect_1": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/structure load worms_drop_1 ~ ~1 ~",
+						"/playsound block.composter.empty @a ~~~ 1 1"
+					],
+					"on_exit": [
+						"@s worms:finish_collect"
+					]
+				},
+				"collect_2": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/structure load worms_drop_2 ~ ~1 ~",
+						"/playsound block.composter.empty @a ~~~ 1 1"
+					],
+					"on_exit": [
+						"@s worms:finish_collect"
+					]
+				},
+				"collect_3": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/structure load worms_drop_3 ~ ~1 ~",
+						"/playsound block.composter.empty @a ~~~ 1 1"
+					],
+					"on_exit": [
+						"@s worms:finish_collect"
+					]
+				},
+				"collect_4": {
+					"transitions": [
+						{
+							"default": "1"
+						}
+					],
+					"on_entry": [
+						"/structure load worms_drop_4 ~ ~1 ~",
+						"/playsound block.composter.empty @a ~~~ 1 1"
+					],
+					"on_exit": [
+						"@s worms:finish_collect"
+					]
+				}
+			}
+		}
+	}
+}

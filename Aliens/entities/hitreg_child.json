@@ -1,0 +1,83 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:hitreg_child",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"chum:hook": {
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"use_item": true,
+							"on_interact": {
+								"filters": {
+									"test": "has_equipment",
+									"domain": "hand",
+									"subject": "other",
+									"value": "minecraft:kelp"
+								},
+								"target": "other",
+								"event": "chum:select_hook_1"
+							}
+						}
+					]
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"test": "is_riding",
+							"value": false
+						},
+						"event": "chum:despawn"
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"height": 0.5,
+				"width": 0.5
+			},
+			"minecraft:physics": {},
+			"minecraft:type_family": {
+				"family": [
+					"hitreg_child"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"chum:hook": {
+				"add": {
+					"component_groups": [
+						"chum:hook"
+					]
+				}
+			},
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			}
+		}
+	}
+}

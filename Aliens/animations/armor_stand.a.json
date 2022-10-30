@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.armor_stand.on_world_load": {
+            "animation_length": 6.5,
+            "timeline": {
+                "6.0": [
+                    "/function debug/on_world_load"
+                ]
+            }
+        }
+    }
+}

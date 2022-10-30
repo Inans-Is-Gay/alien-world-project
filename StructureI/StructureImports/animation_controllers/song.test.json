@@ -1,0 +1,45 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.song.test": {
+			"states": {
+				"default": {
+					"animations": ["find_player","angered_warden","stopwardensound"],
+					"transitions": [
+						{
+							"detected": "v.nby > 0"
+						},
+						{
+							"angered": "v.ang > 0"
+						}
+					],
+					"on_entry": []
+				},
+				"detected": {
+					"animations": ["find_player","angered_warden","stopsoundwarden","creepy"],
+					"transitions": [
+						{
+							"default": "v.nby <= 0"
+						},
+						{
+							"angered": "v.ang > 0"
+						}
+					],
+					"on_entry": ["/stopsound @s music.wardensmad"]
+				},
+				"angered": {
+					"animations": ["find_player","angered_warden","stopsoundwarden","pissed"],
+					"transitions": [
+						{
+							"default": "v.nby <= 0"
+						},
+						{
+							"detected": "v.ang <= 0"
+						}
+					],
+					"on_entry": ["/stopsound @s music.wardensnearby"]
+				}
+			}
+		}
+	}
+}

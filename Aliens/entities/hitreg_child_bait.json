@@ -1,0 +1,236 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:hitreg_child_bait",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"chum:hook": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"interact_text": "action.interact.equip_bait",
+						"swing": true,
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"subject": "other",
+										"test": "has_equipment",
+										"domain": "hand",
+										"value": "chum:bobber_1"
+									},
+									{
+										"subject": "other",
+										"test": "is_mark_variant",
+										"operator": "!=",
+										"value": 1
+									}
+								]
+							},
+							"target": "other",
+							"event": "chum:on_bobber_1"
+						}
+					},
+					{
+						"interact_text": "action.interact.equip_bait",
+						"swing": true,
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"subject": "other",
+										"test": "has_equipment",
+										"domain": "hand",
+										"value": "chum:bobber_2"
+									},
+									{
+										"subject": "other",
+										"test": "is_mark_variant",
+										"operator": "!=",
+										"value": 2
+									}
+								]
+							},
+							"target": "other",
+							"event": "chum:on_bobber_2"
+						}
+					},
+					{
+						"interact_text": "action.interact.equip_bait",
+						"swing": true,
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"subject": "other",
+										"test": "has_equipment",
+										"domain": "hand",
+										"value": "chum:bobber_3"
+									},
+									{
+										"subject": "other",
+										"test": "is_mark_variant",
+										"operator": "!=",
+										"value": 3
+									}
+								]
+							},
+							"target": "other",
+							"event": "chum:on_bobber_3"
+						}
+					},
+					{
+						"interact_text": "action.interact.equip_bait",
+						"swing": true,
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"subject": "other",
+										"test": "has_equipment",
+										"domain": "hand",
+										"value": "chum:bobber_4"
+									},
+									{
+										"subject": "other",
+										"test": "is_mark_variant",
+										"operator": "!=",
+										"value": 4
+									}
+								]
+							},
+							"target": "other",
+							"event": "chum:on_bobber_4"
+						}
+					},
+					{
+						"interact_text": "action.interact.unequip_bait",
+						"swing": true,
+						"on_interact": {
+							"filters": {
+								"any_of": [
+									{
+										"all_of": [
+											{
+												"subject": "other",
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "chum:bobber_1_equipped"
+											},
+											{
+												"subject": "other",
+												"test": "is_mark_variant",
+												"operator": "==",
+												"value": 1
+											}
+										]
+									},
+									{
+										"all_of": [
+											{
+												"subject": "other",
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "chum:bobber_2_equipped"
+											},
+											{
+												"subject": "other",
+												"test": "is_mark_variant",
+												"operator": "==",
+												"value": 2
+											}
+										]
+									},
+									{
+										"all_of": [
+											{
+												"subject": "other",
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "chum:bobber_3_equipped"
+											},
+											{
+												"subject": "other",
+												"test": "is_mark_variant",
+												"operator": "==",
+												"value": 3
+											}
+										]
+									},
+									{
+										"all_of": [
+											{
+												"subject": "other",
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "chum:bobber_4_equipped"
+											},
+											{
+												"subject": "other",
+												"test": "is_mark_variant",
+												"operator": "==",
+												"value": 4
+											}
+										]
+									}
+								]
+							},
+							"target": "other",
+							"event": "chum:on_bobber_0"
+						}
+					}
+				]
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"test": "is_riding",
+							"value": false
+						},
+						"event": "chum:despawn"
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"height": 0.5,
+				"width": 0.5
+			},
+			"minecraft:physics": {},
+			"minecraft:type_family": {
+				"family": [
+					"hitreg_child_bait",
+					"hitreg_child"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			}
+		}
+	}
+}
