@@ -1,1 +1,0 @@
-scoreboard players set @e[name=main] fog_radius_tier 3

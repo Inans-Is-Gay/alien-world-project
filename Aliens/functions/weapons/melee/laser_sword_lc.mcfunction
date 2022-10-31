@@ -1,1 +1,0 @@
-playsound laser_sword.hit @a[r=15]

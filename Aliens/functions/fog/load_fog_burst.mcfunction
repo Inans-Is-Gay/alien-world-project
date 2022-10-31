@@ -1,2 +1,0 @@
-execute @e[name=main,scores={fog_radius_tier=1}] ~ ~ ~ particle chum:fog_circle_base_small_burst 192 63 192
-execute @e[name=main,scores={fog_radius_tier=2}] ~ ~ ~ particle chum:fog_circle_base_medium_burst 192 63 192

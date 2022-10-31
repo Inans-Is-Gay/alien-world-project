@@ -1,1 +1,0 @@
-## DEPRICATED. COMMANDS HERE HAVE BEEN MOVED TO login_init/first_time

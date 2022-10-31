@@ -1,1 +1,0 @@
-execute @s[tag=not_coconut_dialogue] ~~~ function structure_upgrades/crab_dialogue

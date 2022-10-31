@@ -1,1 +1,0 @@
-tellraw @s {"rawtext": [{"translate": "chat.kelp_warning"}]}

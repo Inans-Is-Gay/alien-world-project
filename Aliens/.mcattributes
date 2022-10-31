@@ -1,5 +1,0 @@
-diagnostic.disable.behaviorpack.entity.component.missing=false
-diagnostic.disable.minecraft.tag.missing=true
-diagnostic.disable.behaviorpack.mcfunction.syntax.unknown=true
-diagnostic.disable.resourcepack.particle.missing=true
-diagnostic.disable.behaviorpack.entity.component.missing=true

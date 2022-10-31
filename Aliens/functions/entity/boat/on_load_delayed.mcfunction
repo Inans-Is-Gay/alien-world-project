@@ -1,1 +1,0 @@
-execute @s ~~~ summon chum:platform ~~~ chum:8x4
