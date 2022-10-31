@@ -1,0 +1,16 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "desert"
+    },
+    "components": {
+      "minecraft:climate": {
+        "downfall": 0.0,
+        "temperature": 2.0,
+        "white_ash" : 0.25
+      },
+      "mech": {}
+    }
+  }
+}

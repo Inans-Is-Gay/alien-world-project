@@ -1,0 +1,1 @@
+dialogue open @e[type=chum:giantcrab] @a[x=181,y=62,z=200,dx=6,dy=8,dz=8] giant_crab_1

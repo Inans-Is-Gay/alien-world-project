@@ -1,0 +1,512 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:shop_stand",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"58ebcba1d43d5ffb_ac_0": "controller.animation.58ebcba1d43d5ffb5beec0f6e223022dcf7c1b8c_0"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"58ebcba1d43d5ffb_ac_0": "1"
+					}
+				]
+			}
+		},
+		"component_groups": {
+			"gm1:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"gm1:dir_0": {
+				"minecraft:skin_id": {
+					"value": 0
+				}
+			},
+			"gm1:dir_1": {
+				"minecraft:skin_id": {
+					"value": 1
+				}
+			},
+			"gm1:dir_2": {
+				"minecraft:skin_id": {
+					"value": 2
+				}
+			},
+			"gm1:dir_3": {
+				"minecraft:skin_id": {
+					"value": 3
+				}
+			},
+			"chum:fishing_rod_1": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"chum:fishing_rod_2": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"chum:fishing_net": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"chum:lum_bait": {
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"chum:kelp_bait": {
+				"minecraft:variant": {
+					"value": 4
+				}
+			},
+			"chum:reef_bait": {
+				"minecraft:variant": {
+					"value": 5
+				}
+			},
+			"chum:melody_bait": {
+				"minecraft:variant": {
+					"value": 6
+				}
+			},
+			"chum:trap": {
+				"minecraft:variant": {
+					"value": 7
+				}
+			},
+			"chum:helm": {
+				"minecraft:variant": {
+					"value": 8
+				}
+			},
+			"chum:buoy": {
+				"minecraft:variant": {
+					"value": 9
+				}
+			},
+			"chum:pirate": {
+				"minecraft:variant": {
+					"value": 10
+				}
+			},
+			"chum:flippers": {
+				"minecraft:variant": {
+					"value": 11
+				}
+			},
+			"chum:sailor": {
+				"minecraft:variant": {
+					"value": 12
+				}
+			},
+			"chum:captain": {
+				"minecraft:variant": {
+					"value": 13
+				}
+			},
+			"chum:fisher": {
+				"minecraft:variant": {
+					"value": 14
+				}
+			},
+			"chum:sold_out": {
+				"minecraft:is_chested": {}
+			},
+			"chum:discounted": {
+				"minecraft:is_tamed": {}
+			},
+			"chum:func_play_success_animation": {
+				"minecraft:is_sheared": {},
+				"minecraft:timer": {
+					"time": 0.25,
+					"time_down_event": {
+						"event": "chum:purchase_reset"
+					}
+				}
+			},
+			"chum:func_play_failure_animation": {
+				"minecraft:is_ignited": {},
+				"minecraft:timer": {
+					"time": 0.25,
+					"time_down_event": {
+						"event": "chum:purchase_reset"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"width": 1.5,
+						"height": 2,
+						"pivot": [
+							0,
+							1,
+							0
+						]
+					}
+				]
+			},
+			"minecraft:scale": {
+				"value": 1
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": false
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"value": "minecraft:blaze_rod",
+										"domain": "hand",
+										"subject": "other"
+									},
+									{
+										"test": "has_ability",
+										"value": "instabuild",
+										"subject": "other"
+									}
+								]
+							},
+							"event": "gm1:despawn"
+						}
+					},
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_ability",
+										"value": "instabuild",
+										"subject": "other"
+									},
+									{
+										"test": "has_equipment",
+										"value": "minecraft:ghast_tear",
+										"subject": "other"
+									}
+								]
+							},
+							"event": "gm1:cycle_rotation"
+						}
+					}
+				]
+			},
+			"minecraft:skin_id": {
+				"value": 0
+			},
+			"minecraft:npc": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"gm1:dir_0"
+					]
+				}
+			},
+			"gm1:despawn": {
+				"add": {
+					"component_groups": [
+						"gm1:despawn"
+					]
+				}
+			},
+			"gm1:cycle_rotation": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_skin_id",
+									"value": 0
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"gm1:dir_1"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"gm1:dir_0"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_skin_id",
+									"value": 1
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"gm1:dir_2"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"gm1:dir_1"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_skin_id",
+									"value": 2
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"gm1:dir_3"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"gm1:dir_2"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_skin_id",
+									"value": 3
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"gm1:dir_0"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"gm1:dir_3"
+							]
+						}
+					}
+				]
+			},
+			"gm1:set_south": {
+				"add": {
+					"component_groups": [
+						"gm1:dir_0"
+					]
+				}
+			},
+			"gm1:set_north": {
+				"add": {
+					"component_groups": [
+						"gm1:dir_2"
+					]
+				}
+			},
+			"gm1:set_east": {
+				"add": {
+					"component_groups": [
+						"gm1:dir_3"
+					]
+				}
+			},
+			"gm1:set_west": {
+				"add": {
+					"component_groups": [
+						"gm1:dir_1"
+					]
+				}
+			},
+			"chum:shop_fishing_rod_1": {
+				"add": {
+					"component_groups": [
+						"chum:fishing_rod_1"
+					]
+				}
+			},
+			"chum:shop_fishing_rod_2": {
+				"add": {
+					"component_groups": [
+						"chum:fishing_rod_2"
+					]
+				}
+			},
+			"chum:shop_fishing_net": {
+				"add": {
+					"component_groups": [
+						"chum:fishing_net"
+					]
+				}
+			},
+			"chum:shop_lum_bait": {
+				"add": {
+					"component_groups": [
+						"chum:lum_bait"
+					]
+				}
+			},
+			"chum:shop_kelp_bait": {
+				"add": {
+					"component_groups": [
+						"chum:kelp_bait"
+					]
+				}
+			},
+			"chum:shop_reef_bait": {
+				"add": {
+					"component_groups": [
+						"chum:reef_bait"
+					]
+				}
+			},
+			"chum:shop_melody_bait": {
+				"add": {
+					"component_groups": [
+						"chum:melody_bait"
+					]
+				}
+			},
+			"chum:shop_trap": {
+				"add": {
+					"component_groups": [
+						"chum:trap"
+					]
+				}
+			},
+			"chum:shop_helm": {
+				"add": {
+					"component_groups": [
+						"chum:helm"
+					]
+				}
+			},
+			"chum:shop_buoy": {
+				"add": {
+					"component_groups": [
+						"chum:buoy"
+					]
+				}
+			},
+			"chum:shop_pirate": {
+				"add": {
+					"component_groups": [
+						"chum:pirate"
+					]
+				}
+			},
+			"chum:shop_flippers": {
+				"add": {
+					"component_groups": [
+						"chum:flippers"
+					]
+				}
+			},
+			"chum:shop_sailor": {
+				"add": {
+					"component_groups": [
+						"chum:sailor"
+					]
+				}
+			},
+			"chum:shop_captain": {
+				"add": {
+					"component_groups": [
+						"chum:captain"
+					]
+				}
+			},
+			"chum:shop_fisher": {
+				"add": {
+					"component_groups": [
+						"chum:fisher"
+					]
+				}
+			},
+			"chum:play_success_animation": {
+				"add": {
+					"component_groups": [
+						"chum:func_play_success_animation"
+					]
+				}
+			},
+			"chum:play_failure_animation": {
+				"add": {
+					"component_groups": [
+						"chum:func_play_failure_animation"
+					]
+				}
+			},
+			"chum:sell_out": {
+				"add": {
+					"component_groups": [
+						"chum:sold_out"
+					]
+				}
+			},
+			"chum:enable_discount": {
+				"add": {
+					"component_groups": [
+						"chum:discounted"
+					]
+				}
+			},
+			"chum:disable_discount": {
+				"remove": {
+					"component_groups": [
+						"chum:discounted"
+					]
+				}
+			},
+			"chum:purchase_reset": {
+				"remove": {
+					"component_groups": [
+						"chum:func_play_success_animation",
+						"chum:func_play_failure_animation"
+					]
+				}
+			},
+			"chum:reset": {
+				"remove": {
+					"component_groups": [
+						"chum:sold_out"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.player.get_scores": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [{
+						"get_scores": "query.is_moving"
+					}]
+				},
+				"get_scores": {
+					"on_entry": [
+						"/scoreboard players add @s cdKAr 0",
+						"/scoreboard players add @s cdKAl 0",
+						"/scoreboard players add @s KACharge 0",
+						"/scoreboard players add @s cdCHl 0",
+						"/scoreboard players add @s cdCHr 0",
+						"/scoreboard players add @s CHCharge 0",
+						"/scoreboard players add @s cdLBr 0",
+						"/scoreboard players add @s cdLSl 0",
+						"/scoreboard players add @s cdLSr 0",
+						"/scoreboard players add @s cdRAl 0",
+						"/scoreboard players add @s cdRAr 0",
+						"/scoreboard players add @s ARMode 0",
+						"/scoreboard players add @s cdLSGl 0",
+						"/scoreboard players add @s cdLNSr 0",
+						"/scoreboard players add @s OGMode 0",
+						"/scoreboard players add @s FSMode 0",
+						"/scoreboard players add @s cdFSr 0",
+						"/scoreboard players add @s IGMode 0",
+						"/scoreboard players add @s PGMode 0",
+						"/scoreboard players add @s LGMode 0",
+						"/scoreboard players add @s LBMode 0"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,108 @@
+{
+    "tiers": [
+        {
+            "trades": [
+                {
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 24
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:spawn_nessie",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": -1
+                },
+                {
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 16
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:paint_can",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": -1
+                },
+                {
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 64
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:kelp_upgrade",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": -1
+                },
+                {
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 64
+                        },
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 16
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:melody_upgrade",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": -1
+                },
+                {
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 64
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:storage_upgrade",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": -1
+                },
+                {
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 32
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:lighting_upgrade",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false,
+                    "max_uses": -1
+                }
+            ]
+        }
+    ]
+}

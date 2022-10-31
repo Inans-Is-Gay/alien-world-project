@@ -1,0 +1,238 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tsu:concussion_hammer_lc",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tsu:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "tsu:knockback_power_0": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 1,
+          "duration": 1,
+          "attack_time": 0.05,
+          "knockback_damage": 8,
+          "knockback_strength": 3,
+          "knockback_range": 6,
+          "knockback_filters": {
+            "test": "has_tag",
+            "subject": "other",
+            "operator": "!=",
+            "value": "concussion_hammer_lc"
+          },
+          "damage_filters": {
+            "test": "has_tag",
+            "subject": "other",
+            "operator": "!=",
+            "value": "concussion_hammer_lc"
+          },
+          "on_roar_end": {
+            "event": "evt:despawn"
+          },
+          "cooldown_time": 3
+        }
+      },
+      "tsu:knockback_power_1": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 1,
+          "duration": 1,
+          "attack_time": 0.05,
+          "knockback_damage": 12,
+          "knockback_strength": 5,
+          "knockback_range": 6,
+          "knockback_filters": {
+            "test": "has_tag",
+            "subject": "other",
+            "operator": "!=",
+            "value": "concussion_hammer_lc"
+          },
+          "damage_filters": {
+            "test": "has_tag",
+            "subject": "other",
+            "operator": "!=",
+            "value": "concussion_hammer_lc"
+          },
+          "on_roar_end": {
+            "event": "evt:despawn"
+          },
+          "cooldown_time": 3
+        }
+      },
+      "tsu:knockback_power_2": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 1,
+          "duration": 1,
+          "attack_time": 0.05,
+          "knockback_damage": 16,
+          "knockback_strength": 10,
+          "knockback_range": 6,
+          "knockback_filters": {
+            "test": "has_tag",
+            "subject": "other",
+            "operator": "!=",
+            "value": "concussion_hammer_lc"
+          },
+          "damage_filters": {
+            "test": "has_tag",
+            "subject": "other",
+            "operator": "!=",
+            "value": "concussion_hammer_lc"
+          },
+          "on_roar_end": {
+            "event": "evt:despawn"
+          },
+          "cooldown_time": 3
+        }
+      },
+      "tsu:knockback_power_3": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 1,
+          "duration": 1,
+          "attack_time": 0.05,
+          "knockback_damage": 20,
+          "knockback_strength": 15,
+          "knockback_range": 6,
+          "knockback_filters": {
+            "test": "has_tag",
+            "subject": "other",
+            "operator": "!=",
+            "value": "concussion_hammer_lc"
+          },
+          "damage_filters": {
+            "test": "has_tag",
+            "subject": "other",
+            "operator": "!=",
+            "value": "concussion_hammer_lc"
+          },
+          "on_roar_end": {
+            "event": "evt:despawn"
+          },
+          "cooldown_time": 3
+        }
+      },
+      "tsu:knockback_power_4": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 1,
+          "duration": 1,
+          "attack_time": 0.05,
+          "knockback_damage": 24,
+          "knockback_strength": 20,
+          "knockback_range": 6,
+          "knockback_filters": {
+            "test": "has_tag",
+            "subject": "other",
+            "operator": "!=",
+            "value": "concussion_hammer_lc"
+          },
+          "damage_filters": {
+            "test": "has_tag",
+            "subject": "other",
+            "operator": "!=",
+            "value": "concussion_hammer_lc"
+          },
+          "on_roar_end": {
+            "event": "evt:despawn"
+          },
+          "cooldown_time": 3
+        }
+      },
+      "tsu:knockback_power_5": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 1,
+          "duration": 1,
+          "attack_time": 0.05,
+          "knockback_damage": 28,
+          "knockback_strength": 25,
+          "knockback_range": 6,
+          "knockback_filters": {
+            "test": "has_tag",
+            "subject": "other",
+            "operator": "!=",
+            "value": "concussion_hammer_lc"
+          },
+          "damage_filters": {
+            "test": "has_tag",
+            "subject": "other",
+            "operator": "!=",
+            "value": "concussion_hammer_lc"
+          },
+          "on_roar_end": {
+            "event": "evt:despawn"
+          },
+          "cooldown_time": 3
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:persistent": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:fire_immune": {},
+      "minecraft:physics": {},
+      "minecraft:type_family": {
+        "family": ["concussion_hammer", "item_entity"]
+      },
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:health": {
+        "value": 10,
+        "max": 10
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "deals_damage": false
+        }
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+
+    "events": {
+      "evt:despawn": {
+        "add": {
+          "component_groups": ["tsu:despawn"]
+        }
+      },
+      "evt:knockback_power_0": {
+        "add": {
+          "component_groups": ["tsu:knockback_power_0"]
+        }
+      },
+      "evt:knockback_power_1": {
+        "add": {
+          "component_groups": ["tsu:knockback_power_1"]
+        }
+      },
+      "evt:knockback_power_2": {
+        "add": {
+          "component_groups": ["tsu:knockback_power_2"]
+        }
+      },
+      "evt:knockback_power_3": {
+        "add": {
+          "component_groups": ["tsu:knockback_power_3"]
+        }
+      },
+      "evt:knockback_power_4": {
+        "add": {
+          "component_groups": ["tsu:knockback_power_4"]
+        }
+      },
+      "evt:knockback_power_5": {
+        "add": {
+          "component_groups": ["tsu:knockback_power_5"]
+        }
+      }
+    }
+  }
+}

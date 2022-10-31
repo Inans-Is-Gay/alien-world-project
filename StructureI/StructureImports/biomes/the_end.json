@@ -1,0 +1,15 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "the_end"
+    },
+    "components": {
+      "minecraft:climate": {
+        "downfall": 1.0,
+        "temperature": 0.7
+      },
+      "end": {}
+    }
+  }
+}

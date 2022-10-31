@@ -1,0 +1,67 @@
+{
+	"biomes": {
+		"forest": {
+			"fog_identifier": "fog:forest",
+			"water_surface_color": "#62d3ff",
+			"water_surface_transparency": 0.65,
+			"water_fog_color": "#62d3ff",
+			"water_fog_distance": 15
+		},
+		"taiga": {
+			"fog_identifier": "fog:taiga",
+			"water_surface_color": "#62d3ff",
+			"water_surface_transparency": 0.65,
+			"water_fog_color": "#62d3ff",
+			"water_fog_distance": 15
+		  },
+		  "mushroom_island": {
+			"fog_identifier": "fog:mushroom",
+			"water_surface_color": "#62d3ff",
+			"water_surface_transparency": 0.65,
+			"water_fog_color": "#62d3ff",
+			"water_fog_distance": 15
+		  },
+		  "birch_forest": {
+			"fog_identifier": "fog:birch",
+			"water_surface_color": "#62d3ff",
+			"water_surface_transparency": 0.65,
+			"water_fog_color": "#62d3ff",
+			"water_fog_distance": 15
+		  },
+		  "mega_taiga": {
+			"fog_identifier": "fog:glow",
+			"water_surface_color": "#00ff04",
+			"water_surface_transparency": 0.85,
+			"water_fog_color": "#00ff04",
+			"water_fog_distance": 15
+		  },
+		  "jungle": {
+			"fog_identifier": "fog:jungle",
+			"water_surface_color": "#62d3ff",
+			"water_surface_transparency": 0.65,
+			"water_fog_color": "#62d3ff",
+			"water_fog_distance": 15
+		  },
+		  "plains": {
+			"fog_identifier": "fog:electric",
+			"water_surface_color": "#62d3ff",
+			"water_surface_transparency": 0.65,
+			"water_fog_color": "#62d3ff",
+			"water_fog_distance": 15
+		  },
+		  "desert": {
+			"fog_identifier": "fog:nigger",
+			"water_surface_color": "#000000",
+			"water_surface_transparency": 1.0,
+			"water_fog_color": "#000000",
+			"water_fog_distance": 15
+		  },
+		  "the_end": {
+			"fog_identifier": "fog:endfog",
+			"water_surface_color": "#ff00ff",
+			"water_surface_transparency": 0.65,
+			"water_fog_color": "#ff00ff",
+			"water_fog_distance": 15
+		  }
+	}
+}

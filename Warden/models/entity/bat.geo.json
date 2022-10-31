@@ -1,0 +1,192 @@
+{
+  "format_version": "1.8.0",
+  "geometry.bat": {
+
+    "visible_bounds_width": 1,
+    "texturewidth": 128,
+    "textureheight": 128,
+    "visible_bounds_height": 1,
+    "visible_bounds_offset": [ 0, 0.5, 0 ],
+    "bones": [
+      {
+        "name": "head",
+        "pivot": [ 0.0, 24.0, 0.0 ],
+      "cubes": [
+        {
+          "origin": [-5.0,25.0,-2.5],
+          "size": [2.0,6.0,2.0],
+          "uv": [62.0,104.0],
+          "mirror": false
+        },
+        {
+          "origin": [-6.0,13.0,-4.5],
+          "size": [2.0,6.0,2.0],
+          "uv": [52.0,96.0],
+          "mirror": false
+        },
+        {
+          "origin": [1.25,12.0,-4.0],
+          "size": [4.0,1.0,1.0],
+          "uv": [52.0,104.0],
+          "mirror": false
+        },
+        {
+          "origin": [3.0,25.0,-2.5],
+          "size": [2.0,6.0,2.0],
+          "uv": [62.0,104.0],
+          "mirror": false
+        },
+        {
+          "origin": [-6.0,20.0,-6.5],
+          "size": [6.0,5.0,6.0],
+          "uv": [6.0,92.0],
+          "mirror": false
+        },
+        {
+          "origin": [1.0,18.0,-8.5],
+          "size": [4.0,4.0,4.0],
+          "uv": [10.0,106.0],
+          "mirror": false
+        },
+        {
+          "origin": [4.0,13.0,-4.5],
+          "size": [2.0,6.0,2.0],
+          "uv": [52.0,96.0],
+          "mirror": false
+        },
+        {
+          "origin": [-4.0,16.0,-7.5],
+          "size": [8.0,10.0,8.0],
+          "uv": [90.0,80.0],
+          "mirror": false
+        },
+        {
+          "origin": [-4.0,16.0,0.5],
+          "size": [8.0,10.0,8.0],
+          "uv": [90.0,80.0],
+          "mirror": false
+        },
+        {
+          "origin": [0.0,20.0,-6.5],
+          "size": [6.0,5.0,6.0],
+          "uv": [6.0,92.0],
+          "mirror": false
+        },
+        {
+          "origin": [-4.0,13.0,-9.5],
+          "size": [2.0,6.0,2.0],
+          "uv": [14.0,82.0],
+          "mirror": false
+        },
+        {
+          "origin": [-5.0,18.0,-8.5],
+          "size": [4.0,4.0,4.0],
+          "uv": [10.0,106.0],
+          "mirror": false
+        },
+        {
+          "origin": [2.0,13.0,-9.5],
+          "size": [2.0,6.0,2.0],
+          "uv": [14.0,82.0],
+          "mirror": false
+        },
+        {
+          "origin": [-5.25,12.0,-4.0],
+          "size": [4.0,1.0,1.0],
+          "uv": [52.0,104.0],
+          "mirror": false
+        }
+        ]
+      },
+      {
+        "name": "rightEar",
+        "pivot": [ 0.0, 24.0, 0.0 ],
+		"neverRender": true,
+        "parent": "head"
+      },
+      {
+        "name": "leftEar",
+        "mirror": true,
+        "pivot": [ 0.0, 24.0, 0.0 ],
+		"neverRender": true,
+        "parent": "head"
+      },
+      {
+        "name": "body",
+        "pivot": [ 0.0, 24.0, 0.0 ],
+        "cubes": [
+          {
+            "origin": [ -7, 5.0, -2.0 ],
+            "size": [ 14, 14, 12 ],
+            "uv": [ 0, 0 ]
+          },
+          {
+            "origin": [ -5.0, -10.0, -1.0 ],
+            "size": [ 10, 16, 10 ],
+            "uv": [ 6, 28 ]
+          },
+          {
+            "origin": [ -3.0, -14.0, -5.0 ],
+            "size": [ 6, 4, 10 ],
+            "uv": [ 76, 0 ]
+          },
+          {
+            "origin": [ -1.0, -14.0, -6.0 ],
+            "size": [ 2, 15, 2 ],
+            "uv": [ 114, 2 ]
+          }
+        ]
+      },
+      {
+        "name": "rightWing",
+        "pivot": [ 0.0, 24.0, 0.0 ],
+        "cubes": [
+          {
+            "origin": [ -12.0, 7.0, 1.5 ],
+            "size": [ 10, 16, 1 ],
+            "uv": [ 38, 56 ]
+          }
+        ],
+        "parent": "body"
+      },
+      {
+        "name": "rightWingTip",
+        "pivot": [ -12.0, 23.0, 1.5 ],
+        "cubes": [
+          {
+            "origin": [ -44.0, 10.0, 1.5 ],
+            "size": [ 32, 12, 1 ],
+            "uv": [ 38, 56 ]
+          }
+        ],
+        "parent": "rightWing"
+      },
+      {
+        "name": "leftWing",
+        "mirror": true,
+        "pivot": [ 0.0, 24.0, 0.0 ],
+        "cubes": [
+          {
+            "origin": [ 2.0, 7.0, 1.5 ],
+            "size": [ 10, 16, 1 ],
+            "uv": [ 38, 56 ]
+          }
+        ],
+        "parent": "body"
+      },
+      {
+        "name": "leftWingTip",
+        "mirror": true,
+        "pivot": [ 12.0, 23.0, 1.5 ],
+        "cubes": [
+          {
+            "origin": [ 12.0, 10.0, 1.5 ],
+            "size": [ 32, 12, 1 ],
+            "uv": [ 38, 56 ]
+          }
+        ],
+        "parent": "leftWing"
+      }
+    ]
+  }
+}

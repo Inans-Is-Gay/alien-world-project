@@ -1,0 +1,47 @@
+{
+  "format_version": "1.12.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "tsu:entity_fire",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false
+  },
+  "components": {
+   "minecraft:collision_box": {
+    "width": 1.0,
+    "height": 1.0
+   },
+   "minecraft:projectile": {
+
+    "on_hit": {
+      "impact_damage": {
+        "damage": 0,
+        "knockback": false,
+        "catch_fire": true,
+        "semi_random_diff_damage": false
+      },
+      "catch_fire": {
+        "fire_affected_by_griefing": false
+      },
+      "remove_on_hit": { }
+    },
+    "power": 10.0,
+    "gravity": 0.00,
+    "inertia": 1,
+    "liquid_inertia": 1,
+    "anchor": 2,
+    "offset": [ 0, 0.5, 0 ],
+    "semi_random_diff_damage": false,
+    "uncertainty_base": 10.0,
+    "reflect_on_hurt": false
+   },
+   "minecraft:physics": {
+   },
+   "minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+   }
+  }
+ }
+}

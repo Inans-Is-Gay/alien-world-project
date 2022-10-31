@@ -1,0 +1,130 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "tsu:terrawalker_spawner",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"tsu:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"tsu:check_interval": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": [ 30, 200 ],
+					"time_down_event": {
+						"event": "evt:check_for_terracreatures"
+					}
+				}
+			},
+			"tsu:terracreature_check": {
+				"minecraft:entity_sensor": {
+					"sensor_range": 30,
+					"relative_range": false,
+					"minimum_count": 1,
+					"event_filters": {
+						"any_of": [{
+							"test": "is_family",
+							"subject": "other",
+							"value": "terrawalker"
+						}]
+					},
+					"event": "evt:terracreature_found"
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 3,
+					"time_down_event": {
+						"event": "evt:spawn_terracreatures"
+					}
+				}
+			},
+			"tsu:spawn_terracreatures": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"spawn_entity": "tsu:terrawalker",
+							"spawn_event": "minecraft:entity_spawned",
+							"single_use": true,
+							"num_to_spawn": 2
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 3,
+					"time_down_event": {
+						"event": "evt:check_for_terracreatures"
+					}
+				}
+			}
+		},
+		"components": {
+			
+			"minecraft:collision_box": {
+				"width": 0.0,
+				"height": 0.0
+			},
+			"minecraft:health": {
+				"value": 100000
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:movement": {
+				"value": 0.0
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": ["tsu:terracreature_check"]
+				},
+				"remove": {
+					"component_groups": ["tsu:check_interval","tsu:spawn_terracreatures"]
+				}
+			},
+			"evt:check_for_terracreatures": {
+				"add": {
+					"component_groups": ["tsu:terracreature_check"]
+				},
+				"remove": {
+					"component_groups": ["tsu:check_interval","tsu:spawn_terracreatures"]
+				}
+			},
+			"evt:terracreature_found": {
+				"remove": {
+					"component_groups": ["tsu:terracreature_check"]
+				},
+				"add": {
+					"component_groups": ["tsu:check_interval"]
+				}
+			},
+			"evt:spawn_terracreatures": {
+				"remove": {
+					"component_groups": ["tsu:terracreature_check"]
+				},
+				"add": {
+					"component_groups": ["tsu:spawn_terracreatures"]
+				}
+			},
+			"evt:despawn": {
+				"add": {
+					"component_groups": ["tsu:despawn"]
+				}
+			}
+		}
+	}
+}

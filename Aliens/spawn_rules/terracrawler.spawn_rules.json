@@ -1,0 +1,142 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "tsu:terracrawler",
+      "population_control": "animal"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+				"minecraft:brightness_filter": {
+					"min": 0,
+					"max": 7
+				},
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 100
+        },
+        "minecraft:herd": {
+          "min_size": 2,
+          "max_size": 4
+        },
+				"minecraft:biome_filter": {
+					"none_of": [
+						{ "test": "has_biome_tag", "operator": "==", "value": "hell" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "crimson_forest" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "warped_forest" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "soulsand_valley" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "basalt_deltas" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "the_end" }
+					]
+				}
+      },
+			{
+        "minecraft:spawns_on_surface": {},
+				"minecraft:brightness_filter": {
+					"min": 8,
+					"max": 15
+				},
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 5
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 1
+        },
+				"minecraft:biome_filter": {
+					"none_of": [
+						{ "test": "has_biome_tag", "operator": "==", "value": "hell" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "crimson_forest" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "warped_forest" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "soulsand_valley" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "basalt_deltas" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "the_end" }
+					]
+				}
+      },
+			{
+        "minecraft:spawns_on_surface": {},
+				"minecraft:brightness_filter": {
+					"min": 0,
+					"max": 7
+				},
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 200
+        },
+        "minecraft:herd": {
+          "min_size": 2,
+          "max_size": 4
+        },
+				"minecraft:biome_filter": {
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "forest"
+				}
+      },
+			{
+        "minecraft:spawns_on_surface": {},
+				"minecraft:brightness_filter": {
+					"min": 8,
+					"max": 15
+				},
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 10
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 1
+        },
+				"minecraft:biome_filter": {
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "forest"
+				}
+      },
+      {
+        "minecraft:spawns_underground": {},
+        "minecraft:brightness_filter": {
+          "min": 0,
+          "max": 7,
+          "adjust_for_weather": true
+        },
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 6
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 1
+        },
+				"minecraft:biome_filter": {
+					"none_of": [
+						{ "test": "has_biome_tag", "operator": "==", "value": "hell" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "crimson_forest" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "warped_forest" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "soulsand_valley" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "basalt_deltas" },
+						{ "test": "has_biome_tag", "operator": "==", "value": "the_end" }
+					]
+				}
+      }
+    ]
+  }
+}

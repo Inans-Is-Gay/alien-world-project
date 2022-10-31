@@ -1,0 +1,140 @@
+{
+    "format_version": "1.17",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "hortence_kelp",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "hortence.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "hortence.kelp",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": ["/tag @e[name=main] add seen_kelp_spec_dialogue"],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "hortence_reef",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "hortence.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "hortence.reef",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": ["/tag @e[name=main] add seen_reef_spec_dialogue"],
+                "on_close_commands": [
+                    "/execute @e[name=main,tag=mel_dialogue] ~~~ dialogue open @e[type=chum:npc_hortence] @a hortence_melody",
+                    "/execute @e[name=main,tag=!mel_dialogue,tag=jung_dialogue] ~~~ dialogue open @e[type=chum:npc_hortence] @a hortence_kelp"
+                    ],
+                "buttons": []
+            },
+            {
+                "scene_tag": "hortence_melody",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "hortence.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "hortence.melody",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": ["/tag @e[name=main] add seen_mel_spec_dialogue"],
+                "on_close_commands": ["/execute @e[name=main,tag=jung_dialogue] ~~~ dialogue open @e[type=chum:npc_hortence] @a hortence_kelp"],
+                "buttons": []
+            },
+            {
+                "scene_tag": "hortence_nessie",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "hortence.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "hortence.nessie",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": ["/tag @e[name=main] add seen_nessie_spec_dialogue"],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "hortence_special_fish",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "hortence.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "hortence.special_fish",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            }
+        ]
+    }
+}

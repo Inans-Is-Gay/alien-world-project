@@ -1,0 +1,950 @@
+{
+    "format_version": "1.17",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "ped_parrot",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_parrot.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "parrot.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "parrot.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "parrot.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.parrot"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_feather",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_feather.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "feather.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "feather.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "feather.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.feather"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_pod",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_pod.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "pod.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "pod.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "pod.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.pod"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_toad",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_toad.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "toad.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "toad.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "toad.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.toad"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_cuddle",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_cuddle.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "cuddle.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "cuddle.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "cuddle.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.cuddle"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_chameleon",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_chameleon.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "chameleon.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "chameleon.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "chameleon.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.chameleon"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_kelp",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_kelp.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "kelp.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "kelp.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "kelp.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.kelp"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_piranja",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_piranja.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "piranja.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "piranja.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "piranja.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.piranja"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_shark",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_shark.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "shark.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "shark.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "shark.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.shark"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_alien",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_alien.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "alien.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "alien.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "alien.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.alien"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_rocket",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_rocket.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "rocket.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "rocket.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "rocket.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.rocket"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_puffer",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_puffer.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "puffer.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "puffer.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "puffer.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.puffer"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_angler",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_angler.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "angler.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "angler.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "angler.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.angler"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_scholar",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_scholar.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "scholar.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "scholar.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "scholar.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.scholar"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_spook",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_spook.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "spook.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "spook.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "spook.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.spook"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_butterfly",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_butterfly.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "butterfly.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "butterfly.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "butterfly.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.butterfly"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_spike",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_spike.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "spike.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "spike.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "spike.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.spike"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_royal",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_royal.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "royal.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "royal.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "royal.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.royal"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_serpent",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_serpent.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "serpent.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "serpent.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "serpent.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.serpent"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_crab",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_crab.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "crab.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "crab.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "crab.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.crab"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_slug",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_slug.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "slug.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "slug.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "slug.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.slug"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_crawler",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_crawler.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "crawler.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "crawler.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "crawler.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.crawler"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            },
+            {
+                "scene_tag": "ped_eclipse",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "item.chum:caught_eclipse.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "eclipse.ped1"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "eclipse.ped2"
+                        },
+                        {
+                            "translate": "\n"
+                        },
+                        {
+                            "translate": "eclipse.ped3"
+                        },
+                        {
+                            "translate": "\n\n"
+                        },
+                        {
+                            "translate": "ped.eclipse"
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": [],
+                "buttons": []
+            }
+        ]
+    }
+}

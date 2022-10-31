@@ -1,0 +1,118 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:buoy",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"lighting": "controller.animation.buoy.lighting"
+			},
+			"scripts": {
+				"animate": [
+					"lighting"
+				]
+			}
+		},
+		"component_groups": {
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"buoy:add_light": {
+				"minecraft:is_tamed": {}
+			},
+			"buoy:collect": {
+				"minecraft:is_ignited": {}
+			}
+		},
+		"components": {
+			"minecraft:buoyant": {
+				"liquid_blocks": [
+					"water"
+				],
+				"simulate_waves": true
+			},
+			"minecraft:collision_box": {
+				"height": 0.5,
+				"width": 1.5
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:physics": {},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "entity_attack",
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "damager",
+								"value": "player"
+							},
+							"event": "buoy:collect"
+						},
+						"deals_damage": false
+					},
+					{
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							"event": "buoy:collect"
+						},
+						"swing": true
+					}
+				]
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"buoy:add_light"
+					]
+				}
+			},
+			"buoy:collect": {
+				"add": {
+					"component_groups": [
+						"buoy:collect"
+					]
+				}
+			},
+			"buoy:collect_end": {
+				"remove": {
+					"component_groups": [
+						"buoy:collect"
+					]
+				}
+			},
+			"buoy:light_finished": {
+				"remove": {
+					"component_groups": [
+						"buoy:add_light"
+					]
+				}
+			},
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			}
+		}
+	}
+}

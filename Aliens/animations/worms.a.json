@@ -1,0 +1,17 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.worms.ambient_sfx": {
+            "animation_length": 5.0,
+            "loop": true,
+            "timeline": {
+                "0.0": [
+                    "/playsound worm_squish @a ~~~ 1 1"
+                ],
+                "0.9": [
+                    "@s worms:ambient_sfx_cancel"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,255 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.jetpack.drop_jetpack": {
+      "initial_state": "wait_for_death",
+      "states": {
+        "wait_for_death": {
+          "transitions": [
+            {
+              "on_death": "!query.is_alive && query.variant != 0"
+            }
+          ]
+        },
+        "on_death": {
+          "on_entry": [
+            "/summon tsu:drop_jetpack"
+          ],
+          "on_exit": [
+            "/clear @s"
+          ],
+          "transitions": [
+            {
+              "wait_for_death": "query.is_alive"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.jetpack.update_rise_variable": {
+      "initial_state": "not_rising",
+      "states": {
+        "not_rising": {
+          "transitions": [
+            {
+              "rising": "query.is_jumping"
+            }
+          ]
+        },
+        "rising": {
+          "on_entry": [
+            "variable.rise = !variable.rise;"
+          ],
+          "transitions": [
+            {
+              "not_rising": "!query.is_jumping"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.jetpack.update_hover_variable": {
+      "initial_state": "not_sneaking",
+      "states": {
+        "not_sneaking": {
+          "transitions": [
+            {
+              "sneaking": "query.is_sneaking"
+            }
+          ]
+        },
+        "sneaking": {
+          "on_entry": [
+            "variable.hover = !variable.hover;"
+          ],
+          "transitions": [
+            {
+              "not_sneaking": "!query.is_sneaking"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.jetpack": {
+      "initial_state": "wait_to_init",
+      "states": {
+        "wait_to_init": {
+          "transitions": [
+            {
+              "init": "1"
+            }
+          ]
+        },
+        "init": {
+          "animations": [
+            "jetpack_init_repeater"
+          ],
+          "on_exit": [
+            "variable.hover = 0;",
+            "variable.rise = 0;",
+            "/tp ~ ~ ~"
+          ],
+          "transitions": [
+            {
+              "unequipped": "query.variant == 0"
+            },
+            {
+              "none_ground": "query.variant != 4"
+            }
+          ]
+        },
+        "unequipped": {
+          "on_entry": [
+            "/replaceitem entity @s[m = c] slot.armor.chest 0 chainmail_chestplate { \"minecraft:keep_on_death\": {} }",
+						"/event entity @s evt:jetpack_off"
+          ],
+          "on_exit": [
+            "variable.hover = 0;",
+            "variable.rise = 0;",
+						"/event entity @s evt:jetpack_on"
+          ],
+          "transitions": [
+            {
+              "none_ground": "query.variant != 0"
+            }
+          ]
+        },
+        "none_ground": {
+          "animations": [
+            "jetpack_none_ground"
+          ],
+          "on_entry": [
+            "/replaceitem entity @s slot.armor.chest 0 chainmail_chestplate",
+            "@s evt:set_jetpack_none_ground",
+						"/event entity @s evt:jetpack_on"
+          ],
+          "transitions": [
+            {
+              "unequipped": "query.variant == 0"
+            },
+            {
+              "rise": "variable.rise"
+            },
+            {
+              "hover": "variable.hover"
+            },
+            {
+              "none_air": "!query.is_on_ground"
+            }
+          ]
+        },
+        "none_air": {
+          "animations": [
+            "jetpack_none_air"
+          ],
+          "on_entry": [
+            "/replaceitem entity @s slot.armor.chest 0 elytra 1 0 { \"minecraft:item_lock\": { \"mode\": \"lock_in_slot\" }, \"minecraft:keep_on_death\": {} }",
+            "@s evt:set_jetpack_none_air",
+						"/event entity @s evt:jetpack_on"
+          ],
+          "transitions": [
+            {
+              "unequipped": "query.variant == 0"
+            },
+            {
+              "glide": "query.is_gliding"
+            },
+            {
+              "hover": "variable.hover"
+            },
+            {
+              "none_ground": "query.is_on_ground"
+            }
+          ]
+        },
+        "rise": {
+          "animations": [
+            "jetpack_rise",
+            "jetpack_rise_sound"
+          ],
+          "on_entry": [
+            "variable.hover = 0;",
+            "variable.rise = 1;",
+            "/replaceitem entity @s slot.armor.chest 0 chainmail_chestplate 1 0 { \"minecraft:item_lock\": { \"mode\": \"lock_in_slot\" }, \"minecraft:keep_on_death\": {} }",
+            "/effect @s levitation 751619276 10 true",
+            "@s evt:set_jetpack_rise",
+						"/event entity @s evt:jetpack_on"
+          ],
+          "on_exit": [
+            "/playsound jetpack.off @s ~ ~ ~ 0.3",
+            "/stopsound @s jetpack.rise"
+          ],
+          "transitions": [
+            {
+              "unequipped": "query.variant == 0"
+            },
+            {
+              "hover": "variable.hover"
+            },
+            {
+              "none_air": "!variable.rise"
+            }
+          ]
+        },
+        "hover": {
+          "animations": [
+            "jetpack_hover",
+            "jetpack_hover_sound"
+          ],
+          "on_entry": [
+            "variable.hover = 1;",
+            "variable.rise = 0;",
+            "/replaceitem entity @s slot.armor.chest 0 chainmail_chestplate 1 0 { \"minecraft:item_lock\": { \"mode\": \"lock_in_slot\" }, \"minecraft:keep_on_death\": {} }",
+            "@s evt:set_jetpack_hover",
+						"/event entity @s evt:jetpack_on"
+          ],
+          "on_exit": [
+            "/playsound jetpack.off @s ~ ~ ~ 0.2",
+            "/stopsound @s jetpack.hover"
+          ],
+          "transitions": [
+            {
+              "unequipped": "query.variant == 0"
+            },
+            {
+              "rise": "variable.rise"
+            },
+            {
+              "none_air": "!variable.hover"
+            }
+          ]
+        },
+        "glide": {
+          "animations": [
+            "jetpack_glide",
+            "jetpack_glide_sound"
+          ],
+          "on_entry": [
+            "variable.hover = 0;",
+            "variable.rise = 0;",
+            "@s evt:set_jetpack_glide",
+						"/event entity @s evt:jetpack_on"
+          ],
+          "on_exit": [
+            "/playsound jetpack.off @s ~ ~ ~ 0.1",
+            "/stopsound @s jetpack.glide"
+          ],
+          "transitions": [
+            {
+              "unequipped": "query.variant == 0"
+            },
+            {
+              "rise": "variable.rise"
+            },
+            {
+              "hover": "variable.hover"
+            },
+            {
+              "none_air": "!query.is_gliding"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

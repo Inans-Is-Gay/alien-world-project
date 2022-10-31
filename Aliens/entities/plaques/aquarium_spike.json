@@ -1,0 +1,163 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:aquarium_spike",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:mark_variant": {
+				"value": 4
+			},
+			"minecraft:type_family": {
+				"family": [
+					"plaque"
+				]
+			},
+			"minecraft:npc": {},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"height": 2,
+						"width": 1
+					}
+				]
+			},
+			"minecraft:environment_sensor": {
+				"triggers": {
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_tag",
+								"value": "has_fish"
+							},
+							{
+								"test": "has_component",
+								"operator": "not",
+								"value": "minecraft:is_ignited"
+							}
+						]
+					},
+					"event": "chum:plaque_particles"
+				}
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:collision_box": {
+				"height": 1.5,
+				"width": 0
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"component_groups": {
+			"chum:plaque_particles": {
+				"minecraft:is_ignited": {},
+				"minecraft:environment_sensor": {
+					"triggers": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "distance_to_nearest_player",
+									"subject": "self",
+									"value": 5,
+									"operator": "<"
+								}
+							]
+						},
+						"event": "chum:complete_animation"
+					}
+				}
+			},
+			"chum:no_fish": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"chum:complete_animation": {
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:timer": {
+					"time": 1,
+					"time_down_event": {
+						"event": "chum:complete"
+					}
+				}
+			},
+			"chum:complete": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			}
+		},
+		"events": {
+			"chum:reset": {
+				"add": {
+					"component_groups": [
+						"chum:no_fish"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:complete_animation",
+						"chum:complete"
+					]
+				}
+			},
+			"chum:complete": {
+				"add": {
+					"component_groups": [
+						"chum:complete"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:complete_animation",
+						"chum:no_fish"
+					]
+				}
+			},
+			"chum:plaque_particles": {
+				"add": {
+					"component_groups": [
+						"chum:plaque_particles"
+					]
+				}
+			},
+			"chum:complete_animation": {
+				"remove": {
+					"component_groups": [
+						"chum:no_fish",
+						"chum:plaque_particles"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"chum:complete_animation"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"chum:no_fish"
+					]
+				}
+			}
+		}
+	}
+}

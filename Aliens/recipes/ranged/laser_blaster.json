@@ -1,0 +1,32 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "tsu:laser_blaster"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " G ",
+      "CIE"
+    ],
+    "key": {
+      "G": {
+        "item": "ghast_tear"
+      },
+      "C": {
+        "item": "tsu:carbon_steel_staff"
+      },
+      "I": {
+        "item": "tsu:compressed_iron"
+      },
+      "E": {
+        "item": "tsu:terra_emerald"
+      }
+    },
+    "result": {
+      "item": "tsu:laser_blaster"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.player.check_weapon_cd.check_laser_blaster_cd": {
+      "loop": true,
+      "animation_length": 0.01,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={ARMode1CD=1..}] evt:disable_animation",
+          "/event entity @s[scores={ARMode1CD=0}] evt:enable_animation"
+        ]
+      }
+    },
+		"animation.player.check_weapon_cd.check_fire_saw_cd": {
+      "loop": true,
+      "animation_length": 0.01,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={cdFSr=1..}] evt:disable_animation",
+          "/event entity @s[scores={cdFSr=0}] evt:enable_animation"
+        ]
+      }
+    },
+		"animation.player.check_weapon_cd.check_kinetic_axe_cd": {
+      "loop": true,
+      "animation_length": 0.01,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={cdKAl=1..}] evt:disable_animation",
+          "/event entity @s[scores={cdKAl=0}] evt:enable_animation"
+        ]
+      }
+    },
+		"animation.player.check_weapon_cd.check_laser_bow_cd": {
+      "loop": true,
+      "animation_length": 0.01,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={cdLBr=1..}] evt:disable_animation",
+          "/event entity @s[scores={cdLBr=0}] evt:enable_animation"
+        ]
+      }
+    },
+		"animation.player.check_weapon_cd.check_laser_sword_cd": {
+      "loop": true,
+      "animation_length": 0.01,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={cdLSr=1..}] evt:disable_animation",
+          "/event entity @s[scores={cdLSr=0}] evt:enable_animation"
+        ]
+      }
+    },
+		"animation.player.check_weapon_cd.check_longsword_cd": {
+      "loop": true,
+      "animation_length": 0.01,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={cdLNSr=1..}] evt:disable_animation",
+          "/event entity @s[scores={cdLNSr=0}] evt:enable_animation"
+        ]
+      }
+    },
+		"animation.player.check_weapon_cd.check_pulse_gun_cd": {
+      "loop": true,
+      "animation_length": 0.01,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={PGMode1CD=1..}] evt:disable_animation",
+          "/event entity @s[scores={PGMode1CD=0}] evt:enable_animation"
+        ]
+      }
+    },
+		"animation.player.check_weapon_cd.check_rocket_axe_cd": {
+      "loop": true,
+      "animation_length": 0.01,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={cdRAr=1..}] evt:disable_animation",
+          "/event entity @s[scores={cdRAr=0}] evt:enable_animation"
+        ]
+      }
+    }
+  }
+}

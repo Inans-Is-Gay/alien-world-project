@@ -1,0 +1,48 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.mercorgi": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"tamed": "query.is_tamed"
+						}
+					]
+				},
+				"tamed": {
+					"on_entry": [
+						"/function tutorial/give_rod",
+						"/function debug/seq_unHalt"
+					]
+				}
+			}
+		},
+		"controller.animation.player_boat": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"riding": "query.is_riding"
+						}
+					]
+				},
+				"riding": {
+					"on_entry": [
+						"/tag @e[name=main] add riding"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_riding"
+						}
+					],
+					"on_exit": [
+						"/tag @e[name=main] remove riding"
+					]
+				}
+			}
+		}
+	}
+}

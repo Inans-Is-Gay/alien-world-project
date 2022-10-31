@@ -1,0 +1,146 @@
+[
+  {
+    "flipbook_texture": "textures/blocks/prismarine_rough",
+    "atlas_tile": "prismarine",
+    "ticks_per_frame": 0,
+    "frames": [ 0]
+  },
+  {
+    "flipbook_texture": "textures/blocks/deepslate/chiseled_deepslate",
+    "atlas_tile": "chiseled_deepslate",
+    "ticks_per_frame": 5,
+    "frames": [ 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 11, 12, 13, 14, 15, 0, 0, 0, 0, 0, 0, 16, 17, 18, 19, 20, 0, 0, 0, 0, 21, 22, 23, 24, 25, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26, 27, 28, 29, 30, 31, 32, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  },
+   { 
+    "flipbook_texture": "textures/blocks/deepslate/chiseled_deepslate_2",
+    "atlas_tile": "chiseled_deepslate_2",
+    "ticks_per_frame": 5,
+    "frames": [ 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 9, 10, 11, 12, 13, 14, 15, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 18, 19, 20, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 23, 24, 25, 26, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 9, 10, 11, 12, 13, 14, 15, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 29, 30, 31, 32, 33]
+  },
+  
+  {
+    "flipbook_texture": "textures/blocks/seagrass",
+    "atlas_tile": "seagrass_short",
+    "frames": [ 0, 1, 2, 3, 4, 5, 6, 7],
+    "ticks_per_frame": 3
+  },
+   {
+    "flipbook_texture": "textures/blocks/redstone_block",
+    "atlas_tile": "redstone_block",
+    "frames": [ 0, 1, 2, 3 ]
+  },
+   {
+    "flipbook_texture": "textures/blocks/endframe_side",
+    "atlas_tile": "endframe_side",
+	"ticks_per_frame": 3,
+    "frames": [ 0, 0, 0, 0, 0, 0, 1, 2, 3, 4 ]
+  },
+   {
+    "flipbook_texture": "textures/blocks/endframe_top",
+    "atlas_tile": "endframe_top",
+	"ticks_per_frame": 3,
+    "frames": [ 0, 0, 0, 0, 0, 0, 0, 1, 2, 3 ]
+  },
+   {
+    "flipbook_texture": "textures/blocks/endframe_eye",
+    "atlas_tile": "endframe_eye",
+	"ticks_per_frame": 3,
+    "frames": [ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 2, 2, 2, 3, 2, 2, 3, 3, 2, 2, 3, 3 ]
+  },
+    {
+    "flipbook_texture": "textures/blocks/smithing_table_top",
+    "atlas_tile": "smithing_table_top",
+	"ticks_per_frame": 2,
+    "frames": [ 0, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+  },
+   {
+    "flipbook_texture": "textures/blocks/cartography_table_top",
+    "atlas_tile": "cartography_table_top",
+	"ticks_per_frame": 5,
+    "frames": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+  },
+   {
+    "flipbook_texture": "textures/blocks/enchanting_table_top",
+    "atlas_tile": "enchanting_table_top",
+	"ticks_per_frame": 3,
+    "frames": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 ]
+  },
+  {
+    "flipbook_texture": "textures/blocks/loom_front",
+    "atlas_tile": "loom_front",
+    "frames": [ 0, 1],
+    "ticks_per_frame": 3
+  },
+  {
+    "flipbook_texture": "textures/blocks/lectern_front",
+    "atlas_tile": "lectern_front",
+    "frames": [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "ticks_per_frame": 1
+  },
+  {
+    "flipbook_texture": "textures/blocks/lectern_top",
+    "atlas_tile": "lectern_top",
+    "frames": [ 0, 14, 0, 14, 0, 14, 0, 14, 0, 14, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 10, 11, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13],
+    "ticks_per_frame": 3
+  },
+  {
+    "flipbook_texture": "textures/blocks/loom_top",
+    "atlas_tile": "loom_top",
+    "frames": [ 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "ticks_per_frame": 1
+  },
+   {
+    "flipbook_texture": "textures/blocks/furnace_front_on",
+    "atlas_tile": "furnace_front_on",
+	"ticks_per_frame": 2,
+    "frames": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+  },
+   {
+    "flipbook_texture": "textures/blocks/mob_spawner",
+    "atlas_tile": "mob_spawner",
+	"ticks_per_frame": 8,
+    "frames": [ 0, 1, 2 ]
+  },
+  {
+    "flipbook_texture": "textures/blocks/chiseled_nether_bricks",
+    "atlas_tile": "chiseled_nether_bricks",
+    "frames": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ],
+    "ticks_per_frame": 1
+  },
+  {
+    "flipbook_texture": "textures/blocks/respawn_anchor_side0",
+    "atlas_tile": "respawn_anchor_side",
+    "frames": [ 0, 1],
+    "ticks_per_frame": 5
+  },
+  {
+    "flipbook_texture": "textures/blocks/respawn_anchor_side1",
+    "atlas_tile": "respawn_anchor_side1",
+    "frames": [ 0, 1, 2, 3, 4 ],
+    "ticks_per_frame": 3
+  },
+  {
+    "flipbook_texture": "textures/blocks/respawn_anchor_side2",
+    "atlas_tile": "respawn_anchor_side2",
+    "frames": [ 0, 1, 2, 3, 4 ],
+    "ticks_per_frame": 3
+  },
+  {
+    "flipbook_texture": "textures/blocks/respawn_anchor_side3",
+    "atlas_tile": "respawn_anchor_side3",
+    "frames": [ 0, 1, 2, 3, 4 ],
+    "ticks_per_frame": 3
+  },
+  {
+    "flipbook_texture": "textures/blocks/respawn_anchor_side4",
+    "atlas_tile": "respawn_anchor_side4",
+    "frames": [ 0, 1, 2, 3, 4 ],
+    "ticks_per_frame": 3
+  },
+  {
+    "flipbook_texture": "textures/blocks/respawn_anchor_top",
+    "atlas_tile": "respawn_anchor_top",
+    "frames": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 ],
+    "ticks_per_frame": 1
+  }
+]

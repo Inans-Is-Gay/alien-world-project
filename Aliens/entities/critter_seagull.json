@@ -1,0 +1,311 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:critter_seagull",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"stuck_controller": "controller.animation.critter_seagull.stuck_controller"
+			},
+			"scripts": {
+				"animate": [
+					"stuck_controller"
+				]
+			}
+		},
+		"component_groups": {
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"seagull:flying": {
+				"minecraft:is_ignited": {},
+				"minecraft:behavior.float_wander": {
+					"xz_dist": 15,
+					"y_dist": 2,
+					"y_offset": 0.5,
+					"random_reselect": false,
+					"float_duration": [
+						3.2,
+						6
+					],
+					"priority": 3,
+					"must_reach": true
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"randomInterval": true,
+					"time": [
+						15,
+						35
+					],
+					"time_down_event": {
+						"event": "seagull:try_landing"
+					}
+				},
+				"minecraft:environment_sensor": {
+					"triggers": {
+						"event": "chum:despawn",
+						"filters": {
+							"test": "distance_to_nearest_player",
+							"operator": ">=",
+							"value": 72
+						}
+					}
+				}
+			},
+			"seagull:landing": {
+				"minecraft:is_ignited": {},
+				"minecraft:behavior.float_wander": {
+					"xz_dist": 15,
+					"y_dist": 6,
+					"y_offset": -5,
+					"random_reselect": false,
+					"float_duration": [
+						0.4,
+						1
+					],
+					"priority": 3,
+					"must_reach": false
+				},
+				"minecraft:environment_sensor": {
+					"triggers": {
+						"filters": {
+							"any_of": [
+								{
+									"test": "on_ground"
+								},
+								{
+									"test": "in_water"
+								}
+							]
+						},
+						"event": "seagull:grounded"
+					}
+				}
+			},
+			"seagull:grounded": {
+				"minecraft:entity_sensor": {
+					"event_filters": {
+						"test": "is_family",
+						"subject": "other",
+						"value": "player"
+					},
+					"sensor_range": 4.5,
+					"event": "seagull:begin_fly"
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"randomInterval": true,
+					"time": [
+						5,
+						60
+					],
+					"time_down_event": {
+						"event": "seagull:begin_fly"
+					}
+				},
+				"minecraft:behavior.look_at_player": {
+					"look_distance": 8,
+					"look_time": [
+						2,
+						4
+					],
+					"probability": 10,
+					"priority": 2
+				},
+				"minecraft:behavior.random_stroll": {
+					"priority": 3,
+					"xz_dist": 0,
+					"y_dist": 0,
+					"interval": 0
+				},
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"event": "chum:despawn",
+							"filters": {
+								"test": "distance_to_nearest_player",
+								"operator": ">=",
+								"value": 70
+							}
+						}
+					]
+				}
+			},
+			"seagull:stuck": {
+				"minecraft:is_tamed": {},
+				"minecraft:behavior.float": {
+					"priority": 2
+				},
+				"minecraft:timer": {
+					"time": [
+						1,
+						2
+					],
+					"randomInterval": true,
+					"time_down_event": {
+						"event": "seagull:not_stuck"
+					}
+				},
+				"minecraft:behavior.float_wander": {
+					"float_duration": [
+						0.2,
+						0.5
+					],
+					"priority": 1,
+					"random_reselect": true,
+					"xz_dist": 3,
+					"y_dist": 3
+				},
+				"minecraft:is_ignited": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"seagull",
+					"small",
+					"medium"
+				]
+			},
+			"minecraft:collision_box": {
+				"height": 0.3,
+				"width": 0.3
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "damager",
+								"value": "fish"
+							}
+						},
+						"deals_damage": true
+					},
+					{
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/seagull.json"
+			},
+			"minecraft:movement": {
+				"value": 0.05
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:environment_sensor": {
+				"triggers": {
+					"event": "chum:despawn",
+					"filters": {
+						"test": "distance_to_nearest_player",
+						"operator": ">=",
+						"value": 66
+					}
+				}
+			},
+			"minecraft:navigation.float": {
+				"can_path_over_water": true,
+				"avoid_water": false
+			},
+			"minecraft:movement.basic": {
+				"max_turn": 1
+			},
+			"minecraft:behavior.rise_to_liquid_level": {
+				"priority": 1,
+				"liquid_y_offset": 0.25,
+				"rise_delta": 0.01,
+				"sink_delta": 0.01
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"seagull:grounded"
+					]
+				}
+			},
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			},
+			"seagull:get_unstuck": {
+				"remove": {
+					"component_groups": [
+						"seagull:flying",
+						"seagull:landing",
+						"seagull:grounded"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"seagull:stuck"
+					]
+				}
+			},
+			"seagull:not_stuck": {
+				"remove": {
+					"component_groups": [
+						"seagull:stuck"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"seagull:flying"
+					]
+				}
+			},
+			"seagull:begin_fly": {
+				"add": {
+					"component_groups": [
+						"seagull:flying"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"seagull:landing",
+						"seagull:grounded"
+					]
+				}
+			},
+			"seagull:try_landing": {
+				"add": {
+					"component_groups": [
+						"seagull:landing"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"seagull:flying",
+						"seagull:grounded"
+					]
+				}
+			},
+			"seagull:grounded": {
+				"add": {
+					"component_groups": [
+						"seagull:grounded"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"seagull:flying",
+						"seagull:landing"
+					]
+				}
+			}
+		}
+	}
+}

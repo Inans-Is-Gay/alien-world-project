@@ -1,0 +1,36 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "tsu:pulse_gun"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " G ",
+      "CRD",
+      " S "
+    ],
+    "key": {
+      "G": {
+        "item": "ghast_tear"
+      },
+      "C": {
+        "item": "tsu:carbon_steel_staff"
+      },
+      "R": {
+        "item": "tsu:compressed_redstone"
+      },
+      "D": {
+        "item": "tsu:terra_emerald"
+      },
+      "S": {
+        "item": "slime"
+      }
+    },
+    "result": {
+      "item": "tsu:pulse_gun"
+    }
+  }
+}

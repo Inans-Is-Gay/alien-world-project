@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.dialog": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"open": "query.is_ignited"
+						}
+					]
+				},
+				"open": {
+					"on_entry": [
+						"/dialogue open @s @p[c=1] conversion_system",
+						"/event entity @s chum:reset_dialog"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_ignited"
+						}
+					]
+				}
+			}
+		}
+	}
+}

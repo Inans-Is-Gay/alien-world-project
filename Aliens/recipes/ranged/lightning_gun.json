@@ -1,0 +1,36 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "tsu:lightning_gun"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " Q ",
+      "CPD",
+      " R "
+    ],
+    "key": {
+      "Q": {
+        "item": "gold_block"
+      },
+      "C": {
+        "item": "tsu:carbon_steel_staff"
+      },
+      "P": {
+        "item": "tsu:diamond_bit_plating"
+      },
+      "D": {
+        "item": "tsu:terra_diamond"
+      },
+      "R": {
+        "item": "tsu:compressed_redstone"
+      }
+    },
+    "result": {
+      "item": "tsu:lightning_gun"
+    }
+  }
+}

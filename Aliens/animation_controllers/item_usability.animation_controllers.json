@@ -1,0 +1,86 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.player.can_use_item": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"laser_blaster": "query.is_item_name_any(0) == 'laser_blaster'"
+						},
+						{
+							"fire_saw": "query.is_item_name_any(0) == 'fire_saw'"
+						},
+						{
+							"kinetic_axe": "query.is_item_name_any(0) == 'kinetic_axe'"
+						},
+						{
+							"laser_bow": "query.is_item_name_any(0) == 'laser_bow'"
+						},
+						{
+							"laser_sword": "query.is_item_name_any(0) == 'laser_sword'"
+						},
+						{
+							"longsword": "query.is_item_name_any(0) == 'longsword'"
+						},
+						{
+							"pulse_gun": "query.is_item_name_any(0) == 'pulse_gun'"
+						},
+						{
+							"rocket_axe": "query.is_item_name_any(0) == 'rocket_axe'"
+						}
+					]
+				},
+				"laser_blaster": {
+					"animations": [ "check_laser_blaster_cd" ],
+					"transitions": [{
+						"default": "query.is_item_name_any(0) != 'laser_blaster'"
+					}]
+				},
+				"fire_saw": {
+					"animations": [ "check_fire_saw_cd" ],
+					"transitions": [{
+						"default": "query.is_item_name_any(0) != 'fire_saw'"
+					}]
+				},
+				"kinetic_axe": {
+					"animations": [ "check_kinetic_axe_cd" ],
+					"transitions": [{
+						"default": "query.is_item_name_any(0) != 'kinetic_axe'"
+					}]
+				},
+				"laser_bow": {
+					"animations": [ "check_laser_bow_cd" ],
+					"transitions": [{
+						"default": "query.is_item_name_any(0) != 'laser_bow'"
+					}]
+				},
+				"laser_sword": {
+					"animations": [ "check_laser_sword_cd" ],
+					"transitions": [{
+						"default": "query.is_item_name_any(0) != 'laser_sword'"
+					}]
+				},
+				"longsword": {
+					"animations": [ "check_longsword_cd" ],
+					"transitions": [{
+						"default": "query.is_item_name_any(0) != 'longsword'"
+					}]
+				},
+				"pulse_gun": {
+					"animations": [ "check_pulse_gun_cd" ],
+					"transitions": [{
+						"default": "query.is_item_name_any(0) != 'pulse_gun'"
+					}]
+				},
+				"rocket_axe": {
+					"animations": [ "check_rocket_axe_cd" ],
+					"transitions": [{
+						"default": "query.is_item_name_any(0) != 'rocket_axe'"
+					}]
+				}
+			}
+		}
+	}
+}

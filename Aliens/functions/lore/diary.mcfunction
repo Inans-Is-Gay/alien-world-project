@@ -1,0 +1,1 @@
+structure load mystructure:lore_diary 355 55 104

@@ -1,0 +1,295 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:fish_slug",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"a10837329a385694_a_0": "animation.a10837329a385694acf7389506e5497f7f1ada70_0",
+				"a10837329a385694_a_1": "animation.a10837329a385694acf7389506e5497f7f1ada70_1",
+				"a10837329a385694_a_2": "animation.a10837329a385694acf7389506e5497f7f1ada70_2"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"a10837329a385694_a_0": "q.is_baby"
+					},
+					{
+						"a10837329a385694_a_1": "q.is_tamed"
+					},
+					{
+						"a10837329a385694_a_2": "q.is_chested"
+					}
+				]
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"crab"
+				]
+			},
+			"minecraft:navigation.generic": {
+				"is_amphibious": true,
+				"can_path_over_water": false,
+				"can_break_doors": true,
+				"can_swim": false,
+				"can_walk": true,
+				"avoid_sun": true
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 0.6
+			},
+			"minecraft:underwater_movement": {
+				"value": 0.2
+			},
+			"minecraft:movement.generic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 1,
+				"persist_time": 0,
+				"reselect_targets": true,
+				"entity_types": {
+					"max_dist": 16,
+					"filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "trap"
+							},
+							{
+								"test": "has_component",
+								"operator": "not",
+								"subject": "other",
+								"value": "minecraft:behavior.rise_to_liquid_level"
+							}
+						]
+					}
+				}
+			},
+			"minecraft:entity_sensor": {
+				"event": "chum:trapped",
+				"sensor_range": 1.4,
+				"event_filters": {
+					"all_of": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "trap"
+						},
+						{
+							"test": "has_component",
+							"operator": "not",
+							"subject": "other",
+							"value": "minecraft:behavior.rise_to_liquid_level"
+						}
+					]
+				}
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 1,
+				"attack_once": false,
+				"speed_multiplier": 2.4,
+				"on_attack": {
+					"event": "chum:trapped",
+					"target": "self"
+				}
+			},
+			"minecraft:attack": {
+				"damage": 0
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"filters": {
+								"test": "has_equipment",
+								"subject": "other",
+								"value": "wooden_hoe"
+							},
+							"event": "chum:collect_nettable"
+						},
+						"swing": true
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"test": "has_equipment",
+								"subject": "damager",
+								"value": "wooden_hoe"
+							},
+							"event": "chum:collect_nettable"
+						},
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "damager",
+								"value": "player"
+							}
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"test": "in_water"
+						},
+						"event": "chum:in_water"
+					},
+					{
+						"filters": {
+							"test": "in_water",
+							"operator": "!="
+						},
+						"event": "chum:on_land"
+					}
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_air": true,
+				"breathes_water": true
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {
+					"min_distance": 32,
+					"max_distance": 40
+				}
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 7,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"entity_types": {
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"value": "player"
+					},
+					"sprint_speed_multiplier": 5,
+					"walk_speed_multiplier": 5
+				},
+				"sprint_speed_multiplier": 5,
+				"walk_speed_multiplier": 5,
+				"max_dist": 4,
+				"max_flee": 6,
+				"priority": 2
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 9
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"component_groups": {
+			"chum:land_movement": {
+				"minecraft:movement": {
+					"value": 0.08
+				}
+			},
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"chum:aquarium_fish": {
+				"minecraft:type_family": {
+					"family": [
+						"aquarium_fish"
+					]
+				}
+			},
+			"chum:collect_nettable": {
+				"minecraft:is_baby": {}
+			},
+			"chum:trapped": {
+				"minecraft:is_tamed": {}
+			},
+			"chum:aquarium_first": {
+				"minecraft:is_chested": {}
+			}
+		},
+		"events": {
+			"chum:in_water": {
+				"remove": {
+					"component_groups": [
+						"chum:land_movement"
+					]
+				}
+			},
+			"chum:trapped": {
+				"add": {
+					"component_groups": [
+						"chum:trapped"
+					]
+				}
+			},
+			"chum:on_land": {
+				"add": {
+					"component_groups": [
+						"chum:land_movement"
+					]
+				}
+			},
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			},
+			"chum:aquarium_fish": {
+				"add": {
+					"component_groups": [
+						"chum:aquarium_fish"
+					]
+				}
+			},
+			"chum:collect_nettable": {
+				"add": {
+					"component_groups": [
+						"chum:collect_nettable"
+					]
+				}
+			},
+			"chum:aquarium_fish_first": {
+				"add": {
+					"component_groups": [
+						"chum:aquarium_fish",
+						"chum:aquarium_first"
+					]
+				}
+			},
+			"chum:remove_aquarium_first": {
+				"remove": {
+					"component_groups": [
+						"chum:aquarium_first"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,542 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tsu:item",
+      "is_summonable": true,
+      "is_spawnable": false,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tsu:despawn_item": {
+        "minecraft:instant_despawn": {}
+      },
+      "tsu:laser_blaster": {
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+      "tsu:concussion_hammer": {
+        "minecraft:skin_id": {
+          "value": 2
+        }
+      },
+      "tsu:creeper_canon": {
+        "minecraft:skin_id": {
+          "value": 3
+        }
+      },
+      "tsu:fire_saw": {
+        "minecraft:skin_id": {
+          "value": 4
+        }
+      },
+      "tsu:ion_gun": {
+        "minecraft:skin_id": {
+          "value": 5
+        }
+      },
+      "tsu:kinetic_axe": {
+        "minecraft:skin_id": {
+          "value": 6
+        }
+      },
+      "tsu:laser_bow": {
+        "minecraft:skin_id": {
+          "value": 7
+        }
+      },
+      "tsu:blaster_glove": {
+        "minecraft:skin_id": {
+          "value": 8
+        }
+      },
+      "tsu:scatter_blaster": {
+        "minecraft:skin_id": {
+          "value": 9
+        }
+      },
+      "tsu:laser_sword": {
+        "minecraft:skin_id": {
+          "value": 10
+        }
+      },
+      "tsu:lightning_gun": {
+        "minecraft:skin_id": {
+          "value": 11
+        }
+      },
+      "tsu:longsword": {
+        "minecraft:skin_id": {
+          "value": 12
+        }
+      },
+      "tsu:omni_gun": {
+        "minecraft:skin_id": {
+          "value": 13
+        }
+      },
+      "tsu:pulse_gun": {
+        "minecraft:skin_id": {
+          "value": 14
+        }
+      },
+      "tsu:rocket_axe": {
+        "minecraft:skin_id": {
+          "value": 15
+        }
+      }
+    },
+    "components": {
+      "minecraft:skin_id": {
+        "value": 0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "item"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": false
+                }
+              ]
+            },
+            "event": "tsu:despawn_item"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 1
+                }
+              ]
+            },
+            "event": "tsu:laser_blaster"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 2
+                }
+              ]
+            },
+            "event": "tsu:concussion_hammer"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 3
+                }
+              ]
+            },
+            "event": "tsu:creeper_canon"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 4
+                }
+              ]
+            },
+            "event": "tsu:fire_saw"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 5
+                }
+              ]
+            },
+            "event": "tsu:ion_gun"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 6
+                }
+              ]
+            },
+            "event": "tsu:kinetic_axe"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 7
+                }
+              ]
+            },
+            "event": "tsu:laser_bow"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 8
+                }
+              ]
+            },
+            "event": "tsu:blaster_glove"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 9
+                }
+              ]
+            },
+            "event": "tsu:scatter_blaster"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 10
+                }
+              ]
+            },
+            "event": "tsu:laser_sword"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 11
+                }
+              ]
+            },
+            "event": "tsu:lightning_gun"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 12
+                }
+              ]
+            },
+            "event": "tsu:longsword"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 13
+                }
+              ]
+            },
+            "event": "tsu:omni_gun"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 14
+                }
+              ]
+            },
+            "event": "tsu:pulse_gun"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "operator": "==",
+                  "subject": "self",
+                  "value": true
+                },
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": 15
+                }
+              ]
+            },
+            "event": "tsu:rocket_axe"
+          }
+        ]
+      }
+    },
+    "events": {
+      "tsu:despawn_item": {
+        "add": {
+          "component_groups": [
+            "tsu:despawn_item"
+          ]
+        }
+      },
+      "tsu:laser_blaster": {
+        "add": {
+          "component_groups": [
+            "tsu:laser_blaster"
+          ]
+        }
+      },
+      "tsu:concussion_hammer": {
+        "add": {
+          "component_groups": [
+            "tsu:concussion_hammer"
+          ]
+        }
+      },
+      "tsu:creeper_canon": {
+        "add": {
+          "component_groups": [
+            "tsu:creeper_canon"
+          ]
+        }
+      },
+      "tsu:fire_saw": {
+        "add": {
+          "component_groups": [
+            "tsu:fire_saw"
+          ]
+        }
+      },
+      "tsu:ion_gun": {
+        "add": {
+          "component_groups": [
+            "tsu:ion_gun"
+          ]
+        }
+      },
+      "tsu:kinetic_axe": {
+        "add": {
+          "component_groups": [
+            "tsu:kinetic_axe"
+          ]
+        }
+      },
+      "tsu:laser_bow": {
+        "add": {
+          "component_groups": [
+            "tsu:laser_bow"
+          ]
+        }
+      },
+      "tsu:blaster_glove": {
+        "add": {
+          "component_groups": [
+            "tsu:blaster_glove"
+          ]
+        }
+      },
+      "tsu:scatter_blaster": {
+        "add": {
+          "component_groups": [
+            "tsu:scatter_blaster"
+          ]
+        }
+      },
+      "tsu:laser_sword": {
+        "add": {
+          "component_groups": [
+            "tsu:laser_sword"
+          ]
+        }
+      },
+      "tsu:lightning_gun": {
+        "add": {
+          "component_groups": [
+            "tsu:lightning_gun"
+          ]
+        }
+      },
+      "tsu:longsword": {
+        "add": {
+          "component_groups": [
+            "tsu:longsword"
+          ]
+        }
+      },
+      "tsu:omni_gun": {
+        "add": {
+          "component_groups": [
+            "tsu:omni_gun"
+          ]
+        }
+      },
+      "tsu:pulse_gun": {
+        "add": {
+          "component_groups": [
+            "tsu:pulse_gun"
+          ]
+        }
+      },
+      "tsu:rocket_axe": {
+        "add": {
+          "component_groups": [
+            "tsu:rocket_axe"
+          ]
+        }
+      }
+    }
+  }
+}

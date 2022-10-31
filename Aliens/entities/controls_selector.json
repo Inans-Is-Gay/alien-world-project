@@ -1,0 +1,147 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:controls_selector",
+			"is_summonable": true,
+			"is_spawnable": false
+		},
+		"component_groups": {
+			"chum:activate_selector": {
+				"minecraft:is_sheared": {}
+			},
+			"chum:playstation": {
+				"minecraft:skin_id": {
+					"value": 0
+				}
+			},
+			"chum:xbox": {
+				"minecraft:skin_id": {
+					"value": 1
+				}
+			},
+			"chum:mobile": {
+				"minecraft:skin_id": {
+					"value": 2
+				}
+			},
+			"chum:mouse": {
+				"minecraft:skin_id": {
+					"value": 3
+				}
+			},
+			"chum:switch": {
+				"minecraft:skin_id": {
+					"value": 4
+				}
+			},
+			"chum:no_input": {
+				"minecraft:skin_id": {
+					"value": 5
+				}
+			}
+		},
+		"components": {
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"event": "chum:on_select"
+						},
+						"interact_text": "action.interact.select"
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": true,
+				"always_show": false
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"width": 1,
+						"height": 1
+					}
+				]
+			}
+		},
+		"events": {
+			"chum:on_select": {
+				"add": {
+					"component_groups": [
+						"chum:activate_selector"
+					]
+				}
+			},
+			"chum:deselect": {
+				"remove": {
+					"component_groups": [
+						"chum:activate_selector"
+					]
+				}
+			},
+			"chum:playstation_selector": {
+				"add": {
+					"component_groups": [
+						"chum:playstation"
+					]
+				}
+			},
+			"chum:xbox_selector": {
+				"add": {
+					"component_groups": [
+						"chum:xbox"
+					]
+				}
+			},
+			"chum:mobile_selector": {
+				"add": {
+					"component_groups": [
+						"chum:mobile"
+					]
+				}
+			},
+			"chum:mouse_selector": {
+				"add": {
+					"component_groups": [
+						"chum:mouse"
+					]
+				}
+			},
+			"chum:switch_selector": {
+				"add": {
+					"component_groups": [
+						"chum:switch"
+					]
+				}
+			},
+			"chum:no_input": {
+				"add": {
+					"component_groups": [
+						"chum:no_input"
+					]
+				}
+			}
+		}
+	}
+}

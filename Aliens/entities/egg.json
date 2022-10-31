@@ -1,0 +1,85 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:egg",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"fishing_trap": "controller.animation.egg.fishing_trap"
+			},
+			"scripts": {
+				"animate": [
+					"fishing_trap"
+				]
+			}
+		},
+		"component_groups": {
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"chum:try_place_trap": {
+				"minecraft:is_ignited": {}
+			}
+		},
+		"events": {
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			},
+			"chum:try_place_trap": {
+				"add": {
+					"component_groups": [
+						"chum:try_place_trap"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.4,
+				"height": 0.2
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": 0,
+						"knockback": false
+					},
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"event": "chum:try_place_trap"
+						}
+					}
+				},
+				"liquid_inertia": 0,
+				"anchor": 1,
+				"power": 0.6,
+				"gravity": 0.035,
+				"angle_offset": 45,
+				"offset": [
+					0,
+					6,
+					0
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 100,
+					"max_dropped_ticks": 5,
+					"use_motion_prediction_hints": true
+				}
+			}
+		}
+	}
+}

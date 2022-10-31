@@ -1,0 +1,1 @@
+structure load mystructure:lore_journal 227 60 48

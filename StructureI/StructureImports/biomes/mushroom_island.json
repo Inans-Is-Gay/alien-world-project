@@ -1,0 +1,15 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "mushroom_island"
+    },
+    "components": {
+      "minecraft:climate": {
+        "downfall": 0.7,
+        "temperature": 0.9
+      },
+      "mushroom": {}
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+			"controller.animation.mech.spawn_from_villager": {
+				"initial_state": "default",
+				"states": {
+					"default": {
+						"on_entry": [
+							"/spreadplayers ~ ~ 1 5 @s[tag=!init]",
+							"/tag @s add init"
+						]
+					}
+				}
+			},
+      "controller.animation.mech": {
+        "initial_state": "not_rising",
+        "states": {
+          "not_rising": {
+            "transitions": [
+              {
+                "rising": "query.is_jumping"
+              }
+            ]
+          },
+          "rising": {
+            "on_entry": [
+              "variable.rise = !variable.rise;"
+            ],
+            "transitions": [
+              {
+                "not_rising": "!query.is_jumping"
+              }
+            ]
+          }
+        }
+      },
+      "controller.animation.mech.idle": {
+        "initial_state": "activate",
+        "states": {
+          "activate": {
+            "transitions": [
+              {"off": "query.is_sheared"}
+            ]
+          },
+          "off": {
+            "on_entry": [
+              "/playsound mech.turn_on @a[r=10]",
+              "/stopsound @p mech.idle"
+            ],
+            "transitions": [
+              {
+                "on": "query.has_rider"
+              }
+            ]
+          },
+          "on": {
+            "animations": [
+              "idle_sound"
+            ],
+            "transitions": [
+              {
+                "off": "!query.has_rider"
+              }
+            ]
+          }
+        }
+      },
+      "controller.animation.mech.cannon": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"fire": "query.is_ignited"}
+            ]
+          },
+          "fire": {
+            "on_entry": [
+              "/playsound mech.laser_attack @a[r=10]",
+              "@s evt:stop_cannon"
+            ],
+            "transitions": [
+              {
+                "default": "query.all_animations_finished"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }

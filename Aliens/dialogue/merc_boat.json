@@ -1,0 +1,114 @@
+{
+    "format_version": "1.17",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "merc_boat1",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "corgi.boat.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "merc.boat1",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": [
+                    "/event entity @e[type=chum:mercorgi_npc_boat] chum:remove_dialog",
+                    "execute @e[type=chum:mercorgi_npc_boat,tag=!corg_gave_dialogue] ~~~ scoreboard players add @e[name=main] corgi_talks 1",
+                    "tag @e[type=chum:mercorgi_npc_boat] add corg_gave_dialogue"
+                ],
+                "on_close_commands": ["/dialogue change @e[type=chum:mercorgi_npc_boat] merc_boat1 @initiator"],
+                "buttons": [
+                    {
+                        "name": {
+                            "rawtext": [
+                                {
+                                    "translate": "Next"
+                                }
+                            ]
+                        },
+                        "commands": [
+                            "/dialogue open @e[type=chum:mercorgi_npc_boat] @initiator merc_boat2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag": "merc_boat2",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "corgi.boat.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "merc.boat2",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": ["/dialogue change @e[type=chum:mercorgi_npc_boat] merc_boat1 @initiator"],
+                "buttons": [
+                    {
+                        "name": {
+                            "rawtext": [
+                                {
+                                    "translate": "Next"
+                                }
+                            ]
+                        },
+                        "commands": [
+                            "/dialogue open @e[type=chum:mercorgi_npc_boat] @initiator merc_boat3"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag": "merc_boat3",
+                "npc_name": {
+                    "rawtext": [
+                        {
+                            "translate": "corgi.boat.name",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "text": {
+                    "rawtext": [
+                        {
+                            "translate": "merc.boat3",
+                            "with": [
+                                "\n"
+                            ]
+                        }
+                    ]
+                },
+                "on_open_commands": [],
+                "on_close_commands": ["/dialogue change @e[type=chum:mercorgi_npc_boat] merc_boat1 @initiator"]
+            }
+        ]
+    }
+}

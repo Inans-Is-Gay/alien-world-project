@@ -1,0 +1,172 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.jungle_scroll": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"summon": "query.variant>=5"
+						}
+					]
+				},
+				"summon": {
+					"on_entry": [
+						"/execute @e[type=chum:jungle_tank_statue,tag=!scroll_summon] ~ ~ ~ summon chum:aquarium_scroll_jungle 188 58 -7",
+						"/execute @e[type=chum:aquarium_scroll_jungle,tag=!rotated] ~ ~ ~ tp ~ ~ ~ ~270 ~",
+						"/execute @e[type=chum:aquarium_scroll_jungle] ~ ~ ~ tp ~ ~ ~ ~ ~",
+						"/dialogue change @e[type=chum:aquarium_scroll_jungle,tag=!rotated] ped_alien",
+						"/execute @e[type=chum:aquarium_scroll_jungle,tag=!rotated] ~ ~ ~ tag @s add rotated"
+					],
+					"transitions": [
+						{
+							"default": "query.variant<5"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.reef_scroll": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"summon": "query.variant>=5"
+						}
+					]
+				},
+				"summon": {
+					"on_entry": [
+						"/execute @e[type=chum:reef_tank_statue,tag=!scroll_summon] ~ ~ ~ summon chum:aquarium_scroll_reef 214 58 7",
+						"/execute @e[type=chum:aquarium_scroll_reef,tag=!rotated] ~ ~ ~ tp ~ ~ ~ ~90 ~",
+						"/execute @e[type=chum:aquarium_scroll_reef] ~ ~ ~ tp ~ ~ ~ ~ ~",
+						"/dialogue change @e[type=chum:aquarium_scroll_reef,tag=!rotated] ped_scholar",
+						"/execute @e[type=chum:aquarium_scroll_reef,tag=!rotated] ~ ~ ~ tag @s add rotated"
+					],
+					"transitions": [
+						{
+							"default": "query.variant<5"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.melody_scroll": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"summon": "query.variant>=5"
+						}
+					]
+				},
+				"summon": {
+					"on_entry": [
+						"/execute @e[type=chum:melody_tank_statue,tag=!scroll_summon] ~ ~ ~ summon chum:aquarium_scroll_melody 208 58 -13",
+						"/dialogue change @e[type=chum:aquarium_scroll_melody,tag=!rotated] ped_serpent",
+						"/execute @e[type=chum:aquarium_scroll_melody,tag=!rotated] ~ ~ ~ tag @s add rotated"
+					],
+					"transitions": [
+						{
+							"default": "query.variant<5"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.scroll_tag_jungle": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"tag": "query.is_sheared"
+						}
+					]
+				},
+				"tag": {
+					"on_entry": [
+						"/tag @e[type=chum:jungle_tank_statue] add scroll_summon"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sheared"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.scroll_tag_reef": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"tag": "query.is_sheared"
+						}
+					]
+				},
+				"tag": {
+					"on_entry": [
+						"/tag @e[type=chum:reef_tank_statue] add scroll_summon"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sheared"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.scroll_tag_melody": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"tag": "query.is_sheared"
+						}
+					]
+				},
+				"tag": {
+					"on_entry": [
+						"/tag @e[type=chum:melody_tank_statue] add scroll_summon"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sheared"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.statue_near": {
+			"initial_state": "far",
+			"states": {
+				"far": {
+					"transitions": [
+						{
+							"near": "query.is_ignited"
+						}
+					],
+					"on_entry": [
+						"/tag @s remove is_near"
+					]
+				},
+				"near": {
+					"transitions": [
+						{
+							"far": "!query.is_ignited"
+						}
+					],
+					"on_entry": [
+						"/tag @s add is_near"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,184 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:roar",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"68bc4c689ad823d6_a_0"
+				]
+			},
+			"animations": {
+				"68bc4c689ad823d6_a_0": "animation.68bc4c689ad823d6327d647644cca35b15be412b_0"
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"chum:roar_0": {
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.05,
+					"knockback_strength": 0,
+					"knockback_damage": 0,
+					"knockback_range": 3,
+					"cooldown_time": 50,
+					"knockback_filters": {
+						"test": "in_nether",
+						"value": false
+					},
+					"damage_filters": {
+						"test": "in_nether",
+						"value": true
+					}
+				}
+			},
+			"chum:roar_1": {
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.05,
+					"knockback_strength": 1,
+					"knockback_damage": 0,
+					"knockback_range": 3,
+					"cooldown_time": 50,
+					"knockback_filters": {
+						"test": "in_nether",
+						"value": false
+					},
+					"damage_filters": {
+						"test": "in_nether",
+						"value": true
+					}
+				}
+			},
+			"chum:roar_2": {
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.05,
+					"knockback_strength": 2,
+					"knockback_damage": 0,
+					"knockback_range": 3,
+					"cooldown_time": 50,
+					"knockback_filters": {
+						"test": "in_nether",
+						"value": false
+					},
+					"damage_filters": {
+						"test": "in_nether",
+						"value": true
+					}
+				}
+			},
+			"chum:roar_3": {
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.05,
+					"knockback_strength": 3,
+					"knockback_damage": 0,
+					"knockback_range": 3,
+					"cooldown_time": 50,
+					"knockback_filters": {
+						"test": "in_nether",
+						"value": false
+					},
+					"damage_filters": {
+						"test": "in_nether",
+						"value": true
+					}
+				}
+			},
+			"chum:roar_4": {
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.05,
+					"knockback_strength": 4,
+					"knockback_damage": 0,
+					"knockback_range": 3,
+					"cooldown_time": 50,
+					"knockback_filters": {
+						"test": "in_nether",
+						"value": false
+					},
+					"damage_filters": {
+						"test": "in_nether",
+						"value": true
+					}
+				}
+			},
+			"chum:roar_5": {
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.05,
+					"knockback_strength": 5,
+					"knockback_damage": 0,
+					"knockback_range": 3,
+					"cooldown_time": 50,
+					"knockback_filters": {
+						"test": "in_nether",
+						"value": false
+					},
+					"damage_filters": {
+						"test": "in_nether",
+						"value": true
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"roar"
+				]
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"chum:roar_0": {
+				"add": {
+					"component_groups": [
+						"chum:roar_0"
+					]
+				}
+			},
+			"chum:roar_1": {
+				"add": {
+					"component_groups": [
+						"chum:roar_1"
+					]
+				}
+			},
+			"chum:roar_2": {
+				"add": {
+					"component_groups": [
+						"chum:roar_2"
+					]
+				}
+			},
+			"chum:roar_3": {
+				"add": {
+					"component_groups": [
+						"chum:roar_3"
+					]
+				}
+			},
+			"chum:roar_4": {
+				"add": {
+					"component_groups": [
+						"chum:roar_4"
+					]
+				}
+			},
+			"chum:roar_5": {
+				"add": {
+					"component_groups": [
+						"chum:roar_5"
+					]
+				}
+			}
+		}
+	}
+}

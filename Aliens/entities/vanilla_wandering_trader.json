@@ -1,0 +1,37 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:wandering_trader",
+			"is_summonable": true,
+			"is_spawnable": true
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 1,
+				"entity_types": [
+				{
+				  "filters": {
+					"all_of":[
+					  {
+						"test": "is_family",
+						"subject": "other",
+						"value": "creeper"
+					  },
+					  { "test": "has_component", "subject": "other", "operator": "equals", "value": "minecraft:explode" }
+					]
+				  },
+				  "min_dist": 8,
+				  "walk_speed_multiplier": 1.8,
+				  "sprint_speed_multiplier": 2.4
+				}
+				]
+			  },
+			"minecraft:instant_despawn": {
+				"remove_child_entities": true
+			}
+		},
+		"events": {}
+	}
+}

@@ -1,0 +1,80 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tsu:fabricator",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tsu:base": {
+        "minecraft:physics": {},
+        "minecraft:type_family": {
+          "family": ["arena_mob", "ash_fiend"]
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1.0
+        },
+        "minecraft:health": {
+          "value": 20,
+          "max": 20
+        },
+        "minecraft:breathable": {
+          "total_supply": 15,
+          "suffocate_time": 0,
+          "breathes_air": true,
+          "breathes_water": false
+        },
+        "minecraft:pushable": {
+          "is_pushable": true,
+          "is_pushable_by_piston": true
+        },
+        "minecraft:collision_box": {
+          "width": 1.0,
+          "height": 1.0
+        }
+      },
+      "tsu:invulnerable": {
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "deals_damage": false
+          }
+        }
+      },
+      "tsu:immoveable": {
+        "minecraft:pushable": {
+          "is_pushable": false,
+          "is_pushable_by_piston": false
+        }
+      },
+      "tsu:zero_gravity": {
+        "minecraft:physics": {
+          "has_gravity": false
+        }
+      },
+      "tsu:trader": {
+        "minecraft:economy_trade_table": {
+          "display_name": "Fabricator",
+          "table": "trading/fabricator.json",
+          "new_screen": true,
+          "persist_trades": true
+        }
+      }
+    },
+    "components": {},
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "tsu:base",
+            "tsu:invulnerable",
+            "tsu:immoveable",
+            "tsu:zero_gravity",
+            "tsu:trader"
+          ]
+        }
+      }
+    }
+  }
+}

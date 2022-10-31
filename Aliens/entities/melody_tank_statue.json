@@ -1,0 +1,242 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:melody_tank_statue",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"controller": "controller.animation.melody_scroll",
+				"count": "animation.mel_tank_count",
+				"tag_controller": "controller.animation.statue_near"
+			},
+			"scripts": {
+				"animate": [
+					"controller",
+					"count",
+					"tag_controller"
+				]
+			}
+		},
+		"component_groups": {
+			"chum:add_tag": {
+				"minecraft:is_ignited": {}
+			},
+			"chum:state_0": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"chum:state_1": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"chum:state_2": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"chum:state_3": {
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"chum:state_4": {
+				"minecraft:variant": {
+					"value": 4
+				}
+			},
+			"chum:state_5": {
+				"minecraft:variant": {
+					"value": 5
+				}
+			},
+			"chum:state_6": {
+				"minecraft:variant": {
+					"value": 6
+				}
+			}
+		},
+		"components": {
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_tag",
+									"value": "is_near",
+									"operator": "!=",
+									"subject": "self"
+								},
+								{
+									"test": "distance_to_nearest_player",
+									"value": 12,
+									"operator": "<"
+								}
+							]
+						},
+						"event": "chum:tag"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_tag",
+									"value": "is_near",
+									"subject": "self"
+								},
+								{
+									"test": "distance_to_nearest_player",
+									"value": 12,
+									"operator": ">="
+								}
+							]
+						},
+						"event": "chum:remove_tag"
+					}
+				]
+			}
+		},
+		"events": {
+			"chum:statue_1": {
+				"add": {
+					"component_groups": [
+						"chum:state_1"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:state_2",
+						"chum:state_3",
+						"chum:state_4",
+						"chum:state_5",
+						"chum:state_6"
+					]
+				}
+			},
+			"chum:statue_2": {
+				"add": {
+					"component_groups": [
+						"chum:state_2"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:state_1",
+						"chum:state_3",
+						"chum:state_4",
+						"chum:state_5",
+						"chum:state_6"
+					]
+				}
+			},
+			"chum:statue_3": {
+				"add": {
+					"component_groups": [
+						"chum:state_3"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:state_1",
+						"chum:state_2",
+						"chum:state_4",
+						"chum:state_5",
+						"chum:state_6"
+					]
+				}
+			},
+			"chum:statue_4": {
+				"add": {
+					"component_groups": [
+						"chum:state_4"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:state_1",
+						"chum:state_2",
+						"chum:state_3",
+						"chum:state_5",
+						"chum:state_6"
+					]
+				}
+			},
+			"chum:statue_5": {
+				"add": {
+					"component_groups": [
+						"chum:state_5"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:state_1",
+						"chum:state_2",
+						"chum:state_3",
+						"chum:state_4",
+						"chum:state_6"
+					]
+				}
+			},
+			"chum:statue_6": {
+				"add": {
+					"component_groups": [
+						"chum:state_6"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:state_1",
+						"chum:state_2",
+						"chum:state_3",
+						"chum:state_4",
+						"chum:state_5"
+					]
+				}
+			},
+			"chum:reset": {
+				"add": {
+					"component_groups": [
+						"chum:state_0"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"chum:state_1",
+						"chum:state_2",
+						"chum:state_3",
+						"chum:state_4",
+						"chum:state_5",
+						"chum:state_6"
+					]
+				}
+			},
+			"chum:tag": {
+				"add": {
+					"component_groups": [
+						"chum:add_tag"
+					]
+				}
+			},
+			"chum:remove_tag": {
+				"remove": {
+					"component_groups": [
+						"chum:add_tag"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:lighthouse_light",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"fog": "animation.lighthouse.fog_small",
+				"fog_controller": "controller.animation.lighthouse.fog",
+				"lighthouse_beam": "animation.lighthouse.lighthouse_beam"
+			},
+			"scripts": {
+				"animate": [
+					"fog_controller",
+					{
+						"lighthouse_beam": "query.is_ignited"
+					}
+				]
+			}
+		},
+		"component_groups": {
+			"chum:fog_removal": {
+				"minecraft:is_ignited": {}
+			}
+		},
+		"components": {},
+		"events": {
+			"chum:fog_removal": {
+				"add": {
+					"component_groups": [
+						"chum:fog_removal"
+					]
+				}
+			},
+			"chum:reset": {
+				"remove": {
+					"component_groups": [
+						"chum:fog_removal"
+					]
+				}
+			}
+		}
+	}
+}

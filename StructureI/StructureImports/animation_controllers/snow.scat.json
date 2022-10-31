@@ -1,0 +1,19 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.scatter.test": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"vines": "query.has_any_family('vines')"
+						}
+					]
+				},
+                "vines":{
+                    "animations":["vines"]
+                }
+			}
+		}
+	}
+}

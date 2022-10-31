@@ -1,0 +1,200 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:sea_junk",
+			"animations": {
+				"pollution": "animation.sea_junk.pollution",
+				"collect": "animation.sea_junk.collect",
+				"sickness": "animation.sea_junk.sickness"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"collect": "query.is_ignited"
+					},
+					"pollution",
+					"sickness"
+				]
+			},
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"sea_junk:collect": {
+				"minecraft:is_ignited": {}
+			},
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"sea_junk:type1": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"sea_junk:type2": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"sea_junk:type3": {
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"sea_junk:type4": {
+				"minecraft:variant": {
+					"value": 4
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"height": 1.5,
+				"width": 1.5
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:type_family": {
+				"family": [
+					"pollution",
+					"sea_junk"
+				]
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"test": "distance_to_nearest_player",
+							"subject": "self",
+							"operator": ">=",
+							"value": 86
+						},
+						"event": "chum:despawn"
+					}
+				]
+			},
+			"minecraft:entity_sensor": {
+				"sensor_range": 0.4,
+				"event_filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "boat"
+				},
+				"event": "sea_junk:collect"
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_equipment",
+										"value": "wooden_hoe",
+										"domain": "hand",
+										"subject": "other"
+									}
+								]
+							},
+							"event": "sea_junk:collect"
+						}
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "entity_attack",
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "damager",
+										"value": "player"
+									},
+									{
+										"test": "has_equipment",
+										"value": "wooden_hoe",
+										"domain": "hand",
+										"subject": "damager"
+									}
+								]
+							},
+							"event": "sea_junk:collect"
+						},
+						"deals_damage": false
+					},
+					{
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"sea_junk:collect": {
+				"add": {
+					"component_groups": [
+						"sea_junk:collect"
+					]
+				}
+			},
+			"sea_junk:finish_collect": {
+				"sequence": {
+					"remove": {
+						"component_groups": [
+							"sea_junk:collect"
+						]
+					}
+				}
+			},
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"sea_junk:type1"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"sea_junk:type2"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"sea_junk:type3"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"sea_junk:type4"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

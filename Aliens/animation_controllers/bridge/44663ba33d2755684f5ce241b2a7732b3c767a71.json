@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.44663ba33d2755684f5ce241b2a7732b3c767a71_0": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/tag @s remove holding_net"
+					],
+					"transitions": [
+						{
+							"holding_net": "query.is_item_name_any(0)=='fishing_net'"
+						}
+					]
+				},
+				"holding_net": {
+					"on_entry": [
+						"/tag @s add holding_net"
+					],
+					"transitions": [
+						{
+							"default": "query.is_item_name_any(0)!='fishing_net'"
+						}
+					]
+				}
+			}
+		}
+	}
+}

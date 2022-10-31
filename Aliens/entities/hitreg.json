@@ -1,0 +1,124 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:hitreg",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"chum:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"chum:default": {
+				"minecraft:addrider": {
+					"entity_type": "chum:hitreg_child"
+				},
+				"minecraft:rideable": {
+					"family_types": [
+						"hitreg_child",
+						"fish"
+					],
+					"seat_count": 3,
+					"seats": [
+						{
+							"position": [
+								0,
+								0,
+								0
+							]
+						},
+						{
+							"position": [
+								0,
+								0,
+								0
+							]
+						},
+						{
+							"position": [
+								0,
+								0,
+								0
+							]
+						}
+					]
+				}
+			},
+			"chum:bait": {
+				"minecraft:addrider": {
+					"entity_type": "chum:hitreg_child_bait"
+				},
+				"minecraft:rideable": {
+					"family_types": [
+						"hitreg_child",
+						"fish"
+					],
+					"seat_count": 1,
+					"seats": [
+						{
+							"position": [
+								0,
+								0,
+								0
+							]
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"height": 0,
+				"width": 0
+			},
+			"minecraft:physics": {},
+			"minecraft:type_family": {
+				"family": [
+					"hitreg"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"test": "is_riding",
+							"operator": "!="
+						},
+						"event": "chum:despawn"
+					}
+				]
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"chum:default"
+					]
+				}
+			},
+			"chum:bait": {
+				"add": {
+					"component_groups": [
+						"chum:bait"
+					]
+				}
+			},
+			"chum:despawn": {
+				"add": {
+					"component_groups": [
+						"chum:despawn"
+					]
+				}
+			}
+		}
+	}
+}

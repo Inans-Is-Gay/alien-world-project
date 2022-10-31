@@ -1,0 +1,400 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.fish.give_reward": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"give_reward": "query.is_powered"
+						}
+					]
+				},
+				"give_reward": {
+					"on_entry": [
+						"/particle chum:net_catch ~~~",
+						"/function fishing/fish/item_reward",
+						"/function fishing/fish/net_removal",
+						"/event entity @s chum:despawn"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_powered"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.fish.catch_seq_manager": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"catch_seq": "query.variant==6"
+						}
+					]
+				},
+				"catch_seq": {
+					"animations": [
+						"catch_seq",
+						"catch_seq_tp"
+					]
+				}
+			}
+		},
+		"controller.animation.fish.bis_manager": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"standby": "q.mark_variant==0"
+						},
+						{
+							"spotted_bobber": "q.mark_variant==1"
+						},
+						{
+							"attacking_bobber": "q.mark_variant==2"
+						},
+						{
+							"hit_bobber": "q.mark_variant==3"
+						},
+						{
+							"cooldown": "q.mark_variant==4"
+						}
+					]
+				},
+				"standby": {
+					"transitions": [
+						{
+							"spotted_bobber": "q.mark_variant==1"
+						},
+						{
+							"attacking_bobber": "q.mark_variant==2"
+						},
+						{
+							"hit_bobber": "q.mark_variant==3"
+						},
+						{
+							"cooldown": "q.mark_variant==4"
+						}
+					],
+					"on_entry": [
+						"/function fishing/fish/bis_on/standby"
+					]
+				},
+				"spotted_bobber": {
+					"transitions": [
+						{
+							"standby": "q.mark_variant==0"
+						},
+						{
+							"attacking_bobber": "q.mark_variant==2"
+						},
+						{
+							"hit_bobber": "q.mark_variant==3"
+						},
+						{
+							"cooldown": "q.mark_variant==4"
+						}
+					],
+					"on_entry": [
+						"/function fishing/fish/bis_on/spotted_bobber"
+					]
+				},
+				"attacking_bobber": {
+					"transitions": [
+						{
+							"standby": "q.mark_variant==0"
+						},
+						{
+							"spotted_bobber": "q.mark_variant==1"
+						},
+						{
+							"hit_bobber": "q.mark_variant==3"
+						},
+						{
+							"cooldown": "q.mark_variant==4"
+						}
+					],
+					"on_entry": [
+						"/function fishing/fish/bis_on/attacking_bobber"
+					]
+				},
+				"hit_bobber": {
+					"transitions": [
+						{
+							"standby": "q.mark_variant==0"
+						},
+						{
+							"spotted_bobber": "q.mark_variant==1"
+						},
+						{
+							"attacking_bobber": "q.mark_variant==2"
+						},
+						{
+							"cooldown": "q.mark_variant==4"
+						}
+					],
+					"on_entry": [
+						"/function fishing/fish/bis_on/hit_bobber"
+					]
+				},
+				"cooldown": {
+					"transitions": [
+						{
+							"standby": "q.mark_variant==0"
+						},
+						{
+							"spotted_bobber": "q.mark_variant==1"
+						},
+						{
+							"attacking_bobber": "q.mark_variant==2"
+						},
+						{
+							"hit_bobber": "q.mark_variant==3"
+						}
+					],
+					"on_entry": [
+						"/function fishing/fish/bis_on/cooldown"
+					]
+				}
+			}
+		},
+		"controller.animation.fish.escape_manager": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"initial_calm": "q.variant==4&&(v.angry_gnc??0)"
+						}
+					],
+					"on_entry": [
+						"@s chum:remove_angry",
+						"@s chum:remove_warning",
+						"v.has_been_warned=0;",
+						"v.loop_length=6;",
+						"v.runtime=0;",
+						"v.calm_length=(query.has_any_family('micro')?3.5:(query.has_any_family('small')?3:(query.has_any_family('medium')?2.5:(query.has_any_family('big')?2:(query.has_any_family('special')?1.5:2.5)))));",
+						"v.angry_length=v.loop_length-v.calm_length;",
+						"v.angry_gnc=v.calm_length;",
+						"v.calm_gnc=v.angry_length;"
+					]
+				},
+				"initial_calm": {
+					"transitions": [
+						{
+							"default": "q.variant!=4&&q.variant!=5"
+						},
+						{
+							"escape": "q.all_animations_finished"
+						},
+						{
+							"initial_calm_2": "q.variant==5"
+						}
+					],
+					"animations": [
+						"initial_calm_timeout"
+					]
+				},
+				"initial_calm_2": {
+					"transitions": [
+						{
+							"default": "q.variant!=4&&q.variant!=5"
+						},
+						{
+							"pre_angry": "q.all_animations_finished&&q.variant!=6"
+						}
+					],
+					"animations": [
+						"initial_calm_2_timeout"
+					]
+				},
+				"pre_angry": {
+					"transitions": [
+						{
+							"angry": "1"
+						}
+					],
+					"on_entry": [
+						"v.angry_gnc=v.angry_length+math.random(-0.4,0.4);v.runtime=q.life_time;",
+						"@s chum:add_nav_enabler",
+						"@s chum:add_angry",
+						"@s chum:remove_calm",
+						"@s chum:remove_warning",
+						"/tag @s add angry"
+					]
+				},
+				"angry": {
+					"transitions": [
+						{
+							"default": "q.variant!=4&&q.variant!=5"
+						},
+						{
+							"escape": "q.variant==5&&v.has_been_warned&&(q.life_time-v.runtime)>0.6&&(q.life_time-v.runtime)<3"
+						},
+						{
+							"warning": "q.variant==5&&(q.life_time-v.runtime)>0.6"
+						},
+						{
+							"pre_calm": "(q.life_time-v.runtime)>=v.angry_gnc"
+						},
+						{
+							"pre_calm": "!q.is_sheared"
+						}
+					],
+					"animations": [
+						"angry_timeout"
+					]
+				},
+				"pre_calm": {
+					"transitions": [
+						{
+							"calm": "1"
+						}
+					],
+					"on_entry": [
+						"v.calm_gnc=v.calm_length+math.random(-0.4,0.4);v.runtime=q.life_time;",
+						"@s chum:remove_nav_enabler",
+						"@s chum:remove_angry",
+						"@s chum:add_calm",
+						"v.has_been_warned=0;"
+					]
+				},
+				"calm": {
+					"transitions": [
+						{
+							"default": "q.variant!=4&&q.variant!=5"
+						},
+						{
+							"pre_angry": "(q.life_time-v.runtime)>=v.calm_gnc&&q.variant!=6"
+						},
+						{
+							"pre_angry": "q.is_sheared&&q.variant!=6"
+						}
+					],
+					"animations": [
+						"calm_timeout"
+					]
+				},
+				"warning": {
+					"transitions": [
+						{
+							"default": "q.variant!=4&&q.variant!=5"
+						},
+						{
+							"pre_angry": "q.all_animations_finished&&q.variant!=6"
+						}
+					],
+					"animations": [
+						"warning_timeout"
+					],
+					"on_entry": [
+						"v.has_been_warned=1;",
+						"@s chum:add_angry",
+						"@s chum:remove_calm",
+						"@s chum:add_warning"
+					]
+				},
+				"escape": {
+					"transitions": [
+						{
+							"default": "q.variant!=4&&q.variant!=5"
+						}
+					],
+					"on_entry": [
+						"/function fishing/fish/on_escape"
+					]
+				}
+			}
+		},
+		"controller.animation.fish.lock_manager": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"locked": "query.is_ignited==1"
+						}
+					],
+					"on_entry": [
+						"/function fishing/fish/on_unlock"
+					]
+				},
+				"locked": {
+					"transitions": [
+						{
+							"default": "query.is_ignited==0"
+						}
+					],
+					"on_entry": [
+						"/function fishing/fish/on_lock"
+					]
+				}
+			}
+		},
+		"controller.animation.fish.anger_tracker": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"angry": "query.is_sheared==1"
+						}
+					],
+					"on_entry": [
+						"/tag @s remove angry",
+						"/tag @s remove fully_angry"
+					]
+				},
+				"angry": {
+					"transitions": [
+						{
+							"default": "query.is_sheared==0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.fish.hunger_manager": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"hungry": "query.is_stunned==1"
+						}
+					],
+					"animations": [
+						"turn_hungry"
+					]
+				},
+				"hungry": {
+					"transitions": [
+						{
+							"default": "query.is_stunned==0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.fish.sickness_manager": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sick": "query.is_tamed"
+						}
+					]
+				},
+				"sick": {
+					"transitions": [
+						{
+							"default": "!query.is_tamed"
+						}
+					],
+					"animations": [
+						"fish_sickness"
+					]
+				}
+			}
+		}
+	}
+}

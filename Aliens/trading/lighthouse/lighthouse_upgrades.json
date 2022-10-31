@@ -1,0 +1,24 @@
+{
+    "tiers": [
+        {
+            "trades": [
+                {
+                    "max_uses": 1,
+                    "wants": [
+                        {
+                            "item": "chum:lumia_coin",
+                            "quantity": 32
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "chum:upgrade_tower",
+                            "quantity": 1
+                        }
+                    ],
+                    "reward_exp": false
+                }
+            ]
+        }
+    ]
+}

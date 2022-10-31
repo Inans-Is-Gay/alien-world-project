@@ -1,0 +1,65 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "chum:teleport_pad",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"chum:emissive": {
+				"minecraft:is_ignited": {}
+			}
+		},
+		"components": {
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"operator": "==",
+							"value": "emissive",
+							"subject": "self"
+						},
+						"event": "chum:emissive"
+					},
+					{
+						"filters": {
+							"test": "has_tag",
+							"operator": "!=",
+							"value": "emissive",
+							"subject": "self"
+						},
+						"event": "chum:remove_emissive"
+					}
+				]
+			}
+		},
+		"events": {
+			"chum:emissive": {
+				"add": {
+					"component_groups": [
+						"chum:emissive"
+					]
+				}
+			},
+			"chum:remove_emissive": {
+				"remove": {
+					"component_groups": [
+						"chum:emissive"
+					]
+				}
+			}
+		}
+	}
+}

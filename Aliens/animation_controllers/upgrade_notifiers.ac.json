@@ -1,0 +1,53 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.upgrade.notifiers": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"lighthouse": "query.variant==1&&query.is_ignited"
+						},
+						{
+							"house": "query.variant==2&&query.is_ignited"
+						},
+						{
+							"boathouse": "query.variant==3&&query.is_ignited"
+						},
+						{
+							"gazebo": "query.variant==4&&query.is_ignited"
+						},
+						{
+							"cave": "query.variant==5&&query.is_ignited"
+						}
+					]
+				},
+				"lighthouse": {
+					"on_entry": [
+						"/function structure_upgrades/titles/lighthouse"
+					]
+				},
+				"house": {
+					"on_entry": [
+						"/function structure_upgrades/titles/house"
+					]
+				},
+				"boathouse": {
+					"on_entry": [
+						"/function structure_upgrades/titles/boathouse"
+					]
+				},
+				"gazebo": {
+					"on_entry": [
+						"/function structure_upgrades/titles/gazebo"
+					]
+				},
+				"cave": {
+					"on_entry": [
+						"/function structure_upgrades/titles/cave"
+					]
+				}
+			}
+		}
+	}
+}

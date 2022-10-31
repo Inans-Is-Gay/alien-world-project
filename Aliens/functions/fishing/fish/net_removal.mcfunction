@@ -1,0 +1,1 @@
+clear @p[tag=holding_net] wooden_hoe 0 1
